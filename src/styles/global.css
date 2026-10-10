@@ -657,8 +657,9 @@ h3 {
   }
 }
 .circle {
-  width: 272px;
-  height: 272px;
+  width: min(272px, 100%);
+  aspect-ratio: 1 / 1;
+  height: auto;
   border-radius: 999px;
   background: var(--white);
   border: 3px solid var(--black);
@@ -1277,5 +1278,61 @@ footer {
   .duo-card:hover,
   .svc-card:hover {
     transform: none;
+  }
+}
+
+/* ============ MOBILE REFINEMENTS ============ */
+html,
+body {
+  overflow-x: clip;
+}
+
+@media (max-width: 479px) {
+  /* nav: hide the call pill, burger menu has the call button */
+  .nav-cta {
+    display: none;
+  }
+  .nav-in {
+    gap: 12px;
+    padding: 8px 8px 8px 18px;
+  }
+  .wordmark {
+    font-size: 17px;
+  }
+  .wordmark small {
+    font-size: 10px;
+  }
+  /* duo cards: stack icon above text */
+  .duo-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+  /* hero headline slightly smaller */
+  .hero h1 {
+    font-size: clamp(2.3rem, 11vw, 2.7rem);
+  }
+  /* yellow band breathing room */
+  .band-yellow .in {
+    padding: 56px 20px;
+  }
+  .band-black {
+    padding: 52px 0 60px;
+  }
+}
+
+@media (max-width: 379px) {
+  /* pill buttons fit narrow screens */
+  .btn {
+    font-size: 16px;
+    padding: 6px 6px 6px 22px;
+    gap: 12px;
+  }
+  .btn .arr-c {
+    width: 42px;
+    height: 42px;
+  }
+  .wrap {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 }
