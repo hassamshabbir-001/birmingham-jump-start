@@ -496,6 +496,7 @@ h3 {
 /* ============ SECTIONS ============ */
 .sec {
   padding: 96px 0 0;
+  scroll-margin-top: 90px;
 }
 .sec-head {
   max-width: 760px;
