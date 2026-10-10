@@ -1,15 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
-import heroDusk from "../assets/hero-dusk.webp";
-import batteryCloseup from "../assets/battery-closeup.webp";
-import vanNight from "../assets/van-night.webp";
-import driverRelief from "../assets/driver-relief.webp";
 
 const phoneHref = "tel:+447477649906";
 const phoneLabel = "07477 649906";
 const waHref =
   "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20a%20jump%20start.";
+
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
 
 const faqs = [
   {
@@ -18,64 +16,70 @@ const faqs = [
   },
   {
     q: "How quickly can you reach me?",
-    a: "Our technicians are based across Birmingham, so most callouts are reached within 30–60 minutes depending on traffic and your exact location. When you call, we'll give you a realistic ETA, and keep you updated if anything changes.",
+    a: "Our technicians are based across Birmingham, so most callouts are reached within 30 to 60 minutes depending on traffic and your exact location. When you call, we will give you a realistic ETA, and keep you updated if anything changes.",
   },
   {
     q: "Do I need AA or RAC membership?",
-    a: "No. And that's the point. Unlike the big breakdown clubs, there's no yearly fee and no membership to join. You simply pay for the job when you need help. One call, one fixed quote, problem solved.",
+    a: "No. And that is the point. Unlike the big breakdown clubs, there is no yearly fee and no membership to join. You simply pay for the job when you need help. One call, one fixed quote, problem solved.",
   },
   {
     q: "Which areas do you cover?",
-    a: "All of Birmingham plus the wider West Midlands, including Walsall, Coventry, Solihull, Tamworth, Water Orton, Coleshill and Sutton Coldfield. If you're nearby and unsure, call us. We'll tell you straight away whether we can reach you.",
+    a: "All of Birmingham plus the wider West Midlands, including Walsall, Coventry, Solihull, Tamworth, Water Orton, Coleshill and Sutton Coldfield. If you are nearby and unsure, call us. We will tell you straight away whether we can reach you.",
   },
   {
     q: "My car is in an underground or multi-storey car park. Can you still help?",
-    a: "Yes. Our technicians carry portable jump-start equipment that works anywhere: underground car parks, tight driveways, narrow streets. Just tell us where you are and we'll come to you.",
+    a: "Yes. Our technicians carry portable jump-start equipment that works anywhere: underground car parks, tight driveways, narrow streets. Just tell us where you are and we will come to you.",
   },
   {
     q: "Can you jump start hybrid or electric cars?",
-    a: "Yes. We can help with 12-volt auxiliary battery problems on hybrids and electric cars, and we recover EVs that won't move. If you're unsure what's wrong, describe the symptoms on the phone and we'll advise honestly.",
+    a: "Yes. We can help with 12-volt auxiliary battery problems on hybrids and electric cars, and we recover EVs that will not move. If you are unsure what is wrong, describe the symptoms on the phone and we will advise honestly.",
   },
   {
-    q: "Do you just start the car, or check what's actually wrong?",
-    a: "Every jump start includes a free battery health check. We'll tell you whether your battery is healthy, on its way out, or the real problem is something else, so you're not stranded again next week. If you need a new battery, we can often supply and fit one on the spot.",
+    q: "Do you just start the car, or check what is actually wrong?",
+    a: "Every jump start includes a free battery health check. We will tell you whether your battery is healthy, on its way out, or the real problem is something else, so you are not stranded again next week. If you need a new battery, we can often supply and fit one on the spot.",
   },
   {
-    q: "What happens if the jump start doesn't work?",
-    a: "Then we'll tell you honestly what's going on. No jargon, no pressure. If it's the battery, we can usually replace it there and then. If it's something bigger, we'll recover your vehicle to your home or a garage of your choice.",
+    q: "What happens if the jump start does not work?",
+    a: "Then we will tell you honestly what is going on. No jargon, no pressure. If it is the battery, we can usually replace it there and then. If it is something bigger, we will recover your vehicle to your home or a garage of your choice.",
   },
 ];
 
 const services = [
   {
-    t: "Towing",
-    d: "Car won't start at all? We'll tow it safely to your home, your garage, or wherever it needs to go, anywhere in the West Midlands.",
-    icon: '<path d="M1 8h13v9H1zM14 11h4l4 4v2h-8z"/><circle cx="6" cy="19" r="2"/><circle cx="17" cy="19" r="2"/>',
-  },
-  {
-    t: "Breakdown Recovery",
-    d: "Broken down mid-journey? One call and a recovery truck is on its way. We'll get you and your vehicle somewhere safe, 24/7.",
-    icon: '<path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/>',
-  },
-  {
-    t: "Accident Recovery",
-    d: "Had a bump? We'll recover your vehicle quickly and carefully, and handle the stressful part so you don't have to.",
-    icon: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>',
-  },
-  {
-    t: "Emergency Fuel Delivery",
-    d: "Ran dry? We'll bring petrol or diesel straight to you. Faster, and far safer than walking to a petrol station.",
-    icon: '<path d="M5 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M3 21h14"/><path d="M15 9h2a2 2 0 0 1 2 2v7a1.5 1.5 0 0 0 3 0V9.8a2 2 0 0 0-.6-1.4L18 5"/>',
-  },
-  {
-    t: "Van Recovery",
-    d: "Vans up to 7.5t. When your work vehicle stops, your business stops, so we treat van recovery as the emergency it is.",
-    icon: '<path d="M1 7h12v10H1zM13 10h5l3 3v4h-8z"/><circle cx="6" cy="19" r="2"/><circle cx="17" cy="19" r="2"/>',
-  },
-  {
+    img: "/images/service-battery.jpg",
+    alt: "Technician fitting a new car battery under an open bonnet",
     t: "Battery Replacement",
-    d: "Battery's had it? We can supply and fit a new one on the spot, so a single visit solves the whole problem.",
-    icon: '<rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 10v4"/><path d="M11 9.5 9 12h3l-2 2.5"/>',
+    d: "Battery finished? We supply and fit a new one on the spot, so one visit solves the whole problem.",
+  },
+  {
+    img: "/images/service-towing.jpg",
+    alt: "Recovery truck loading a car on a UK street",
+    t: "Towing and Recovery",
+    d: "Car not starting at all? We tow it safely to your home, your garage, or wherever it needs to go.",
+  },
+  {
+    img: "/images/service-fuel.jpg",
+    alt: "Technician pouring fuel into a stranded car from a jerry can",
+    t: "Emergency Fuel Delivery",
+    d: "Run out of fuel? We bring petrol or diesel to you. Faster and safer than walking to a station.",
+  },
+  {
+    img: "/images/service-lockout.jpg",
+    alt: "Technician opening a locked car door with professional tools",
+    t: "Car Lockout",
+    d: "Locked your keys inside? We open the car without damage and get you back behind the wheel.",
+  },
+  {
+    img: "/images/service-tyre.jpg",
+    alt: "Mechanic changing a flat tyre at the roadside",
+    t: "Tyre Change",
+    d: "Flat tyre at the roadside? We fit your spare where you are, so you can drive on safely.",
+  },
+  {
+    img: "/images/night.jpg",
+    alt: "Recovery van with amber beacons on a Birmingham street at night",
+    t: "Breakdown Recovery",
+    d: "Broken down anywhere in the West Midlands? We recover you and the vehicle, day or night.",
   },
 ];
 
@@ -108,259 +112,299 @@ const areas = [
 >
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <span class="hero-tag"><i aria-hidden="true"></i>24/7 jump start service in Birmingham</span>
-        <h1 class="hero-title" aria-label="Dead battery? One call. You're moving again.">
-          <span class="ln"><span style="--d:.05s">Dead battery?</span></span>
-          <span class="ln"><span style="--d:.18s">One call.</span></span>
-          <span class="ln"><span class="amber" style="--d:.31s">You're moving again.</span></span>
-        </h1>
-        <p class="sub rv rv-d2">
-          Birmingham's 24/7 jump start specialists. Local technicians, fast
-          response, and a free battery health check with every jump start.
-        </p>
-        <div class="hero-ctas rv rv-d2">
-          <a href={phoneHref} class="btn btn-amber">
-            Call {phoneLabel}
-            <svg class="arr-i" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7a2 2 0 0 1 1.7 2.05z" /></svg>
-          </a>
-          <a href={waHref} target="_blank" rel="noopener" class="btn btn-ghost">
-            WhatsApp us
-            <svg class="arr-i" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>
-          </a>
-        </div>
-        <ul class="hero-proof rv rv-d3">
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
-            5.0 Google rating
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
-            Fixed quote before we set off
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
-            No membership needed
-          </li>
-        </ul>
+    <div class="wrap">
+      <span class="eyebrow rv"><span class="dot"></span>24/7 jump start and recovery, Birmingham</span>
+      <h1 class="rv rv-d1">
+        Dead battery? <span class="hl">Back on the road</span> in minutes.
+      </h1>
+      <p class="sub rv rv-d2">
+        A local technician comes to you anywhere in Birmingham, day or night.
+        You get a fixed quote on the phone before we set off. No membership needed.
+      </p>
+      <div class="hero-ctas rv rv-d2">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
       </div>
-      <div class="hero-media rv rv-d1">
-        <div class="frame">
-          <Image
-            src={heroDusk}
-            alt="Birmingham Jump Start technician connecting jump leads to a car battery on a residential street at dusk"
-            widths={[640, 960, 1280]}
-            sizes="(max-width: 1020px) 100vw, 45vw"
-            loading="eager"
-            fetchpriority="high"
-          />
+    </div>
+    <div class="hero-photo rv">
+      <div class="ph">
+        <img
+          src="/images/hero.jpg"
+          alt="Birmingham Jump Start technician connecting jump leads on a residential street"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="hero-floats">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <div>
+            <strong>Jump Start</strong>
+            <span>Flat battery running again in minutes</span>
+          </div>
         </div>
-        <div class="hero-card" aria-hidden="true">
-          <strong>24/7</strong>
-          <span>Day or night, we're already on our way.</span>
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <div>
+            <strong>24/7, every day</strong>
+            <span>Nights, weekends and bank holidays</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ TRUST BAND ============ -->
-  <div class="trustband" aria-hidden="true">
-    <div class="track">
-      {[0, 1].map(() => (
-        <>
-          <span><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>24/7, every day</span>
-          <span><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>5.0 Google rating</span>
-          <span><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>Fully insured</span>
-          <span><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>Fixed quote upfront</span>
-          <span><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>No membership needed</span>
-        </>
-      ))}
-    </div>
-  </div>
-
-  <!-- ============ HOW IT WORKS ============ -->
-  <section class="sec" id="how">
+  <!-- ============ BLACK BAND ============ -->
+  <section class="band-black" aria-label="All services">
     <div class="wrap">
-      <div class="sec-head rv">
-        <span class="eyebrow">How it works</span>
-        <h2>Three steps. That's all it takes.</h2>
-        <p class="lead">
-          One phone call is all it takes to get help on the way.
+      <div class="sec-head center rv">
+        <span class="eyebrow on-dark"><span class="dot"></span>All services</span>
+        <h2>One call covers every roadside problem.</h2>
+        <p class="lede">
+          Jump starts, recovery and towing across Birmingham and the West
+          Midlands, 24 hours a day.
         </p>
       </div>
-      <div class="steps">
-        <article class="step rv">
-          <span class="tag">30 seconds</span>
-          <span class="n" aria-hidden="true">01</span>
-          <h3>You call.</h3>
-          <p>
-            One number, answered 24/7 by a real person. Tell us where you are.
-            That's all we need to get moving.
-          </p>
-        </article>
-        <article class="step rv rv-d1">
-          <span class="tag">Nearest tech</span>
-          <span class="n" aria-hidden="true">02</span>
-          <h3>We dispatch.</h3>
-          <p>
-            The closest local technician heads straight to you, and we give
-            you an honest arrival time.
-          </p>
-        </article>
-        <article class="step rv rv-d2">
-          <span class="tag">Minutes, not hours</span>
-          <span class="n" aria-hidden="true">03</span>
-          <h3>You're moving.</h3>
-          <p>
-            We jump start your car on the spot and run a free battery health
-            check, so you drive away knowing it won't happen again tomorrow.
-          </p>
-        </article>
-      </div>
+      <ul class="chips rv">
+        {["Jump Start", "Battery Replacement", "Towing and Recovery", "Emergency Fuel Delivery", "Car Lockout", "Tyre Change", "Breakdown Recovery"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
     </div>
   </section>
 
   <!-- ============ SERVICES ============ -->
-  <section class="sec" id="services" style="padding-top:0">
+  <section class="sec" id="services">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="eyebrow">Services</span>
-        <h2>Jump starts, towing and recovery.</h2>
+        <span class="eyebrow"><span class="dot"></span>Services</span>
+        <h2>Choose the service you need.</h2>
         <p class="lead">
-          Whatever the problem, it starts with one call. Every job begins
-          with a fixed quote on the phone, agreed before we set off.
+          Every job starts with a fixed quote on the phone. Agreed before we
+          set off and honoured when we arrive.
         </p>
       </div>
 
-      <article class="svc-hero rv">
-        <div class="pic">
-          <Image
-            src={batteryCloseup}
-            alt="Technician attaching a jump lead to a car battery terminal"
-            widths={[640, 960]}
-            sizes="(max-width: 1020px) 100vw, 42vw"
+      <article class="svc-hero-card rv">
+        <div class="svc-photo">
+          <img
+            src="/images/service-jumpstart.jpg"
+            alt="Jump leads connected to a car battery"
             loading="lazy"
           />
         </div>
-        <div class="body">
-          <span class="kicker">Our signature service</span>
-          <h3>Jump Start</h3>
-          <p>
-            A professional jump start anywhere in Birmingham: your driveway,
-            a car park, the roadside. Every visit includes a free battery
-            health check.
-          </p>
-          <ul>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
-              On-the-spot jump start, usually in minutes
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
-              Free battery health check included
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
-              Cars, vans, hybrids &amp; 4x4s
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
-              24/7: nights, weekends, bank holidays
-            </li>
-          </ul>
-          <div>
-            <a href={phoneHref} class="btn btn-amber">
-              Get a jump start now
-              <svg class="arr-i" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>
-            </a>
+        <div class="svc-info">
+          <div class="txt">
+            <span class="kicker">Our signature service</span>
+            <h3>Jump Start</h3>
+            <p>
+              Flat battery? We come to you and get the car running, usually in
+              minutes. Every jump start includes a free battery health check, so
+              you know whether the battery will let you down again.
+            </p>
           </div>
+          <a class="svc-go" href={phoneHref} aria-label="Call for a jump start">
+            <span set:html={arrow} style="display:inline-flex" />
+          </a>
         </div>
       </article>
 
       <div class="svc-grid">
         {services.map((s, i) => (
-          <article class={`svc rv ${i % 3 === 1 ? "rv-d1" : i % 3 === 2 ? "rv-d2" : ""}`}>
-            <span class="ic" aria-hidden="true">
-              <svg viewBox="0 0 24 24" set:html={s.icon} />
-            </span>
-            <h3>{s.t}</h3>
-            <p>{s.d}</p>
-            <a class="go" href={phoneHref} aria-label={`Call about ${s.t}`}>
-              Call for {s.t.toLowerCase()}
-              <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" /></svg>
-            </a>
+          <article class={`svc-card rv ${i % 2 === 1 ? "rv-d1" : ""}`}>
+            <div class="svc-photo">
+              <img src={s.img} alt={s.alt} loading="lazy" />
+            </div>
+            <div class="svc-info">
+              <div class="txt">
+                <span class="kicker">birminghamjumpstart.co.uk</span>
+                <h3>{s.t}</h3>
+                <p>{s.d}</p>
+              </div>
+              <a class="svc-go" href={phoneHref} aria-label={`Call about ${s.t}`}>
+                <span set:html={arrow} style="display:inline-flex" />
+              </a>
+            </div>
           </article>
         ))}
       </div>
     </div>
   </section>
 
+  <!-- ============ YELLOW BAND ============ -->
+  <section class="band-yellow" aria-label="About the service">
+    <div class="in">
+      <div class="wrap">
+        <span class="eyebrow on-yellow rv"><span class="dot"></span>The service</span>
+        <h2 class="rv rv-d1">One team, every roadside fix.</h2>
+        <p class="lede rv rv-d1">
+          Birmingham Jump Start is a local recovery team, not a national call
+          centre. Three things stay the same on every job.
+        </p>
+        <div class="circles">
+          <div class="circle rv">
+            <strong>Fast response</strong>
+            <span>Technicians based across Birmingham and the West Midlands.</span>
+          </div>
+          <div class="circle rv rv-d1">
+            <strong>Upfront pricing</strong>
+            <span>A fixed quote on the phone before we set off. No hidden fees.</span>
+          </div>
+          <div class="circle rv rv-d2">
+            <strong>Fully insured</strong>
+            <span>Every visit covered, every vehicle handled with care.</span>
+          </div>
+        </div>
+        <div class="duo">
+          <div class="duo-card duo-white rv">
+            <span class="ic">
+              <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+            </span>
+            <div>
+              <h3>What Birmingham Jump Start does</h3>
+              <p>
+                Jump starts, battery replacement, towing, fuel delivery, car
+                lockouts, tyre changes and full breakdown recovery across
+                Birmingham and the West Midlands, 24 hours a day, 7 days a week.
+              </p>
+            </div>
+          </div>
+          <div class="duo-card duo-black rv rv-d1">
+            <span class="ic">
+              <svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4zm-1.2 13.6-3.2-3.2 1.4-1.4 1.8 1.8 4.2-4.2 1.4 1.4-5.6 5.6z" /></svg>
+            </span>
+            <div>
+              <h3>What every visit includes</h3>
+              <p>
+                A fixed quote before we set off. A free battery health check
+                with every jump start. No membership, no yearly fee, no surprise
+                charges.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ WHY US ============ -->
-  <section class="sec why" id="why">
+  <section class="sec" id="why">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="eyebrow">Why Birmingham calls us</span>
-        <h2>Made for the moment your car won't start.</h2>
+        <span class="eyebrow"><span class="dot"></span>Why drivers call us</span>
+        <h2>Built for the worst moment of your day.</h2>
         <p class="lead">
-          A dead battery is never convenient. It happens at 7am before work,
-          or at midnight in an empty car park. We built this service for
-          exactly those moments.
+          A flat battery never happens at a good time. This service exists for
+          the 7am school run and the midnight car park alike.
         </p>
       </div>
       <div class="why-grid">
-        <article class="why-card featured rv">
-          <span class="q">Membership</span>
-          <h3>No membership needed.</h3>
+        <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5 0-9 2.5-9 6v2h18v-2c0-3.5-4-6-9-6z" /></svg>
+          </span>
+          <h3>No membership.</h3>
           <p>
-            The big breakdown clubs charge you every year whether you break down
-            or not. We don't do memberships. You call, we come, you pay for the
-            job. Nothing more.
+            The big breakdown clubs charge you every year, whether you break
+            down or not. With us there is no membership. You call, we come, you
+            pay for the job.
           </p>
         </article>
-        <article class="why-card rv rv-d1">
-          <span class="q">Pricing</span>
-          <h3>A fixed quote before we set off.</h3>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2H2v10l9.3 9.3a1 1 0 0 0 1.4 0l8.6-8.6a1 1 0 0 0 0-1.4L12 2zm3 7.5A1.5 1.5 0 1 1 16.5 8 1.5 1.5 0 0 1 15 9.5z" /></svg>
+          </span>
+          <h3>Fixed quote first.</h3>
           <p>
-            You'll know exactly what it costs before we move. Agreed on the
-            phone, honoured on arrival. No "it'll be extra because it's night".
+            You know the price before we move. It is agreed on the phone and
+            honoured on arrival. It does not go up because it is 2am.
           </p>
         </article>
-        <article class="why-card rv rv-d2">
-          <span class="q">Local team</span>
-          <h3>Real local technicians.</h3>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z" /></svg>
+          </span>
+          <h3>Local technicians.</h3>
           <p>
-            We're Birmingham-based, not a national call centre. Our techs know
-            the car parks, the junctions, the back streets, and they'll give
-            you an honest ETA.
+            We are based in Birmingham. Our technicians know the car parks, the
+            junctions and the back streets, and they give you an honest arrival
+            time.
           </p>
         </article>
-        <div class="why-media rv">
-          <Image
-            src={vanNight}
-            alt="Birmingham Jump Start recovery van on a Birmingham street at night"
-            widths={[640, 960]}
-            sizes="(max-width: 1020px) 100vw, 32vw"
-            loading="lazy"
-          />
-        </div>
-        <article class="why-card rv rv-d1">
-          <span class="q">Night-time</span>
-          <h3>Stranded after dark?</h3>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M16 7V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-2h3a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-3zm-5 9-3-4h2V8l3 4h-2v4z" /></svg>
+          </span>
+          <h3>We find the cause.</h3>
           <p>
-            A dead battery in the dark is frightening. Our 24/7 line is answered
-            by a human who sends help immediately and stays on the phone until
-            you're safe, if you need us to.
+            Anyone can clip on jump leads. We also check your battery health for
+            free, so you do not pay for the same rescue twice in one month.
           </p>
         </article>
-        <article class="why-card rv rv-d2">
-          <span class="q">Battery check</span>
-          <h3>We check why it happened.</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="sec" id="how">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>How it works</span>
+        <h2>From your call to moving again.</h2>
+        <p class="lead">
+          Every job follows the same four steps, so you always know what
+          happens next.
+        </p>
+      </div>
+      <div class="steps">
+        <article class="step rv">
+          <span class="num">01</span>
+          <h3>You call.</h3>
           <p>
-            Anyone can clip on jump leads. We also check your battery's health
-            for free, so you don't pay for the same rescue twice in one month.
+            One number, answered 24/7 by a real person. Tell us where you are
+            and what happened.
           </p>
         </article>
+        <article class="step rv rv-d1">
+          <span class="num">02</span>
+          <h3>We come to you.</h3>
+          <p>
+            The nearest technician heads straight to you, and we give you an
+            honest arrival time.
+          </p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">03</span>
+          <h3>Fixed on the spot.</h3>
+          <p>
+            Most problems are fixed where you are: jump start, new battery,
+            fuel, tyre change or lockout.
+          </p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
+          <h3>You drive away.</h3>
+          <p>
+            We run a free battery health check before we leave, so you know it
+            will start tomorrow too.
+          </p>
+        </article>
+      </div>
+      <div class="steps-cta rv">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
       </div>
     </div>
   </section>
@@ -369,34 +413,34 @@ const areas = [
   <section class="sec" id="areas">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="eyebrow">Coverage</span>
-        <h2>Wherever you are in Birmingham, we're close.</h2>
+        <span class="eyebrow"><span class="dot"></span>Coverage</span>
+        <h2>Wherever you are in Birmingham, we are close.</h2>
         <p class="lead">
-          Our technicians are stationed across the city and the wider West
-          Midlands, which is why we reach most callouts in 30–60 minutes.
+          Technicians are stationed across the city and the wider West
+          Midlands. Most callouts are reached in 30 to 60 minutes.
         </p>
       </div>
-      <ul class="areas-pills rv">
+      <ul class="areas rv">
         {areas.map((a) => (
           <li class={a === "Birmingham" ? "home" : ""}>{a}</li>
         ))}
       </ul>
       <p class="areas-note rv">
         Somewhere else nearby? <a href={phoneHref}>Call {phoneLabel}</a>. If
-        you're in the West Midlands, chances are we can reach you.
+        you are in the West Midlands, we can probably reach you.
       </p>
     </div>
   </section>
 
   <!-- ============ REVIEWS ============ -->
   <!-- PLACEHOLDER REVIEWS: illustrative only. Client to replace with real Google reviews before launch. -->
-  <section class="sec" id="reviews" style="padding-top:0">
+  <section class="sec" id="reviews">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="eyebrow">Reviews</span>
+        <span class="eyebrow"><span class="dot"></span>Reviews</span>
         <h2>Rated 5.0 by Birmingham drivers.</h2>
         <p class="lead">
-          What our customers say after the rescue.
+          What customers say after the rescue.
         </p>
       </div>
       <div class="rev-grid">
@@ -413,7 +457,7 @@ const areas = [
           </blockquote>
           <div class="who">
             <span class="ava" aria-hidden="true">S</span>
-            <div><strong>Sarah M.</strong><span>Kings Heath</span></div>
+            <div><strong>Sarah M.</strong><span class="loc">Kings Heath</span></div>
           </div>
         </article>
         <article class="rev rv rv-d1">
@@ -424,12 +468,12 @@ const areas = [
           </div>
           <blockquote>
             "Quoted me the price on the phone and stuck to it. No membership,
-            no upsell, just a proper job done fast. Can't ask for more than
+            no upsell, just a proper job done fast. Cannot ask for more than
             that."
           </blockquote>
           <div class="who">
             <span class="ava" aria-hidden="true">D</span>
-            <div><strong>Dave P.</strong><span>Solihull</span></div>
+            <div><strong>Dave P.</strong><span class="loc">Solihull</span></div>
           </div>
         </article>
         <article class="rev rv rv-d2">
@@ -439,30 +483,30 @@ const areas = [
             ))}
           </div>
           <blockquote>
-            "My van wouldn't start before a big job at 6am. They came out,
+            "My van would not start before a big job at 6am. They came out,
             got me moving, and saved my whole week. Proper local service."
           </blockquote>
           <div class="who">
             <span class="ava" aria-hidden="true">A</span>
-            <div><strong>Aisha K.</strong><span>Erdington</span></div>
+            <div><strong>Aisha K.</strong><span class="loc">Erdington</span></div>
           </div>
         </article>
       </div>
-      <p class="rev-cta rv">
-        Had a rescue with us? Your review helps other stranded drivers find us.
+      <p class="rev-flag rv">
+        Sample reviews shown. Real Google reviews will replace these before launch.
       </p>
     </div>
   </section>
 
   <!-- ============ FAQ ============ -->
-  <section class="sec" id="faq" style="padding-top:0">
+  <section class="sec" id="faq">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="eyebrow">FAQ</span>
-        <h2>Frequently asked questions.</h2>
+        <span class="eyebrow"><span class="dot"></span>FAQ</span>
+        <h2>Questions drivers ask us.</h2>
         <p class="lead">
-          The things every stranded driver asks us, answered straight, the
-          way we'd answer on the phone.
+          The things every stranded driver asks, answered straight, the way
+          we would answer on the phone.
         </p>
       </div>
       <div class="faq-list">
@@ -487,65 +531,22 @@ const areas = [
 
   <!-- ============ FINAL CTA ============ -->
   <section class="final">
-    <div class="wrap">
-      <div class="final-card rv">
-        <div class="final-grid">
-          <div>
-            <h2>Still stuck? One call fixes it.</h2>
-            <p>
-              Call now and a real person will answer. We'll dispatch help
-              and give you an honest arrival time.
-            </p>
-            <div class="row">
-              <a href={phoneHref} class="btn btn-dark">
-                Call {phoneLabel}
-                <svg class="arr-i" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7a2 2 0 0 1 1.7 2.05z" /></svg>
-              </a>
-              <a href={waHref} target="_blank" rel="noopener" class="btn btn-dark" style="background:rgba(22,16,6,.12)">
-                WhatsApp us
-                <svg class="arr-i" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>
-              </a>
-            </div>
-          </div>
-          <div class="final-media">
-            <Image
-              src={driverRelief}
-              alt="Relieved driver back behind the wheel after a Birmingham Jump Start rescue at night"
-              widths={[640, 960]}
-              sizes="(max-width: 1020px) 100vw, 40vw"
-              loading="lazy"
-            />
-          </div>
-        </div>
-        <span class="bolt-bg" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
-        </span>
+    <div class="in rv">
+      <h2>Still stuck? One call fixes it.</h2>
+      <p>
+        Call now and a real person answers. We will dispatch help and give you
+        an honest arrival time.
+      </p>
+      <div class="row">
+        <a href={phoneHref} class="btn btn-black">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
       </div>
     </div>
   </section>
-
-  <style>
-    .final-grid {
-      display: grid;
-      gap: clamp(28px, 4vw, 56px);
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-    .final-media {
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(22, 16, 6, 0.35);
-    }
-    .final-media img {
-      width: 100%;
-      aspect-ratio: 4 / 3.4;
-      object-fit: cover;
-    }
-    @media (min-width: 1020px) {
-      .final-grid {
-        grid-template-columns: 1.1fr 0.9fr;
-      }
-    }
-  </style>
 </BaseLayout>
