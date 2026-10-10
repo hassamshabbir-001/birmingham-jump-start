@@ -46,38 +46,38 @@ const faqs = [
 
 const services = [
   {
-    img: "/images/service-battery.webp",
-    alt: "Technician fitting a new car battery under an open bonnet",
+    img: "/images/car-battery-replacement-birmingham.webp",
+    alt: "Technician fitting a new car battery under an open bonnet in Birmingham",
     t: "Battery Replacement",
     d: "Battery finished? We supply and fit a new one on the spot, so one visit solves the whole problem.",
   },
   {
-    img: "/images/service-towing.webp",
-    alt: "Recovery truck loading a car on a UK street",
+    img: "/images/car-towing-recovery-birmingham.webp",
+    alt: "Recovery truck loading a broken-down car on a Birmingham street",
     t: "Towing and Recovery",
     d: "Car not starting at all? We tow it safely to your home, your garage, or wherever it needs to go.",
   },
   {
-    img: "/images/service-fuel.webp",
-    alt: "Technician pouring fuel into a stranded car from a jerry can",
+    img: "/images/emergency-fuel-delivery-birmingham.webp",
+    alt: "Technician delivering emergency fuel to a stranded car in Birmingham",
     t: "Emergency Fuel Delivery",
     d: "Run out of fuel? We bring petrol or diesel to you. Faster and safer than walking to a station.",
   },
   {
-    img: "/images/service-lockout.webp",
-    alt: "Technician opening a locked car door with professional tools",
+    img: "/images/car-lockout-service-birmingham.webp",
+    alt: "Technician unlocking a car door with professional tools in Birmingham",
     t: "Car Lockout",
     d: "Locked your keys inside? We open the car without damage and get you back behind the wheel.",
   },
   {
-    img: "/images/service-tyre.webp",
-    alt: "Mechanic changing a flat tyre at the roadside",
+    img: "/images/mobile-tyre-change-birmingham.webp",
+    alt: "Mobile tyre change at the roadside in Birmingham",
     t: "Tyre Change",
     d: "Flat tyre at the roadside? We fit your spare where you are, so you can drive on safely.",
   },
   {
-    img: "/images/night.webp",
-    alt: "Recovery van with amber beacons on a Birmingham street at night",
+    img: "/images/recovery-van-birmingham-night.webp",
+    alt: "Birmingham Jump Start recovery van with amber beacons at night",
     t: "Breakdown Recovery",
     d: "Broken down anywhere in the West Midlands? We recover you and the vehicle, day or night.",
   },
@@ -135,10 +135,13 @@ const areas = [
     <div class="hero-photo rv">
       <div class="ph">
         <img
-          src="/images/hero.webp"
-          alt="Birmingham Jump Start technician connecting jump leads on a residential street"
+          src="/images/birmingham-jump-start-hero.webp"
+          alt="Birmingham Jump Start technician connecting jump leads to a car battery on a residential street in Birmingham"
           loading="eager"
           fetchpriority="high"
+          decoding="async"
+          width="1600"
+          height="1066"
         />
       </div>
       <div class="hero-floats">
@@ -198,9 +201,12 @@ const areas = [
       <article class="svc-hero-card rv">
         <div class="svc-photo">
           <img
-            src="/images/service-jumpstart.webp"
-            alt="Jump leads connected to a car battery"
+            src="/images/car-jump-start-birmingham.webp"
+            alt="Close-up of jump leads connected to a car battery during a jump start in Birmingham"
             loading="lazy"
+            decoding="async"
+            width="1200"
+            height="800"
           />
         </div>
         <div class="svc-info">
@@ -223,7 +229,7 @@ const areas = [
         {services.map((s, i) => (
           <article class={`svc-card rv ${i % 2 === 1 ? "rv-d1" : ""}`}>
             <div class="svc-photo">
-              <img src={s.img} alt={s.alt} loading="lazy" />
+              <img src={s.img} alt={s.alt} loading="lazy" decoding="async" width="1200" height="800" />
             </div>
             <div class="svc-info">
               <div class="txt">
