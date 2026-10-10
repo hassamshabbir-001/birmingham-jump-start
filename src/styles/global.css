@@ -990,6 +990,7 @@ h3 {
   display: grid;
   gap: 14px;
   max-width: 860px;
+  margin: 0 auto;
 }
 .faq {
   background: var(--white);
