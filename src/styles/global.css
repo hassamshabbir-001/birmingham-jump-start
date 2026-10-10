@@ -1211,7 +1211,7 @@ footer {
   transform: translateY(26px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.rv.in {
+.rv.rv-on {
   opacity: 1;
   transform: none;
 }
