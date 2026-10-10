@@ -339,13 +339,14 @@ h3 {
 }
 .hero h1 {
   font-size: clamp(2.7rem, 6.4vw, 4.6rem);
+  line-height: 1.22;
   margin: 26px auto 0;
   max-width: 900px;
 }
 .hero h1 .hl {
   background: var(--yellow);
-  padding: 0 0.18em;
-  border-radius: 6px;
+  padding: 0.06em 0.18em;
+  border-radius: 8px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
