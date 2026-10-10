@@ -10,11 +10,13 @@ interface Props {
   title: string;
   description: string;
   faq?: FaqItem[];
+  path?: string;
 }
 
-const { title, description, faq = [] } = Astro.props;
+const { title, description, faq = [], path = "" } = Astro.props;
 
-const canonical = "https://birminghamjumpstart.co.uk/";
+const siteUrl = "https://birminghamjumpstart.co.uk/";
+const canonical = siteUrl + path;
 const phoneHref = "tel:+447477649906";
 const phoneLabel = "07477 649906";
 const waHref = "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20a%20jump%20start.";
@@ -22,14 +24,14 @@ const waHref = "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2
 const businessJsonLd = {
   "@context": "https://schema.org",
   "@type": "AutoRepair",
-  "@id": canonical + "#business",
+  "@id": siteUrl + "#business",
   name: "Birmingham Jump Start",
   description:
     "24/7 car jump start and vehicle recovery service in Birmingham and the West Midlands. Flat battery jump starts, towing, breakdown and accident recovery.",
-  url: canonical,
+  url: siteUrl,
   telephone: "+447477649906",
   priceRange: "££",
-  image: canonical + "og-cover.jpg",
+  image: siteUrl + "og-cover.jpg",
   areaServed: [
     { "@type": "City", name: "Birmingham" },
     { "@type": "City", name: "Walsall" },
@@ -90,7 +92,7 @@ const faqJsonLd =
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={canonical + "og-cover.jpg"} />
+    <meta property="og:image" content={siteUrl + "og-cover.jpg"} />
     <meta property="og:locale" content="en_GB" />
 
     <!-- Twitter -->
@@ -134,11 +136,12 @@ const faqJsonLd =
           <span>Birmingham Jump Start<small>24/7 Recovery</small></span>
         </a>
         <nav class="nav-links" aria-label="Primary">
-          <a href="#services">Services</a>
-          <a href="#how">How it works</a>
-          <a href="#areas">Areas</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#faq">FAQ</a>
+          <a href="/#services">Services</a>
+          <a href="/#how">How it works</a>
+          <a href="/#areas">Areas</a>
+          <a href="/#reviews">Reviews</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/about/">About</a>
         </nav>
         <a href={phoneHref} class="btn btn-yellow btn-sm nav-cta">
           <span class="num">{phoneLabel}</span>
@@ -153,11 +156,12 @@ const faqJsonLd =
     </header>
 
     <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
-      <a href="#services">Services</a>
-      <a href="#how">How it works</a>
-      <a href="#areas">Areas</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#areas">Areas</a>
+      <a href="/#reviews">Reviews</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/about/">About</a>
       <a href={phoneHref} class="m-call">Call {phoneLabel}</a>
     </nav>
 
@@ -196,10 +200,11 @@ const faqJsonLd =
           <div class="foot-col">
             <h4>Explore</h4>
             <ul>
-              <li><a href="#how">How it works</a></li>
-              <li><a href="#areas">Areas we cover</a></li>
-              <li><a href="#reviews">Reviews</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><a href="/#how">How it works</a></li>
+              <li><a href="/#areas">Areas we cover</a></li>
+              <li><a href="/#reviews">Reviews</a></li>
+              <li><a href="/#faq">FAQ</a></li>
+              <li><a href="/about/">About us</a></li>
             </ul>
           </div>
           <div class="foot-col">
@@ -207,7 +212,7 @@ const faqJsonLd =
             <ul>
               <li><a href={phoneHref}>{phoneLabel}</a></li>
               <li><a href={waHref} target="_blank" rel="noopener">WhatsApp us</a></li>
-              <li><a href="#areas">Birmingham, West Midlands</a></li>
+              <li><a href="/#areas">Birmingham, West Midlands</a></li>
             </ul>
           </div>
         </div>
