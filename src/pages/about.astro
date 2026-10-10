@@ -1,0 +1,203 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const phoneHref = "tel:+447477649906";
+const phoneLabel = "07477 649906";
+const waHref =
+  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20a%20jump%20start.";
+
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+---
+
+<BaseLayout
+  title="About Us | Birmingham Jump Start"
+  description="Birmingham Jump Start is a local 24/7 jump start and vehicle recovery team in Birmingham, part of Alliedzone Recovery Ltd. No membership, fixed quotes, real people around the clock."
+  path="about/"
+>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow rv"><span class="dot"></span>About us</span>
+      <h1 class="rv rv-d1">
+        The local team behind <span class="hl">Birmingham Jump Start</span>.
+      </h1>
+      <p class="sub rv rv-d2">
+        We are recovery technicians based in Birmingham, not a national call
+        centre. When you call, a real person answers, and a local technician
+        comes to you.
+      </p>
+      <div class="hero-ctas rv rv-d2">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href="/#services" class="btn btn-white">
+          See our services
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OUR STORY ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Our story</span>
+        <h2>Started with a simple frustration.</h2>
+        <p class="lead">
+          Too many drivers were paying yearly memberships for a service they
+          used once, or waiting hours while a national operator tried to find
+          them a local contractor. Birmingham deserved better: one local
+          number, one fixed quote, one team that actually shows up.
+        </p>
+      </div>
+      <div class="duo">
+        <div class="duo-card duo-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <div>
+            <h3>Why we started</h3>
+            <p>
+              Breakdown cover had become a subscription business. Drivers paid
+              every year whether they broke down or not, then still waited at
+              the roadside. We wanted the opposite: no membership, no call
+              centre queue, just help when you need it.
+            </p>
+          </div>
+        </div>
+        <div class="duo-card duo-black rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z" /></svg>
+          </span>
+          <div>
+            <h3>What we do today</h3>
+            <p>
+              Birmingham Jump Start is the 24/7 jump start and recovery service
+              of Alliedzone Recovery Ltd. Jump starts, batteries, towing, fuel
+              delivery, lockouts, tyre changes and full breakdown recovery,
+              across Birmingham and the West Midlands, day and night.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALUES ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>What we stand for</span>
+        <h2>Four things that never change.</h2>
+        <p class="lead">
+          However busy the night gets, these are the rules every job follows.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z" /></svg>
+          </span>
+          <h3>Local, always.</h3>
+          <p>
+            Our technicians are based in Birmingham. They know the car parks,
+            the junctions and the back streets, and they give you an honest
+            arrival time.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2H2v10l9.3 9.3a1 1 0 0 0 1.4 0l8.6-8.6a1 1 0 0 0 0-1.4L12 2zm3 7.5A1.5 1.5 0 1 1 16.5 8 1.5 1.5 0 0 1 15 9.5z" /></svg>
+          </span>
+          <h3>Honest pricing.</h3>
+          <p>
+            You agree the price on the phone before we set off, and it is
+            honoured on arrival. It does not change because it is 2am or
+            raining.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5 0-9 2.5-9 6v2h18v-2c0-3.5-4-6-9-6z" /></svg>
+          </span>
+          <h3>A person answers.</h3>
+          <p>
+            Day or night, your call is answered by a real person who can send
+            help, not a phone menu. That matters at 3am in an empty car park.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <h3>We check, not just start.</h3>
+          <p>
+            Every jump start includes a free battery health check. We would
+            rather tell you the battery is dying than sell you the same rescue
+            twice.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ YELLOW BAND ============ -->
+  <section class="band-yellow" aria-label="In short">
+    <div class="in">
+      <div class="wrap">
+        <span class="eyebrow on-yellow rv"><span class="dot"></span>In short</span>
+        <h2 class="rv rv-d1">One number. One team. No membership.</h2>
+        <p class="lede rv rv-d1">
+          That is the whole idea, and it has not changed since day one.
+        </p>
+        <div class="circles">
+          <div class="circle rv">
+            <span class="circle-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+            </span>
+            <strong>24/7, answered by people</strong>
+            <span>Nights, weekends and bank holidays.</span>
+          </div>
+          <div class="circle rv rv-d1">
+            <span class="circle-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2H2v10l9.3 9.3a1 1 0 0 0 1.4 0l8.6-8.6a1 1 0 0 0 0-1.4L12 2zm3 7.5A1.5 1.5 0 1 1 16.5 8 1.5 1.5 0 0 1 15 9.5z" /></svg>
+            </span>
+            <strong>Fixed quote first</strong>
+            <span>Agreed on the phone, honoured on arrival.</span>
+          </div>
+          <div class="circle rv rv-d2">
+            <span class="circle-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z" /></svg>
+            </span>
+            <strong>Birmingham based</strong>
+            <span>Local technicians across the West Midlands.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final">
+    <div class="in rv">
+      <h2>Still stuck? One call fixes it.</h2>
+      <p>
+        Call now and a real person answers. We will dispatch help and give you
+        an honest arrival time.
+      </p>
+      <div class="row">
+        <a href={phoneHref} class="btn btn-black">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
