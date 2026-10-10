@@ -1,0 +1,285 @@
+---
+import "../styles/global.css";
+
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  faq?: FaqItem[];
+}
+
+const { title, description, faq = [] } = Astro.props;
+
+const canonical = "https://birminghamjumpstart.co.uk/";
+const phoneHref = "tel:+447477649906";
+const phoneLabel = "07477 649906";
+const waHref = "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20a%20jump%20start.";
+
+const businessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "@id": canonical + "#business",
+  name: "Birmingham Jump Start",
+  description:
+    "24/7 car jump start and vehicle recovery service in Birmingham and the West Midlands. Flat battery jump starts, towing, breakdown and accident recovery.",
+  url: canonical,
+  telephone: "+447477649906",
+  priceRange: "££",
+  image: canonical + "og-cover.jpg",
+  areaServed: [
+    { "@type": "City", name: "Birmingham" },
+    { "@type": "City", name: "Walsall" },
+    { "@type": "City", name: "Coventry" },
+    { "@type": "City", name: "Solihull" },
+    { "@type": "City", name: "Tamworth" },
+    { "@type": "City", name: "Sutton Coldfield" },
+  ],
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "00:00",
+    closes: "23:59",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "15",
+  },
+};
+
+const faqJsonLd =
+  faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }
+    : null;
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#131313" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Birmingham Jump Start" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={canonical + "og-cover.jpg"} />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(businessJsonLd)}
+    />
+    {
+      faqJsonLd && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(faqJsonLd)}
+        />
+      )
+    }
+  </head>
+  <body>
+    <a class="skip-link" href="#main" style="position:absolute;left:12px;top:-60px;z-index:100;background:#ffb800;color:#161006;padding:10px 18px;border-radius:99px;font-weight:700;">Skip to content</a>
+
+    <!-- ============ NAV ============ -->
+    <header class="nav" id="nav">
+      <div class="nav-in">
+        <a href="#top" class="wordmark" aria-label="Birmingham Jump Start — home">
+          <span class="bolt" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <span>Birmingham Jump Start<small>24/7 Recovery</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#how">How it works</a>
+          <a href="#areas">Areas</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a href={phoneHref} class="btn btn-amber btn-sm nav-cta">
+          <span class="num">{phoneLabel}</span>
+          <span class="arr" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7a2 2 0 0 1 1.7 2.05z" /></svg>
+          </span>
+        </a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#areas">Areas</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href={phoneHref} class="m-call">Call {phoneLabel}</a>
+    </nav>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <div class="wrap">
+        <div class="foot-grid">
+          <div class="foot-brand">
+            <a href="#top" class="wordmark" aria-label="Birmingham Jump Start — home">
+              <span class="bolt" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+              </span>
+              <span>Birmingham Jump Start<small>24/7 Recovery</small></span>
+            </a>
+            <p>
+              Birmingham's 24/7 jump start and recovery specialists. One call —
+              you're moving again.
+            </p>
+          </div>
+          <div class="foot-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#services">Jump Start</a></li>
+              <li><a href="#services">Towing</a></li>
+              <li><a href="#services">Breakdown Recovery</a></li>
+              <li><a href="#services">Accident Recovery</a></li>
+              <li><a href="#services">Fuel Delivery</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#how">How it works</a></li>
+              <li><a href="#areas">Areas we cover</a></li>
+              <li><a href="#reviews">Reviews</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <h4>Contact — 24/7</h4>
+            <ul>
+              <li><a href={phoneHref}>{phoneLabel}</a></li>
+              <li><a href={waHref} target="_blank" rel="noopener">WhatsApp us</a></li>
+              <li><a href="#areas">Birmingham, West Midlands</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-base">
+          <span>© 2026 Birmingham Jump Start · Alliedzone Recovery Ltd. All rights reserved.</span>
+          <span class="credit">Designed by <a href="https://sitesbrand.com" target="_blank" rel="noopener">Sitesbrand</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ STICKY MOBILE CALL BAR ============ -->
+    <div class="callbar" role="navigation" aria-label="Quick contact">
+      <a class="call" href={phoneHref}>
+        <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7a2 2 0 0 1 1.7 2.05z" /></svg>
+        Call now — {phoneLabel}
+      </a>
+      <a class="wa" href={waHref} target="_blank" rel="noopener" aria-label="WhatsApp us">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.4A8.5 8.5 0 1 1 21 11.5z" /></svg>
+      </a>
+    </div>
+
+    <script>
+      // nav shadow on scroll
+      const nav = document.getElementById("nav");
+      const onScroll = () => nav && nav.classList.toggle("scrolled", window.scrollY > 24);
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      // mobile menu
+      const burger = document.getElementById("burger");
+      const menu = document.getElementById("mobileMenu");
+      burger?.addEventListener("click", () => {
+        const open = menu?.classList.toggle("open") ?? false;
+        burger.classList.toggle("open", open);
+        burger.setAttribute("aria-expanded", String(open));
+        burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      });
+      menu?.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          menu.classList.remove("open");
+          burger?.classList.remove("open");
+          burger?.setAttribute("aria-expanded", "false");
+        })
+      );
+
+      // scroll reveal
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+      );
+      document.querySelectorAll(".rv").forEach((el) => io.observe(el));
+
+      // faq accordion
+      document.querySelectorAll(".faq").forEach((item) => {
+        const btn = item.querySelector("button");
+        btn?.addEventListener("click", () => {
+          const wasOpen = item.classList.contains("open");
+          document.querySelectorAll(".faq.open").forEach((o) => {
+            o.classList.remove("open");
+            o.querySelector("button")?.setAttribute("aria-expanded", "false");
+          });
+          if (!wasOpen) {
+            item.classList.add("open");
+            btn.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
