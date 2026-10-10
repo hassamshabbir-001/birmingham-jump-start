@@ -1287,6 +1287,69 @@ body {
   overflow-x: clip;
 }
 
+@media (max-width: 760px) {
+  /* tighter vertical rhythm on small screens */
+  .sec {
+    padding-top: 72px;
+  }
+  .sec-head {
+    margin-bottom: 36px;
+  }
+  .band-black {
+    margin-top: 56px;
+  }
+  .band-yellow {
+    margin-top: 72px;
+  }
+  .final {
+    padding-top: 72px;
+  }
+  footer {
+    margin-top: 72px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding-top: 118px;
+  }
+  .hero-photo {
+    margin-top: 40px;
+  }
+  .sec {
+    padding-top: 64px;
+  }
+  .wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .svc-grid {
+    gap: 22px;
+  }
+  .why-grid,
+  .steps,
+  .rev-grid {
+    gap: 16px;
+  }
+  .chips {
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .circles {
+    margin-top: 40px;
+    gap: 20px;
+  }
+  .duo {
+    margin-top: 36px;
+  }
+  .steps-cta {
+    margin-top: 28px;
+  }
+  .areas-note {
+    margin-top: 22px;
+  }
+}
+
 @media (max-width: 479px) {
   /* nav: hide the call pill, burger menu has the call button */
   .nav-cta {
@@ -1317,6 +1380,11 @@ body {
   }
   .band-black {
     padding: 52px 0 60px;
+  }
+  /* long FAQ questions wrap more comfortably */
+  .faq button {
+    font-size: 1rem;
+    padding: 20px 22px;
   }
 }
 
