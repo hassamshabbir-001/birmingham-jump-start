@@ -1,3 +1,11 @@
+## Images
+
+- ALL content images must be WebP (quality ~82). Never commit JPG/PNG for
+  content images; convert before adding to `public/images/`.
+- Exception: `public/og-cover.jpg` stays JPG for social-platform compatibility
+  (og:image).
+- Always set descriptive `alt` text and `loading="lazy"` (except hero: `eager`).
+
 ## Development
 
 When starting the dev server, use background mode:
