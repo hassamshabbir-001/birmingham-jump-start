@@ -382,8 +382,9 @@ h3 {
   box-shadow: var(--shadow);
 }
 .hero-photo img {
+  display: block;
   width: 100%;
-  aspect-ratio: 21 / 9;
+  height: clamp(300px, 28vw, 440px);
   object-fit: cover;
 }
 .float-card {
@@ -434,7 +435,7 @@ h3 {
 }
 @media (max-width: 899px) {
   .hero-photo img {
-    aspect-ratio: 16 / 10;
+    height: clamp(180px, 52vw, 260px);
   }
   .hero-floats {
     display: grid;
