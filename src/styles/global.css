@@ -1634,3 +1634,136 @@ body {
     padding-right: 18px;
   }
 }
+
+/* ============ MICRO-INTERACTIONS ============ */
+/* Buttons: arrow nudges forward on hover, gentle press on tap */
+.btn .arr-c {
+  transition: transform 0.25s ease;
+}
+@media (hover: hover) {
+  .btn:hover .arr-c {
+    transform: translate(3px, -3px);
+  }
+}
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Nav links: underline grows from the left */
+.nav-links > a,
+.nav-links .nav-drop-btn {
+  position: relative;
+}
+.nav-links > a::after,
+.nav-links .nav-drop-btn::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-links > a:hover::after,
+.nav-links .nav-drop-btn:hover::after {
+  transform: scaleX(1);
+}
+
+/* Card photos: slow gentle zoom on hover */
+.svc-card .svc-photo img,
+.duo-card .ph img {
+  transition: transform 0.6s ease;
+}
+@media (hover: hover) {
+  .svc-card:hover .svc-photo img,
+  .duo-card:hover .ph img {
+    transform: scale(1.05);
+  }
+}
+
+/* Hero float cards: soft bobbing */
+@keyframes float-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.fc-1 {
+  animation: float-bob 5s ease-in-out infinite;
+}
+.fc-2 {
+  animation: float-bob 6s ease-in-out 1s infinite;
+}
+
+/* Nav call button: soft attention pulse ring */
+@keyframes cta-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(252, 204, 2, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(252, 204, 2, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(252, 204, 2, 0);
+  }
+}
+.nav-cta {
+  animation: cta-ring 2.6s ease-out infinite;
+}
+
+/* Footer links: slide slightly on hover */
+footer .foot-grid a {
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+}
+@media (hover: hover) {
+  footer .foot-grid a:hover {
+    transform: translateX(4px);
+  }
+}
+
+/* Sticky mobile call bar: slides up into view */
+@keyframes callbar-in {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.callbar {
+  animation: callbar-in 0.45s ease both;
+}
+
+/* Burger: snappier morph */
+.burger::before,
+.burger::after,
+.burger span {
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fc-1,
+  .fc-2,
+  .nav-cta,
+  .callbar {
+    animation: none;
+  }
+  .btn .arr-c,
+  .svc-card .svc-photo img,
+  .duo-card .ph img,
+  footer .foot-grid a {
+    transition: none;
+  }
+  .nav-links > a::after,
+  .nav-links .nav-drop-btn::after {
+    display: none;
+  }
+}
