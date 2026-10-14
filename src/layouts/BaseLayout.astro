@@ -115,7 +115,14 @@ const breadcrumbJsonLd =
     <meta name="theme-color" content="#fccc02" />
     {
       heroImage && (
-        <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
+        <link
+          rel="preload"
+          as="image"
+          href={heroImage}
+          imagesrcset={`${heroImage.replace(".webp", "-mobile.webp")} 640w, ${heroImage} 1280w`}
+          imagesizes="(max-width: 640px) 640px, 1280px"
+          fetchpriority="high"
+        />
       )
     }
 
@@ -137,12 +144,19 @@ const breadcrumbJsonLd =
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- Fonts -->
+    <!-- Fonts: non-blocking load for speed -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
     <noscript><style>.rv { opacity: 1 !important; transform: none !important; }</style></noscript>
 
