@@ -11,9 +11,10 @@ interface Props {
   description: string;
   faq?: FaqItem[];
   path?: string;
+  heroImage?: string;
 }
 
-const { title, description, faq = [], path = "" } = Astro.props;
+const { title, description, faq = [], path = "", heroImage = "" } = Astro.props;
 
 const siteUrl = "https://birminghamjumpstart.co.uk/";
 const canonical = siteUrl + path;
@@ -112,7 +113,11 @@ const breadcrumbJsonLd =
     <link rel="canonical" href={canonical} />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#fccc02" />
-    <link rel="preload" as="image" href="/images/birmingham-jump-start-hero.webp?v=2" fetchpriority="high" />
+    {
+      heroImage && (
+        <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
+      )
+    }
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
