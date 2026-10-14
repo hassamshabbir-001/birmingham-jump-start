@@ -215,11 +215,43 @@ h3 {
   display: block;
   height: 46px;
   width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+.wordmark {
+  min-width: 0;
+  flex-shrink: 1;
 }
 .foot-logo {
   display: block;
   width: 200px;
   height: auto;
+}
+@media (max-width: 700px) {
+  /* mobile header: slimmer logo, compact call button so the pill never overflows */
+  .wordmark-logo {
+    height: 40px;
+  }
+  .nav-cta .arr-c {
+    display: none;
+  }
+  .nav-in {
+    gap: 12px;
+  }
+}
+@media (max-width: 479px) {
+  .wordmark-logo {
+    height: 36px;
+  }
+}
+@media (max-width: 360px) {
+  .wordmark-logo {
+    height: 32px;
+  }
+  .nav-in {
+    padding: 6px 6px 6px 14px;
+    gap: 10px;
+  }
 }
 .bolt {
   display: inline-flex;
