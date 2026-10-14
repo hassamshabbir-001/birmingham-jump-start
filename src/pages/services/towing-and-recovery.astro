@@ -6,7 +6,8 @@ const phoneLabel = "07477 649906";
 const waHref =
   "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20help.";
 
-const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
 
 const faqs = [
   {
@@ -15,34 +16,46 @@ const faqs = [
   },
   {
     q: "Where can you take my car?",
-    a: "Anywhere you choose: your home, a garage, a dealership or an auction site.",
+    a: "Anywhere you choose: your home, a garage, a dealership or an auction site, across Birmingham and the West Midlands.",
   },
   {
     q: "Can you tow accident-damaged cars?",
     a: "Yes. We recover accident and non-runner vehicles with the right equipment to avoid further damage.",
   },
   {
-    q: "How much does towing cost?",
-    a: "A fixed quote on the phone before we set off, based on distance. No hidden extras.",
+    q: "Can passengers ride with you?",
+    a: "Yes. You ride in the cab with us, so nobody is left at the roadside.",
+  },
+  {
+    q: "What if my car is in a tight spot?",
+    a: "Tell us when you call. We have wheel-lift and flatbed options and will send the right truck for the access.",
+  },
+  {
+    q: "Do I need to be with the car?",
+    a: "It helps, but if you cannot stay, we can arrange collection with the keys left in an agreed safe place.",
   },
 ];
+
+const serviceJsonLd = {"@context": "https://schema.org", "@type": "Service", "serviceType": "Vehicle Towing", "name": "Car Towing and Recovery in Birmingham", "description": "24/7 car towing and recovery in Birmingham and the West Midlands, usually within 30 to 40 minutes of your call.", "provider": {"@type": "AutoRepair", "@id": "https://birminghamjumpstart.co.uk/#business", "name": "Birmingham Jump Start", "telephone": "+447477649906"}, "areaServed": [{"@type": "City", "name": "Birmingham"}, {"@type": "City", "name": "Walsall"}, {"@type": "City", "name": "Coventry"}, {"@type": "City", "name": "Solihull"}, {"@type": "City", "name": "Tamworth"}, {"@type": "City", "name": "Sutton Coldfield"}], "availableChannel": {"@type": "ServiceChannel", "servicePhone": {"@type": "ContactPoint", "telephone": "+447477649906", "contactType": "emergency", "availableLanguage": "en-GB"}}, "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59"}};
 ---
 
 <BaseLayout
-  title="Car Towing and Recovery Birmingham | 24/7 Tow Service"
-  description="Need a tow in Birmingham? We recover your car safely to your home, garage or destination, 24/7, usually within 30 to 40 minutes. Call 07477 649906."
+  title="Car Towing Birmingham | 24/7 Towing and Recovery Service"
+  description="Need a tow in Birmingham? We recover your car safely to your home or garage, usually within 30 to 40 minutes. Fixed quote on the phone. Call 07477 649906."
   path="services/towing-and-recovery/"
   faq={faqs}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
     <div class="wrap">
-      <span class="eyebrow rv"><span class="dot"></span>Services</span>
+      <span class="eyebrow rv"><span class="dot"></span>Towing and recovery Birmingham, 24/7</span>
       <h1 class="rv rv-d1">
-        Towed safely, <span class="hl">wherever it needs to go</span>.
+        Car not moving? <span class="hl">Towed safely</span> where it needs to go.
       </h1>
       <p class="sub rv rv-d2">
-        Car not starting at all? Accident damage? We tow it safely to your home, your garage, or wherever it needs to go, anywhere in Birmingham and the West Midlands.
+        Breakdown, accident or a car that simply will not start: we tow it safely to your home, your garage or wherever it needs to go, anywhere in Birmingham and the West Midlands.
       </p>
       <div class="hero-ctas rv rv-d2">
         <a href={phoneHref} class="btn btn-yellow">
@@ -59,22 +72,126 @@ const faqs = [
         At your car within 30 to 40 minutes of your call
       </p>
     </div>
+    <div class="hero-photo rv">
+      <div class="ph">
+        <img
+          src="/images/car-towing-recovery-birmingham.webp"
+          alt="Recovery truck loading a broken-down car on a Birmingham street"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+      </div>
+      <div class="hero-floats">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1a4.5 4.5 0 0 0-6 6L2 21.5V24h2.5l5.6-5.6a4.5 4.5 0 0 0 6-6l4.6 4.6a1.8 1.8 0 0 0 2.5-2.5z" /></svg>
+          </span>
+          <div>
+            <strong>Secure loading</strong>
+            <span>Wheel-lift and flatbed options</span>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <div>
+            <strong>30 to 40 minutes</strong>
+            <span>Usual response in Birmingham</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLACK BAND ============ -->
+  <section class="band-black" aria-label="Towing facts">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow on-dark"><span class="dot"></span>Why drivers call us</span>
+        <h2>Recovery without the drama.</h2>
+        <p class="lede">
+          Modern equipment, trained operators, and your car treated carefully from pickup to drop-off. You choose the destination.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["30 to 40 minute response", "Your choice of destination", "Accident recovery", "You ride with us", "Fixed quote on the phone"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SIGNS ============ -->
+  <section class="sec" id="signs">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Do you need a tow?</span>
+        <h2>When towing is the answer.</h2>
+        <p class="lead">
+          Some problems cannot be fixed at the roadside. When that happens, safe recovery is the right call.
+        </p>
+      </div>
+      <div class="why-grid">
+                <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Car will not start at all.</h3>
+          <p>
+            No crank, no lights, jump start did not help. The fault needs a garage, and the car needs a tow.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1a4.5 4.5 0 0 0-6 6L2 21.5V24h2.5l5.6-5.6a4.5 4.5 0 0 0 6-6l4.6 4.6a1.8 1.8 0 0 0 2.5-2.5z" /></svg>
+          </span>
+          <h3>Accident damage.</h3>
+          <p>
+            Even minor accident damage can make a car unsafe to drive. We recover it without causing further damage.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Engine or gearbox failure.</h3>
+          <p>
+            Warning lights, strange noises, loss of power. Driving on risks a bigger bill; a tow is cheaper than an engine.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z" /></svg>
+          </span>
+          <h3>Stuck somewhere unsafe.</h3>
+          <p>
+            Broken down on a busy road or in a bad spot at night. We get you and the car out safely.
+          </p>
+        </article>
+      </div>
+    </div>
   </section>
 
   <!-- ============ WHAT'S INCLUDED ============ -->
-  <section class="sec">
+  <section class="sec" id="included">
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>What you get</span>
-        <h2>Recovery without the drama.</h2>
-        <p class="lead">Modern equipment, trained operators, and your car treated like it is our own from pickup to drop-off.</p>
+        <h2>Handled properly, end to end.</h2>
+        <p class="lead">
+          From the first call to the drop-off, one team takes responsibility for your car.
+        </p>
       </div>
       <div class="duo">
         <div class="duo-card duo-white rv">
           <div class="ph">
             <img
-              src="/images/car-towing-recovery-birmingham.webp"
-              alt="Recovery truck loading a broken-down car on a Birmingham street"
+              src="/images/recovery-van-birmingham-night.webp"
+              alt="Birmingham Jump Start recovery van ready for a towing job at night"
               loading="lazy"
               decoding="async"
               width="1200"
@@ -97,8 +214,27 @@ const faqs = [
     </div>
   </section>
 
+  <!-- ============ YELLOW BAND ============ -->
+  <section class="band-yellow" aria-label="Towing cost">
+    <div class="in">
+      <div class="wrap">
+        <span class="eyebrow on-yellow rv"><span class="dot"></span>What it costs</span>
+        <h2 class="rv rv-d1">Fixed quote based on distance.</h2>
+        <p class="lede rv rv-d1">
+          Tell us where the car is and where it needs to go, and we quote a fixed price on the phone before we set off. No membership, no hidden extras, no night surcharge. The price we quote is the price you pay.
+        </p>
+        <div class="steps-cta rv">
+          <a href={phoneHref} class="btn btn-black">
+            Call 07477 649906 for your quote
+            <span class="arr-c" set:html={arrow} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ HOW IT WORKS ============ -->
-  <section class="sec">
+  <section class="sec" id="how">
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>How it works</span>
@@ -108,19 +244,55 @@ const faqs = [
         <article class="step rv">
           <span class="num">01</span>
           <h3>You call.</h3>
-          <p>One number, answered 24/7 by a real person. Fixed quote on the phone before we set off.</p>
+          <p>
+            One number, answered 24/7 by a real person. Tell us your location
+            and what happened.
+          </p>
         </article>
         <article class="step rv rv-d1">
           <span class="num">02</span>
-          <h3>We come to you.</h3>
-          <p>The nearest technician heads straight to you, usually within 30 to 40 minutes.</p>
+          <h3>Fixed quote.</h3>
+          <p>
+            We agree the price on the phone before we set off. It will not
+            change when we arrive.
+          </p>
         </article>
         <article class="step rv rv-d2">
           <span class="num">03</span>
+          <h3>We come to you.</h3>
+          <p>
+            The nearest technician heads straight to you, usually within 30 to
+            40 minutes, with an honest arrival time.
+          </p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
           <h3>Delivered safely.</h3>
-          <p>Your car is secured, transported and handed over at your chosen destination. You sign, we leave.</p>
+          <p>
+            Your car secured, transported and handed over at your chosen destination. You sign, we leave.
+          </p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ AREAS ============ -->
+  <section class="sec" id="areas">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Areas we cover</span>
+        <h2>Wherever you are in Birmingham, we are close.</h2>
+        <p class="lead">
+          Local technicians across Birmingham and the West Midlands, on roads
+          we know well: the M6, M42, A38 and A45 corridors, the Bullring, the
+          NEC, Birmingham Airport and every suburb between.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["Birmingham City Centre", "Edgbaston", "Erdington", "Sutton Coldfield", "Handsworth", "Harborne", "Yardley", "Solihull", "Walsall", "Coventry", "Tamworth", "Kings Heath", "Selly Oak", "Aston", "Birmingham Airport", "The NEC"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
     </div>
   </section>
 
@@ -129,7 +301,11 @@ const faqs = [
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>FAQ</span>
-        <h2>Questions drivers ask us.</h2>
+        <h2>Towing questions, answered.</h2>
+        <p class="lead">
+          The things every driver asks, answered straight, the way
+          we would answer on the phone.
+        </p>
       </div>
       <div class="faq-list">
         {faqs.map((f, i) => (
@@ -154,7 +330,7 @@ const faqs = [
   <!-- ============ FINAL CTA ============ -->
   <section class="final">
     <div class="in rv">
-      <h2>Still stuck? One call fixes it.</h2>
+      <h2>Need a tow? One call fixes it.</h2>
       <p>
         Call now and a real person answers. We dispatch help straight away,
         usually reaching you within 30 to 40 minutes.

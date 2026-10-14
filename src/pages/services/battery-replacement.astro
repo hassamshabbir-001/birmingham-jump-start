@@ -6,43 +6,56 @@ const phoneLabel = "07477 649906";
 const waHref =
   "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20help.";
 
-const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
 
 const faqs = [
   {
-    q: "How do I know I need a new battery?",
-    a: "If the car will not hold a charge after a jump start, or the battery is over 4 years old and struggling, it is time. We test it free on every visit.",
+    q: "How do I know I need a new battery and not just a jump start?",
+    a: "If the car will not hold a charge after a jump start, or the battery is over 4 years old and struggling, it needs replacing. We test it free on every visit and tell you honestly.",
   },
   {
     q: "Do you fit batteries for stop-start cars?",
-    a: "Yes. We carry AGM and EFB batteries for stop-start systems and register them to the car where required.",
+    a: "Yes. We carry AGM and EFB batteries for stop-start systems and register them to the car where the manufacturer requires it.",
   },
   {
     q: "How long does fitting take?",
-    a: "Usually 20 to 30 minutes at your location, including testing the charging system.",
+    a: "Usually 20 to 30 minutes at your location, including testing the charging system and coding where needed.",
   },
   {
     q: "What happens to my old battery?",
-    a: "We take it away and recycle it responsibly at no extra charge.",
+    a: "We take it away and recycle it responsibly at no extra charge. Car batteries contain lead and acid and must not go in household waste.",
+  },
+  {
+    q: "Will you come to my workplace car park?",
+    a: "Yes. Home, work, multi-storey car parks and the roadside, anywhere in Birmingham and the West Midlands.",
+  },
+  {
+    q: "Is there a warranty on the battery?",
+    a: "Yes. The battery carries the manufacturer's warranty, and our fitting is guaranteed.",
   },
 ];
+
+const serviceJsonLd = {"@context": "https://schema.org", "@type": "Service", "serviceType": "Car Battery Replacement", "name": "Mobile Car Battery Replacement in Birmingham", "description": "24/7 mobile car battery replacement in Birmingham. Correct battery supplied and fitted at your location, usually within 30 to 40 minutes.", "provider": {"@type": "AutoRepair", "@id": "https://birminghamjumpstart.co.uk/#business", "name": "Birmingham Jump Start", "telephone": "+447477649906"}, "areaServed": [{"@type": "City", "name": "Birmingham"}, {"@type": "City", "name": "Walsall"}, {"@type": "City", "name": "Coventry"}, {"@type": "City", "name": "Solihull"}, {"@type": "City", "name": "Tamworth"}, {"@type": "City", "name": "Sutton Coldfield"}], "availableChannel": {"@type": "ServiceChannel", "servicePhone": {"@type": "ContactPoint", "telephone": "+447477649906", "contactType": "emergency", "availableLanguage": "en-GB"}}, "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59"}};
 ---
 
 <BaseLayout
-  title="Car Battery Replacement Birmingham | Supplied and Fitted 24/7"
-  description="Dead car battery in Birmingham? We supply and fit the right battery at your location within 30 to 40 minutes, 24/7. Old battery taken away. Call 07477 649906."
+  title="Car Battery Replacement Birmingham | Mobile Fitting 24/7"
+  description="Car battery dead in Birmingham? We supply and fit the right battery at your car, usually within 30 to 40 minutes. Fixed quote. Call 07477 649906."
   path="services/battery-replacement/"
   faq={faqs}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
     <div class="wrap">
-      <span class="eyebrow rv"><span class="dot"></span>Services</span>
+      <span class="eyebrow rv"><span class="dot"></span>Battery replacement Birmingham, 24/7</span>
       <h1 class="rv rv-d1">
-        New battery, <span class="hl">fitted at your car</span>.
+        Battery dead? <span class="hl">New one fitted</span> at your car.
       </h1>
       <p class="sub rv rv-d2">
-        Battery finished? We bring the right battery for your car and fit it where you are parked. One visit solves the whole problem, and we take the old battery away.
+        We bring the correct battery for your car and fit it where you are parked, at home, at work or at the roadside. One visit solves it, and we take the old battery away for recycling.
       </p>
       <div class="hero-ctas rv rv-d2">
         <a href={phoneHref} class="btn btn-yellow">
@@ -59,22 +72,126 @@ const faqs = [
         At your car within 30 to 40 minutes of your call
       </p>
     </div>
+    <div class="hero-photo rv">
+      <div class="ph">
+        <img
+          src="/images/car-battery-replacement-birmingham.webp"
+          alt="Technician fitting a new car battery under an open bonnet in Birmingham"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+      </div>
+      <div class="hero-floats">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <div>
+            <strong>Correct battery, first time</strong>
+            <span>Matched to your make and model</span>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <div>
+            <strong>30 to 40 minutes</strong>
+            <span>Usual response in Birmingham</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLACK BAND ============ -->
+  <section class="band-black" aria-label="Battery replacement facts">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow on-dark"><span class="dot"></span>Why drivers call us</span>
+        <h2>The right battery, fitted properly.</h2>
+        <p class="lede">
+          Not every battery fits every car. We match the exact specification, including stop-start systems, and register it where the car needs it.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["30 to 40 minute response", "Correct battery guaranteed", "Fitted at your location", "Old battery recycled", "Fixed quote on the phone"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SIGNS ============ -->
+  <section class="sec" id="signs">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Do you need a new battery?</span>
+        <h2>Signs the battery is finished.</h2>
+        <p class="lead">
+          A jump start gets you moving, but these signs mean the battery itself needs replacing. We test it free and tell you honestly.
+        </p>
+      </div>
+      <div class="why-grid">
+                <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Jump starts do not last.</h3>
+          <p>
+            The car starts with a jump but will not start again on its own. The battery can no longer hold a charge and needs replacing.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <h3>Battery is over 4 years old.</h3>
+          <p>
+            Most car batteries last 3 to 5 years. If yours is past 4 and struggling on cold mornings, it is living on borrowed time.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <h3>Battery warning light is on.</h3>
+          <p>
+            The dashboard battery light means the charging system or battery has a fault. We test both on the spot and tell you which.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Swollen or leaking case.</h3>
+          <p>
+            A bulging or leaking battery is dangerous and must be replaced, not jump started. Do not touch leaking acid and call us.
+          </p>
+        </article>
+      </div>
+    </div>
   </section>
 
   <!-- ============ WHAT'S INCLUDED ============ -->
-  <section class="sec">
+  <section class="sec" id="included">
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>What you get</span>
-        <h2>The right battery, fitted properly.</h2>
-        <p class="lead">We match the battery to your exact car, including stop-start and hybrid systems, and register it where the car needs it.</p>
+        <h2>Fitted right, wherever you are.</h2>
+        <p class="lead">
+          We carry batteries for most makes and models, and fit them properly, not just dropped in.
+        </p>
       </div>
       <div class="duo">
         <div class="duo-card duo-white rv">
           <div class="ph">
             <img
               src="/images/car-battery-replacement-birmingham.webp"
-              alt="Technician fitting a new car battery under an open bonnet in Birmingham"
+              alt="New car battery fitted under the bonnet by a Birmingham Jump Start technician"
               loading="lazy"
               decoding="async"
               width="1200"
@@ -97,8 +214,27 @@ const faqs = [
     </div>
   </section>
 
+  <!-- ============ YELLOW BAND ============ -->
+  <section class="band-yellow" aria-label="Battery replacement cost">
+    <div class="in">
+      <div class="wrap">
+        <span class="eyebrow on-yellow rv"><span class="dot"></span>What it costs</span>
+        <h2 class="rv rv-d1">One fixed quote, battery included.</h2>
+        <p class="lede rv rv-d1">
+          Call with your car registration and we quote the full fitted price on the phone: the correct battery, fitting, coding where needed and old battery disposal. No membership, no hidden extras, no night surcharge.
+        </p>
+        <div class="steps-cta rv">
+          <a href={phoneHref} class="btn btn-black">
+            Call 07477 649906 for your quote
+            <span class="arr-c" set:html={arrow} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ HOW IT WORKS ============ -->
-  <section class="sec">
+  <section class="sec" id="how">
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>How it works</span>
@@ -108,19 +244,55 @@ const faqs = [
         <article class="step rv">
           <span class="num">01</span>
           <h3>You call.</h3>
-          <p>One number, answered 24/7 by a real person. Fixed quote on the phone before we set off.</p>
+          <p>
+            One number, answered 24/7 by a real person. Tell us your location
+            and what happened.
+          </p>
         </article>
         <article class="step rv rv-d1">
           <span class="num">02</span>
-          <h3>We come to you.</h3>
-          <p>The nearest technician heads straight to you, usually within 30 to 40 minutes.</p>
+          <h3>Fixed quote.</h3>
+          <p>
+            We agree the price on the phone before we set off. It will not
+            change when we arrive.
+          </p>
         </article>
         <article class="step rv rv-d2">
           <span class="num">03</span>
+          <h3>We come to you.</h3>
+          <p>
+            The nearest technician heads straight to you, usually within 30 to
+            40 minutes, with an honest arrival time.
+          </p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
           <h3>Fitted and tested.</h3>
-          <p>New battery in, terminals cleaned and tightened, charging system checked. You drive away with a warranty.</p>
+          <p>
+            New battery in, terminals cleaned, charging system checked. You drive away knowing it will start tomorrow.
+          </p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ AREAS ============ -->
+  <section class="sec" id="areas">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Areas we cover</span>
+        <h2>Wherever you are in Birmingham, we are close.</h2>
+        <p class="lead">
+          Local technicians across Birmingham and the West Midlands, on roads
+          we know well: the M6, M42, A38 and A45 corridors, the Bullring, the
+          NEC, Birmingham Airport and every suburb between.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["Birmingham City Centre", "Edgbaston", "Erdington", "Sutton Coldfield", "Handsworth", "Harborne", "Yardley", "Solihull", "Walsall", "Coventry", "Tamworth", "Kings Heath", "Selly Oak", "Aston", "Birmingham Airport", "The NEC"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
     </div>
   </section>
 
@@ -129,7 +301,11 @@ const faqs = [
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>FAQ</span>
-        <h2>Questions drivers ask us.</h2>
+        <h2>Battery replacement questions, answered.</h2>
+        <p class="lead">
+          The things every driver asks, answered straight, the way
+          we would answer on the phone.
+        </p>
       </div>
       <div class="faq-list">
         {faqs.map((f, i) => (
@@ -154,7 +330,7 @@ const faqs = [
   <!-- ============ FINAL CTA ============ -->
   <section class="final">
     <div class="in rv">
-      <h2>Still stuck? One call fixes it.</h2>
+      <h2>Battery finished? One call fixes it.</h2>
       <p>
         Call now and a real person answers. We dispatch help straight away,
         usually reaching you within 30 to 40 minutes.

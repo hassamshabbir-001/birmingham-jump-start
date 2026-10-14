@@ -6,16 +6,17 @@ const phoneLabel = "07477 649906";
 const waHref =
   "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20help.";
 
-const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
 
 const faqs = [
   {
     q: "What if I do not have a spare wheel?",
-    a: "Many new cars come with sealant kits instead. We can still help, or recover the car to a tyre shop.",
+    a: "Many new cars come with sealant kits instead of a spare. We can still help, or recover the car to a tyre shop.",
   },
   {
     q: "Can you repair the puncture at the roadside?",
-    a: "We fit your spare to get you moving. A proper puncture repair needs a workshop, and we will tell you honestly if it is repairable.",
+    a: "We fit your spare to get you moving. A proper puncture repair needs a workshop, and we will tell you honestly if yours is repairable.",
   },
   {
     q: "Is it safe to change a tyre on a busy road?",
@@ -25,24 +26,36 @@ const faqs = [
     q: "How fast can you reach me?",
     a: "Usually within 30 to 40 minutes of your call in Birmingham.",
   },
+  {
+    q: "Should I drive on a flat tyre?",
+    a: "No. Even a short distance can destroy the tyre and damage the wheel. Pull over safely and call.",
+  },
+  {
+    q: "Do you sell new tyres?",
+    a: "We fit your spare. For a new tyre we can recover the car to a tyre shop of your choice.",
+  },
 ];
+
+const serviceJsonLd = {"@context": "https://schema.org", "@type": "Service", "serviceType": "Mobile Tyre Change", "name": "Mobile Tyre Change in Birmingham", "description": "24/7 mobile tyre change in Birmingham. Spare wheel fitted at your location, usually within 30 to 40 minutes of your call.", "provider": {"@type": "AutoRepair", "@id": "https://birminghamjumpstart.co.uk/#business", "name": "Birmingham Jump Start", "telephone": "+447477649906"}, "areaServed": [{"@type": "City", "name": "Birmingham"}, {"@type": "City", "name": "Walsall"}, {"@type": "City", "name": "Coventry"}, {"@type": "City", "name": "Solihull"}, {"@type": "City", "name": "Tamworth"}, {"@type": "City", "name": "Sutton Coldfield"}], "availableChannel": {"@type": "ServiceChannel", "servicePhone": {"@type": "ContactPoint", "telephone": "+447477649906", "contactType": "emergency", "availableLanguage": "en-GB"}}, "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59"}};
 ---
 
 <BaseLayout
-  title="Mobile Tyre Change Birmingham | Flat Tyre Fitted at Roadside 24/7"
-  description="Flat tyre in Birmingham? We come to you and fit your spare at the roadside, usually within 30 to 40 minutes. Call 07477 649906."
+  title="Mobile Tyre Change Birmingham | Flat Tyre Fitting 24/7"
+  description="Flat tyre in Birmingham? We come to you and fit your spare at the roadside, usually within 30 to 40 minutes. Fixed quote. Call 07477 649906."
   path="services/tyre-change/"
   faq={faqs}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
     <div class="wrap">
-      <span class="eyebrow rv"><span class="dot"></span>Services</span>
+      <span class="eyebrow rv"><span class="dot"></span>Mobile tyre change Birmingham, 24/7</span>
       <h1 class="rv rv-d1">
-        Flat tyre? <span class="hl">Changed where you are</span>.
+        Flat tyre? <span class="hl">Changed where</span> you are.
       </h1>
       <p class="sub rv rv-d2">
-        Puncture at the roadside? No jack, no safe place to work? We come to you and fit your spare properly, so you can drive on safely.
+        Puncture at the roadside, no jack, or no safe place to work. We come to you and fit your spare properly, torqued to spec, so you can drive on safely.
       </p>
       <div class="hero-ctas rv rv-d2">
         <a href={phoneHref} class="btn btn-yellow">
@@ -59,22 +72,126 @@ const faqs = [
         At your car within 30 to 40 minutes of your call
       </p>
     </div>
+    <div class="hero-photo rv">
+      <div class="ph">
+        <img
+          src="/images/mobile-tyre-change-birmingham.webp"
+          alt="Mobile tyre change at the roadside in Birmingham"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+      </div>
+      <div class="hero-floats">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1a4.5 4.5 0 0 0-6 6L2 21.5V24h2.5l5.6-5.6a4.5 4.5 0 0 0 6-6l4.6 4.6a1.8 1.8 0 0 0 2.5-2.5z" /></svg>
+          </span>
+          <div>
+            <strong>Torqued to spec</strong>
+            <span>Manufacturer settings, checked</span>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <div>
+            <strong>30 to 40 minutes</strong>
+            <span>Usual response in Birmingham</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLACK BAND ============ -->
+  <section class="band-black" aria-label="Tyre change facts">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow on-dark"><span class="dot"></span>Why drivers call us</span>
+        <h2>Back on four wheels, safely.</h2>
+        <p class="lede">
+          Proper jacking, correct torque on the wheel nuts, and a pressure check before you drive off. No shortcuts at the roadside.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["30 to 40 minute response", "Spare fitted at your location", "Correct torque settings", "Pressure checked", "Fixed quote on the phone"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SIGNS ============ -->
+  <section class="sec" id="signs">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Do you need a tyre change?</span>
+        <h2>When the tyre gives up.</h2>
+        <p class="lead">
+          Punctures rarely happen somewhere convenient. We come to wherever you are.
+        </p>
+      </div>
+      <div class="why-grid">
+                <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Puncture at the roadside.</h3>
+          <p>
+            Nail, screw or debris through the tread. We fit your spare and advise whether the tyre can be repaired.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Blowout.</h3>
+          <p>
+            Sudden loss of pressure at speed. Pull over safely and call us; do not drive on the rim.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>No jack or tools.</h3>
+          <p>
+            Many cars no longer carry a full kit. We bring everything needed.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Unsafe location to DIY.</h3>
+          <p>
+            Busy dual carriageway or a slope. We position the van to shield the work area with warning beacons.
+          </p>
+        </article>
+      </div>
+    </div>
   </section>
 
   <!-- ============ WHAT'S INCLUDED ============ -->
-  <section class="sec">
+  <section class="sec" id="included">
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>What you get</span>
-        <h2>Back on four wheels, safely.</h2>
-        <p class="lead">Proper jacking, correct torque on the wheel nuts, and a pressure check before you drive off.</p>
+        <h2>Fitted properly, not just on.</h2>
+        <p class="lead">
+          A wheel change done right protects your wheels, your nuts and your safety.
+        </p>
       </div>
       <div class="duo">
         <div class="duo-card duo-white rv">
           <div class="ph">
             <img
               src="/images/mobile-tyre-change-birmingham.webp"
-              alt="Mobile tyre change at the roadside in Birmingham"
+              alt="Spare wheel being fitted at the roadside in Birmingham"
               loading="lazy"
               decoding="async"
               width="1200"
@@ -89,7 +206,7 @@ const faqs = [
               <li>Spare wheel fitted at your location</li>
               <li>Wheel nuts torqued to manufacturer spec</li>
               <li>Tyre pressure checked on all four wheels</li>
-              <li>Honest advice on repair vs replacement</li>
+              <li>Honest advice on repair versus replacement</li>
             </ul>
           </div>
         </div>
@@ -97,8 +214,27 @@ const faqs = [
     </div>
   </section>
 
+  <!-- ============ YELLOW BAND ============ -->
+  <section class="band-yellow" aria-label="Tyre change cost">
+    <div class="in">
+      <div class="wrap">
+        <span class="eyebrow on-yellow rv"><span class="dot"></span>What it costs</span>
+        <h2 class="rv rv-d1">Fixed quote before we set off.</h2>
+        <p class="lede rv rv-d1">
+          One fixed price on the phone for fitting your spare at the roadside. No membership, no hidden extras, no night surcharge. The price we quote is the price you pay.
+        </p>
+        <div class="steps-cta rv">
+          <a href={phoneHref} class="btn btn-black">
+            Call 07477 649906 for your quote
+            <span class="arr-c" set:html={arrow} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ HOW IT WORKS ============ -->
-  <section class="sec">
+  <section class="sec" id="how">
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>How it works</span>
@@ -108,19 +244,55 @@ const faqs = [
         <article class="step rv">
           <span class="num">01</span>
           <h3>You call.</h3>
-          <p>One number, answered 24/7 by a real person. Fixed quote on the phone before we set off.</p>
+          <p>
+            One number, answered 24/7 by a real person. Tell us your location
+            and what happened.
+          </p>
         </article>
         <article class="step rv rv-d1">
           <span class="num">02</span>
-          <h3>We come to you.</h3>
-          <p>The nearest technician heads straight to you, usually within 30 to 40 minutes.</p>
+          <h3>Fixed quote.</h3>
+          <p>
+            We agree the price on the phone before we set off. It will not
+            change when we arrive.
+          </p>
         </article>
         <article class="step rv rv-d2">
           <span class="num">03</span>
+          <h3>We come to you.</h3>
+          <p>
+            The nearest technician heads straight to you, usually within 30 to
+            40 minutes, with an honest arrival time.
+          </p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
           <h3>Fitted and checked.</h3>
-          <p>Spare on, pressures checked, and you know whether the punctured tyre can be repaired.</p>
+          <p>
+            Spare on, pressures checked, and you know whether the punctured tyre can be repaired.
+          </p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ AREAS ============ -->
+  <section class="sec" id="areas">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Areas we cover</span>
+        <h2>Wherever you are in Birmingham, we are close.</h2>
+        <p class="lead">
+          Local technicians across Birmingham and the West Midlands, on roads
+          we know well: the M6, M42, A38 and A45 corridors, the Bullring, the
+          NEC, Birmingham Airport and every suburb between.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["Birmingham City Centre", "Edgbaston", "Erdington", "Sutton Coldfield", "Handsworth", "Harborne", "Yardley", "Solihull", "Walsall", "Coventry", "Tamworth", "Kings Heath", "Selly Oak", "Aston", "Birmingham Airport", "The NEC"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
     </div>
   </section>
 
@@ -129,7 +301,11 @@ const faqs = [
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>FAQ</span>
-        <h2>Questions drivers ask us.</h2>
+        <h2>Tyre change questions, answered.</h2>
+        <p class="lead">
+          The things every driver asks, answered straight, the way
+          we would answer on the phone.
+        </p>
       </div>
       <div class="faq-list">
         {faqs.map((f, i) => (
@@ -154,7 +330,7 @@ const faqs = [
   <!-- ============ FINAL CTA ============ -->
   <section class="final">
     <div class="in rv">
-      <h2>Still stuck? One call fixes it.</h2>
+      <h2>Flat tyre? One call fixes it.</h2>
       <p>
         Call now and a real person answers. We dispatch help straight away,
         usually reaching you within 30 to 40 minutes.

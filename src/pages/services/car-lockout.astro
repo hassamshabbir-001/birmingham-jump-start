@@ -6,7 +6,8 @@ const phoneLabel = "07477 649906";
 const waHref =
   "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20help.";
 
-const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
 
 const faqs = [
   {
@@ -15,34 +16,46 @@ const faqs = [
   },
   {
     q: "What if my keys are lost, not locked in?",
-    a: "We can still get you in, and advise on getting a replacement key cut and programmed.",
+    a: "We can still get you in, and advise on getting a replacement key cut and programmed for your car.",
   },
   {
     q: "Do you need proof the car is mine?",
-    a: "Yes, we ask for ID and proof of ownership before opening any vehicle. It protects everyone.",
+    a: "Yes. We ask for ID and proof of ownership before opening any vehicle. It protects everyone.",
   },
   {
     q: "How fast can you get to me?",
     a: "Usually within 30 to 40 minutes of your call anywhere in Birmingham.",
   },
+  {
+    q: "Can you open keyless entry cars?",
+    a: "Yes. We handle keyless and push-button-start cars with the correct procedures.",
+  },
+  {
+    q: "What if the lock itself is broken?",
+    a: "We will tell you honestly on inspection and advise on the repair or replacement needed.",
+  },
 ];
+
+const serviceJsonLd = {"@context": "https://schema.org", "@type": "Service", "serviceType": "Vehicle Lockout Service", "name": "Car Lockout Service in Birmingham", "description": "24/7 car lockout service in Birmingham. Non-destructive vehicle entry, usually within 30 to 40 minutes of your call.", "provider": {"@type": "AutoRepair", "@id": "https://birminghamjumpstart.co.uk/#business", "name": "Birmingham Jump Start", "telephone": "+447477649906"}, "areaServed": [{"@type": "City", "name": "Birmingham"}, {"@type": "City", "name": "Walsall"}, {"@type": "City", "name": "Coventry"}, {"@type": "City", "name": "Solihull"}, {"@type": "City", "name": "Tamworth"}, {"@type": "City", "name": "Sutton Coldfield"}], "availableChannel": {"@type": "ServiceChannel", "servicePhone": {"@type": "ContactPoint", "telephone": "+447477649906", "contactType": "emergency", "availableLanguage": "en-GB"}}, "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59"}};
 ---
 
 <BaseLayout
   title="Car Lockout Service Birmingham | Locked Keys in Car 24/7"
-  description="Locked your keys in the car in Birmingham? We open it without damage and get you back in, usually within 30 to 40 minutes. Call 07477 649906."
+  description="Locked your keys in the car in Birmingham? We open it without damage, usually within 30 to 40 minutes. Fixed quote, no membership. Call 07477 649906."
   path="services/car-lockout/"
   faq={faqs}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
     <div class="wrap">
-      <span class="eyebrow rv"><span class="dot"></span>Services</span>
+      <span class="eyebrow rv"><span class="dot"></span>Car lockout service Birmingham, 24/7</span>
       <h1 class="rv rv-d1">
         Locked out? <span class="hl">Back in your car</span> fast.
       </h1>
       <p class="sub rv rv-d2">
-        Keys locked inside? Lost them at the shops? We open your car without damage using professional tools and get you back behind the wheel.
+        Keys locked inside, lost at the shops, or a key fob that died. We open your car without damage using professional tools and get you back behind the wheel.
       </p>
       <div class="hero-ctas rv rv-d2">
         <a href={phoneHref} class="btn btn-yellow">
@@ -59,22 +72,126 @@ const faqs = [
         At your car within 30 to 40 minutes of your call
       </p>
     </div>
+    <div class="hero-photo rv">
+      <div class="ph">
+        <img
+          src="/images/car-lockout-service-birmingham.webp"
+          alt="Technician unlocking a car door with professional tools in Birmingham"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+      </div>
+      <div class="hero-floats">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1a4.5 4.5 0 0 0-6 6L2 21.5V24h2.5l5.6-5.6a4.5 4.5 0 0 0 6-6l4.6 4.6a1.8 1.8 0 0 0 2.5-2.5z" /></svg>
+          </span>
+          <div>
+            <strong>No damage</strong>
+            <span>Professional entry tools</span>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <div>
+            <strong>30 to 40 minutes</strong>
+            <span>Usual response in Birmingham</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLACK BAND ============ -->
+  <section class="band-black" aria-label="Lockout facts">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow on-dark"><span class="dot"></span>Why drivers call us</span>
+        <h2>Opened cleanly, no damage.</h2>
+        <p class="lede">
+          Professional entry tools and techniques for every make, with your paintwork, seals and locks left untouched.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["30 to 40 minute response", "Non-destructive entry", "All makes and models", "Keyless cars covered", "Fixed quote on the phone"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SIGNS ============ -->
+  <section class="sec" id="signs">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Do you need a lockout service?</span>
+        <h2>How lockouts happen.</h2>
+        <p class="lead">
+          It takes two seconds of distraction. We open cars every day for all of these.
+        </p>
+      </div>
+      <div class="why-grid">
+                <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Keys locked inside.</h3>
+          <p>
+            The classic: keys on the seat, door shut. Happens at petrol stations, schools and supermarkets daily.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Lost keys.</h3>
+          <p>
+            Lost on a night out or dropped somewhere unknown. We get you in, then advise on a replacement key.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Dead key fob.</h3>
+          <p>
+            The fob battery died and the manual key is inside, or the car does not recognise the fob. We know the workarounds.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Boot locked with keys in it.</h3>
+          <p>
+            Shopping loaded, boot shut, keys inside. We open the boot without damage to the seal or lock.
+          </p>
+        </article>
+      </div>
+    </div>
   </section>
 
   <!-- ============ WHAT'S INCLUDED ============ -->
-  <section class="sec">
+  <section class="sec" id="included">
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>What you get</span>
-        <h2>Opened cleanly, no damage.</h2>
-        <p class="lead">Professional entry tools and techniques for every make, with your paintwork and seals left untouched.</p>
+        <h2>In without a scratch.</h2>
+        <p class="lead">
+          Every car is opened with the method its manufacturer expects, not forced.
+        </p>
       </div>
       <div class="duo">
         <div class="duo-card duo-white rv">
           <div class="ph">
             <img
               src="/images/car-lockout-service-birmingham.webp"
-              alt="Technician unlocking a car door with professional tools in Birmingham"
+              alt="Professional car unlocking tools being used on a car door in Birmingham"
               loading="lazy"
               decoding="async"
               width="1200"
@@ -97,8 +214,27 @@ const faqs = [
     </div>
   </section>
 
+  <!-- ============ YELLOW BAND ============ -->
+  <section class="band-yellow" aria-label="Lockout cost">
+    <div class="in">
+      <div class="wrap">
+        <span class="eyebrow on-yellow rv"><span class="dot"></span>What it costs</span>
+        <h2 class="rv rv-d1">Fixed quote before we set off.</h2>
+        <p class="lede rv rv-d1">
+          One fixed price on the phone, agreed before we come. No membership, no hidden extras, no night surcharge. The price we quote is the price you pay.
+        </p>
+        <div class="steps-cta rv">
+          <a href={phoneHref} class="btn btn-black">
+            Call 07477 649906 for your quote
+            <span class="arr-c" set:html={arrow} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ HOW IT WORKS ============ -->
-  <section class="sec">
+  <section class="sec" id="how">
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>How it works</span>
@@ -108,19 +244,55 @@ const faqs = [
         <article class="step rv">
           <span class="num">01</span>
           <h3>You call.</h3>
-          <p>One number, answered 24/7 by a real person. Fixed quote on the phone before we set off.</p>
+          <p>
+            One number, answered 24/7 by a real person. Tell us your location
+            and what happened.
+          </p>
         </article>
         <article class="step rv rv-d1">
           <span class="num">02</span>
-          <h3>We come to you.</h3>
-          <p>The nearest technician heads straight to you, usually within 30 to 40 minutes.</p>
+          <h3>Fixed quote.</h3>
+          <p>
+            We agree the price on the phone before we set off. It will not
+            change when we arrive.
+          </p>
         </article>
         <article class="step rv rv-d2">
           <span class="num">03</span>
+          <h3>We come to you.</h3>
+          <p>
+            The nearest technician heads straight to you, usually within 30 to
+            40 minutes, with an honest arrival time.
+          </p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
           <h3>Unlocked and on your way.</h3>
-          <p>Door open, no scratches, no damage. Most lockouts are resolved in minutes.</p>
+          <p>
+            Door open, no scratches, no damage. Most lockouts are resolved in minutes.
+          </p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ AREAS ============ -->
+  <section class="sec" id="areas">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Areas we cover</span>
+        <h2>Wherever you are in Birmingham, we are close.</h2>
+        <p class="lead">
+          Local technicians across Birmingham and the West Midlands, on roads
+          we know well: the M6, M42, A38 and A45 corridors, the Bullring, the
+          NEC, Birmingham Airport and every suburb between.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["Birmingham City Centre", "Edgbaston", "Erdington", "Sutton Coldfield", "Handsworth", "Harborne", "Yardley", "Solihull", "Walsall", "Coventry", "Tamworth", "Kings Heath", "Selly Oak", "Aston", "Birmingham Airport", "The NEC"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
     </div>
   </section>
 
@@ -129,7 +301,11 @@ const faqs = [
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>FAQ</span>
-        <h2>Questions drivers ask us.</h2>
+        <h2>Lockout questions, answered.</h2>
+        <p class="lead">
+          The things every driver asks, answered straight, the way
+          we would answer on the phone.
+        </p>
       </div>
       <div class="faq-list">
         {faqs.map((f, i) => (
@@ -154,7 +330,7 @@ const faqs = [
   <!-- ============ FINAL CTA ============ -->
   <section class="final">
     <div class="in rv">
-      <h2>Still stuck? One call fixes it.</h2>
+      <h2>Locked out? One call fixes it.</h2>
       <p>
         Call now and a real person answers. We dispatch help straight away,
         usually reaching you within 30 to 40 minutes.

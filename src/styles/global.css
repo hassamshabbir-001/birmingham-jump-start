@@ -925,6 +925,7 @@ a.svc-card .kicker {
 .duo-black {
   background: var(--black);
   color: var(--white);
+  align-items: center;
 }
 .duo-black .ic {
   background: var(--yellow);
