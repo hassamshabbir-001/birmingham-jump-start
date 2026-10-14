@@ -73,6 +73,32 @@ const faqJsonLd =
         })),
       }
     : null;
+
+const pathParts = path.split("/").filter(Boolean);
+const breadcrumbJsonLd =
+  pathParts.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          ...pathParts.map((part, i) => ({
+            "@type": "ListItem",
+            position: i + 2,
+            name: part
+              .split("-")
+              .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+              .join(" "),
+            item: siteUrl + pathParts.slice(0, i + 1).join("/") + "/",
+          })),
+        ],
+      }
+    : null;
 ---
 
 <!doctype html>
@@ -124,6 +150,14 @@ const faqJsonLd =
         />
       )
     }
+    {
+      breadcrumbJsonLd && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(breadcrumbJsonLd)}
+        />
+      )
+    }
   </head>
   <body>
     <a class="skip-link" href="#main" style="position:absolute;left:12px;top:-60px;z-index:100;background:#ffb800;color:#161006;padding:10px 18px;border-radius:8px;font-weight:700;">Skip to content</a>
@@ -138,7 +172,22 @@ const faqJsonLd =
           <span>Birmingham Jump Start<small>24/7 Recovery</small></span>
         </a>
         <nav class="nav-links" aria-label="Primary">
-          <a href="/services/">Services</a>
+          <div class="nav-drop">
+            <a href="/services/" class="nav-drop-btn" aria-haspopup="true">
+              Services
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+            </a>
+            <div class="nav-drop-menu" role="menu" aria-label="Services">
+              <a href="/services/" class="drop-all" role="menuitem">All Services</a>
+              <a href="/services/jump-start/" role="menuitem">Jump Start</a>
+              <a href="/services/battery-replacement/" role="menuitem">Battery Replacement</a>
+              <a href="/services/towing-and-recovery/" role="menuitem">Towing and Recovery</a>
+              <a href="/services/emergency-fuel-delivery/" role="menuitem">Emergency Fuel Delivery</a>
+              <a href="/services/car-lockout/" role="menuitem">Car Lockout</a>
+              <a href="/services/tyre-change/" role="menuitem">Tyre Change</a>
+              <a href="/services/breakdown-recovery/" role="menuitem">Breakdown Recovery</a>
+            </div>
+          </div>
           <a href="/#how">How it works</a>
           <a href="/#areas">Areas</a>
           <a href="/#reviews">Reviews</a>
@@ -159,7 +208,14 @@ const faqJsonLd =
     </header>
 
     <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
-      <a href="/services/">Services</a>
+      <a href="/services/" class="m-sec">All Services</a>
+      <a href="/services/jump-start/" class="m-sub">Jump Start</a>
+      <a href="/services/battery-replacement/" class="m-sub">Battery Replacement</a>
+      <a href="/services/towing-and-recovery/" class="m-sub">Towing and Recovery</a>
+      <a href="/services/emergency-fuel-delivery/" class="m-sub">Emergency Fuel Delivery</a>
+      <a href="/services/car-lockout/" class="m-sub">Car Lockout</a>
+      <a href="/services/tyre-change/" class="m-sub">Tyre Change</a>
+      <a href="/services/breakdown-recovery/" class="m-sub">Breakdown Recovery</a>
       <a href="/#how">How it works</a>
       <a href="/#areas">Areas</a>
       <a href="/#reviews">Reviews</a>

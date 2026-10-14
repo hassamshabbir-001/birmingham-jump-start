@@ -4,45 +4,104 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const phoneHref = "tel:+447477649906";
 const phoneLabel = "07477 649906";
 const waHref =
-  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20help.";
+  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20a%20jump%20start.";
 
-const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
 
 const faqs = [
   {
-    q: "How fast can you reach me?",
-    a: "Usually within 30 to 40 minutes of your call anywhere in Birmingham. We give you an honest arrival time on the phone.",
+    q: "How much does a jump start cost in Birmingham?",
+    a: "You get a fixed quote on the phone before we set off, so you know the exact price upfront. There is no membership, no call-out surcharge, and no extra charge at night, on weekends or inside the Birmingham Clean Air Zone.",
   },
   {
-    q: "Will a jump start damage my car?",
-    a: "No. We use professional surge-protected equipment, safe for modern cars including hybrids and stop-start systems.",
+    q: "How fast can you reach my car?",
+    a: "Usually within 30 to 40 minutes of your call anywhere in Birmingham. We give you an honest arrival time on the phone, and the nearest technician heads straight to you.",
+  },
+  {
+    q: "Will a jump start damage my modern car?",
+    a: "No. We use a regulated lithium jump pack, not leads off another car, which is safe for stop-start systems, hybrids and modern ECUs. We connect in the correct order every time.",
+  },
+  {
+    q: "Can you jump start a hybrid or electric car?",
+    a: "Yes. Hybrids and EVs still have a separate 12V battery, and when it goes flat the car will not unlock or start. We boost that 12V battery using the correct procedure for your make and model.",
   },
   {
     q: "What if the jump start does not work?",
-    a: "Then the battery or another part has failed. We can supply and fit a new battery on the spot, or recover the car if needed.",
+    a: "Then the battery or another part has failed. We test the battery and charging system on the spot. If you need a new battery, we can supply and fit the correct one at your car, or recover the vehicle if it needs a garage.",
   },
   {
-    q: "Do I need a membership?",
-    a: "No. One call, one fixed quote agreed on the phone, no yearly fee and no hidden charges.",
+    q: "Do I need AA or RAC membership?",
+    a: "No. This is a pay-per-job service with no yearly fee. One call, one fixed quote, help on the way.",
   },
 ];
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Car Jump Start",
+  name: "Mobile Car Jump Start in Birmingham",
+  description:
+    "24/7 mobile jump start service in Birmingham and the West Midlands. Flat battery started on the spot with a free battery health check, usually within 30 to 40 minutes of your call.",
+  provider: {
+    "@type": "AutoRepair",
+    "@id": "https://birminghamjumpstart.co.uk/#business",
+    name: "Birmingham Jump Start",
+    telephone: "+447477649906",
+  },
+  areaServed: [
+    { "@type": "City", name: "Birmingham" },
+    { "@type": "City", name: "Walsall" },
+    { "@type": "City", name: "Coventry" },
+    { "@type": "City", name: "Solihull" },
+    { "@type": "City", name: "Tamworth" },
+    { "@type": "City", name: "Sutton Coldfield" },
+  ],
+  availableChannel: {
+    "@type": "ServiceChannel",
+    servicePhone: {
+      "@type": "ContactPoint",
+      telephone: "+447477649906",
+      contactType: "emergency",
+      availableLanguage: "en-GB",
+    },
+  },
+  hoursAvailable: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "00:00",
+    closes: "23:59",
+  },
+};
 ---
 
 <BaseLayout
-  title="Car Jump Start in Birmingham | 24/7 Mobile Jump Start"
-  description="Flat battery in Birmingham? Our technician reaches you within 30 to 40 minutes, jump starts your car on the spot and checks the battery free. Call 07477 649906."
+  title="Car Jump Start Birmingham | 24/7 Mobile Jump Start Service"
+  description="Flat battery in Birmingham? Mobile jump start 24/7, usually at your car in 30 to 40 minutes. Fixed quote on the phone, no membership. Call 07477 649906."
   path="services/jump-start/"
   faq={faqs}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
     <div class="wrap">
-      <span class="eyebrow rv"><span class="dot"></span>Services</span>
+      <span class="eyebrow rv"><span class="dot"></span>Jump start Birmingham, 24/7</span>
       <h1 class="rv rv-d1">
-        Dead battery? <span class="hl">Back on the road</span> in minutes.
+        Flat battery? <span class="hl">Back on the road</span> in minutes.
       </h1>
       <p class="sub rv rv-d2">
-        Our jump start van comes to you anywhere in Birmingham, day or night. Professional equipment, no damage to your electrics, and a free battery health check with every visit.
+        Our mobile jump start van comes to you anywhere in Birmingham, day or
+        night. A regulated jump pack starts your car safely, and every visit
+        includes a free battery health check.
       </p>
       <div class="hero-ctas rv rv-d2">
         <a href={phoneHref} class="btn btn-yellow">
@@ -59,26 +118,141 @@ const faqs = [
         At your car within 30 to 40 minutes of your call
       </p>
     </div>
+    <div class="hero-photo rv">
+      <div class="ph">
+        <img
+          src="/images/car-jump-start-birmingham.webp"
+          alt="Birmingham Jump Start technician connecting jump leads to a car battery on a residential street in Birmingham"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+      </div>
+      <div class="hero-floats">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <div>
+            <strong>Jump pack, not leads</strong>
+            <span>Safe for modern cars and hybrids</span>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <div>
+            <strong>Free battery check</strong>
+            <span>With every jump start</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLACK BAND ============ -->
+  <section class="band-black" aria-label="Jump start facts">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow on-dark"><span class="dot"></span>Why drivers call us</span>
+        <h2>The fastest fix for a car that will not start.</h2>
+        <p class="lede">
+          Most flat batteries are running again within minutes of our
+          arrival. No tow truck, no waiting room, no membership.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["30 to 40 minute response", "Fixed quote on the phone", "No membership needed", "Safe for hybrids and EVs", "Free battery health check"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ WHEN YOU NEED ONE ============ -->
+  <section class="sec" id="signs">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Do you need a jump start?</span>
+        <h2>Signs your battery is the problem.</h2>
+        <p class="lead">
+          If any of these sound familiar, a jump start is probably all you
+          need. Call and we will confirm on the phone.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <h3>Clicking, but no engine.</h3>
+          <p>
+            You turn the key or press the button and hear rapid clicking. The
+            battery has enough power for the electrics, but not enough to turn
+            the starter motor.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <h3>Nothing at all.</h3>
+          <p>
+            No lights, no dashboard, central locking dead. The battery is
+            fully flat, often after lights left on overnight or a long period
+            parked up.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Slow, struggling start.</h3>
+          <p>
+            The engine turns over slowly, especially on cold Birmingham
+            mornings. The battery is weak and a jump start plus a proper test
+            will tell you if it needs replacing.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z" /></svg>
+          </span>
+          <h3>Hybrid or EV will not wake up.</h3>
+          <p>
+            Hybrids and EVs have a separate 12V battery. When it dies, the car
+            will not unlock or start, even with a full traction battery. We
+            boost it with the correct procedure.
+          </p>
+        </article>
+      </div>
+    </div>
   </section>
 
   <!-- ============ WHAT'S INCLUDED ============ -->
-  <section class="sec">
+  <section class="sec" id="included">
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>What you get</span>
         <h2>A proper jump start, not a quick fix.</h2>
-        <p class="lead">We start the car safely and check why the battery died, so you are not stranded again tomorrow.</p>
+        <p class="lead">
+          We start the car safely and check why the battery died, so you are
+          not stranded again tomorrow.
+        </p>
       </div>
       <div class="duo">
         <div class="duo-card duo-white rv">
           <div class="ph">
             <img
-              src="/images/car-jump-start-birmingham.webp"
-              alt="Birmingham Jump Start technician connecting jump leads to a car battery on a residential street in Birmingham"
+              src="/images/birmingham-jump-start-hero.webp"
+              alt="Birmingham Jump Start van arriving for a jump start callout in Birmingham"
               loading="lazy"
               decoding="async"
-              width="1200"
-              height="800"
+              width="1600"
+              height="1066"
             />
           </div>
         </div>
@@ -86,7 +260,7 @@ const faqs = [
           <div>
             <h3>Every visit includes</h3>
             <ul class="tick-list">
-              <li>Safe jump start with professional-grade equipment</li>
+              <li>Safe jump start with a regulated lithium jump pack</li>
               <li>Free battery health check on every visit</li>
               <li>Alternator output check while we are there</li>
               <li>Honest advice: recharge, replace, or nothing needed</li>
@@ -97,8 +271,30 @@ const faqs = [
     </div>
   </section>
 
+  <!-- ============ YELLOW BAND: COST ============ -->
+  <section class="band-yellow" aria-label="Jump start cost">
+    <div class="in">
+      <div class="wrap">
+        <span class="eyebrow on-yellow rv"><span class="dot"></span>What it costs</span>
+        <h2 class="rv rv-d1">One fixed quote. Agreed before we set off.</h2>
+        <p class="lede rv rv-d1">
+          Call, tell us your car and location, and we give you the exact
+          price on the phone. No membership, no call-out surcharge, and no
+          extra charge at night, on bank holidays or inside the Birmingham
+          Clean Air Zone. The price we quote is the price you pay.
+        </p>
+        <div class="steps-cta rv">
+          <a href={phoneHref} class="btn btn-black">
+            Call {phoneLabel} for your quote
+            <span class="arr-c" set:html={arrow} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ HOW IT WORKS ============ -->
-  <section class="sec">
+  <section class="sec" id="how">
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>How it works</span>
@@ -108,19 +304,56 @@ const faqs = [
         <article class="step rv">
           <span class="num">01</span>
           <h3>You call.</h3>
-          <p>One number, answered 24/7 by a real person. Fixed quote on the phone before we set off.</p>
+          <p>
+            One number, answered 24/7 by a real person. Tell us your location
+            and what the car is doing.
+          </p>
         </article>
         <article class="step rv rv-d1">
           <span class="num">02</span>
-          <h3>We come to you.</h3>
-          <p>The nearest technician heads straight to you, usually within 30 to 40 minutes.</p>
+          <h3>Fixed quote.</h3>
+          <p>
+            We agree the price on the phone before we set off. It will not
+            change when we arrive.
+          </p>
         </article>
         <article class="step rv rv-d2">
           <span class="num">03</span>
+          <h3>We come to you.</h3>
+          <p>
+            The nearest technician heads straight to you, usually within 30 to
+            40 minutes, with an honest arrival time.
+          </p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
           <h3>Started and checked.</h3>
-          <p>Car running, battery tested, and you know exactly what to do next. Most visits take under 20 minutes.</p>
+          <p>
+            Car running, battery tested, alternator checked. Most visits take
+            under 20 minutes.
+          </p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ AREAS ============ -->
+  <section class="sec" id="areas">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Areas we cover</span>
+        <h2>Wherever you are in Birmingham, we are close.</h2>
+        <p class="lead">
+          Local technicians across Birmingham and the West Midlands, on roads
+          we know well: the M6, M42, A38 and A45 corridors, the Bullring, the
+          NEC, Birmingham Airport and every suburb between.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["Birmingham City Centre", "Edgbaston", "Erdington", "Sutton Coldfield", "Handsworth", "Harborne", "Yardley", "Solihull", "Walsall", "Coventry", "Tamworth", "Kings Heath", "Selly Oak", "Aston", "Birmingham Airport", "The NEC"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
     </div>
   </section>
 
@@ -129,7 +362,11 @@ const faqs = [
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow"><span class="dot"></span>FAQ</span>
-        <h2>Questions drivers ask us.</h2>
+        <h2>Jump start questions, answered.</h2>
+        <p class="lead">
+          The things every stranded driver asks, answered straight, the way
+          we would answer on the phone.
+        </p>
       </div>
       <div class="faq-list">
         {faqs.map((f, i) => (
@@ -154,7 +391,7 @@ const faqs = [
   <!-- ============ FINAL CTA ============ -->
   <section class="final">
     <div class="in rv">
-      <h2>Still stuck? One call fixes it.</h2>
+      <h2>Car will not start? One call fixes it.</h2>
       <p>
         Call now and a real person answers. We dispatch help straight away,
         usually reaching you within 30 to 40 minutes.

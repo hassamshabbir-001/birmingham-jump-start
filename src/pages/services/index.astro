@@ -9,14 +9,30 @@ const waHref =
 const arrow =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
 
-const services = [
+const faqs = [
   {
-    href: "/services/jump-start/",
-    img: "/images/car-jump-start-birmingham.webp",
-    alt: "Birmingham Jump Start technician connecting jump leads to a car battery",
-    t: "Jump Start",
-    d: "Flat battery running again in minutes, with a free battery health check.",
+    q: "How fast do you reach breakdowns in Birmingham?",
+    a: "Usually within 30 to 40 minutes of your call. We give you an honest arrival time on the phone, and the nearest technician heads straight to you.",
   },
+  {
+    q: "Do I need a membership or breakdown cover?",
+    a: "No. Every service is pay-as-you-go with a fixed quote agreed on the phone before we set off. No yearly fee and no hidden charges.",
+  },
+  {
+    q: "Which areas do you cover?",
+    a: "Birmingham and the West Midlands: Walsall, Coventry, Solihull, Tamworth, Sutton Coldfield and everywhere between, 24 hours a day.",
+  },
+  {
+    q: "What if my car cannot be fixed at the roadside?",
+    a: "We recover it to your home, your garage or wherever it needs to go, and you ride with us. Nobody is left stranded.",
+  },
+  {
+    q: "How do I choose the right service?",
+    a: "You do not have to. Call, describe what happened, and a real person sends the right help. If it turns out to be a different problem, we handle that too.",
+  },
+];
+
+const services = [
   {
     href: "/services/battery-replacement/",
     img: "/images/car-battery-replacement-birmingham.webp",
@@ -63,21 +79,22 @@ const services = [
 ---
 
 <BaseLayout
-  title="Our Services | Birmingham Jump Start | 24/7 Roadside Help"
-  description="Every roadside service in one place: jump starts, battery replacement, towing, fuel delivery, lockouts, tyre changes and full breakdown recovery across Birmingham, 24/7."
+  title="Car Recovery and Roadside Services Birmingham | 24/7"
+  description="Birmingham's 24/7 roadside services: jump starts, battery fitting, towing, fuel delivery, lockouts, tyres and recovery. At your car in 30 to 40 minutes."
   path="services/"
+  faq={faqs}
 >
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
     <div class="wrap">
-      <span class="eyebrow rv"><span class="dot"></span>Our services</span>
+      <span class="eyebrow rv"><span class="dot"></span>Our services, 24/7</span>
       <h1 class="rv rv-d1">
-        One call covers <span class="hl">every roadside problem</span>.
+        Every roadside problem, <span class="hl">one local team</span>.
       </h1>
       <p class="sub rv rv-d2">
-        Jump starts, batteries, towing, fuel, lockouts, tyres and full
-        recovery. A local technician reaches you usually within 30 to 40
-        minutes of your call, 24 hours a day.
+        Jump starts, batteries, towing, fuel delivery, lockouts, tyre changes
+        and full breakdown recovery across Birmingham. One call, one fixed
+        quote, and a technician usually at your car within 30 to 40 minutes.
       </p>
       <div class="hero-ctas rv rv-d2">
         <a href={phoneHref} class="btn btn-yellow">
@@ -89,37 +106,283 @@ const services = [
           <span class="arr-c" set:html={arrow} />
         </a>
       </div>
+      <p class="hero-eta rv rv-d2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+        At your car within 30 to 40 minutes of your call
+      </p>
+    </div>
+    <div class="hero-photo rv">
+      <div class="ph">
+        <img
+          src="/images/recovery-van-birmingham-night.webp"
+          alt="Birmingham Jump Start recovery van with amber beacons ready for a night callout"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+      </div>
+      <div class="hero-floats">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <div>
+            <strong>7 services</strong>
+            <span>One team handles them all</span>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <div>
+            <strong>30 to 40 minutes</strong>
+            <span>Usual response in Birmingham</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ============ SERVICE GRID ============ -->
+  <!-- ============ BLACK BAND ============ -->
+  <section class="band-black" aria-label="All services">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow on-dark"><span class="dot"></span>All services</span>
+        <h2>One call covers every roadside problem.</h2>
+        <p class="lede">
+          You do not need to know which service you need. Describe what
+          happened and we send the right help.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["Jump Start", "Battery Replacement", "Towing and Recovery", "Emergency Fuel Delivery", "Car Lockout", "Tyre Change", "Breakdown Recovery"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
   <section class="sec" id="services">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="eyebrow"><span class="dot"></span>What we do</span>
+        <span class="eyebrow"><span class="dot"></span>Services</span>
         <h2>Choose the service you need.</h2>
         <p class="lead">
-          Fixed quote on the phone before we set off. No membership, no
-          hidden charges.
+          Every job starts with a fixed quote on the phone. Agreed before we
+          set off and honoured when we arrive.
         </p>
       </div>
+
+      <article class="svc-hero-card rv">
+        <div class="svc-photo">
+          <img
+            src="/images/car-jump-start-birmingham.webp"
+            alt="Technician connecting jump leads to a car battery during a jump start in Birmingham"
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="800"
+          />
+        </div>
+        <div class="svc-info">
+          <div class="txt">
+            <span class="kicker">Our signature service</span>
+            <h3>Jump Start</h3>
+            <p>
+              Flat battery? We come to you and get the car running, usually in
+              minutes. Every jump start includes a free battery health check, so
+              you know whether the battery will let you down again.
+            </p>
+          </div>
+          <a class="svc-go" href="/services/jump-start/" aria-label="Jump start service details">
+            <span set:html={arrow} style="display:inline-flex" />
+          </a>
+        </div>
+      </article>
+
       <div class="svc-grid">
         {services.map((s, i) => (
-          <a href={s.href} class={`svc-card svc-link-card rv ${i % 2 === 1 ? "rv-d1" : ""}`} aria-label={`${s.t} service details`}>
-            <span class="svc-photo">
+          <article class={`svc-card rv ${i % 2 === 1 ? "rv-d1" : ""}`}>
+            <div class="svc-photo">
               <img src={s.img} alt={s.alt} loading="lazy" decoding="async" width="1200" height="800" />
-            </span>
-            <span class="svc-info">
-              <span class="txt">
+            </div>
+            <div class="svc-info">
+              <div class="txt">
                 <span class="kicker">Birmingham Jump Start</span>
-                <strong class="svc-t">{s.t}</strong>
-                <span class="svc-d">{s.d}</span>
-              </span>
-              <span class="svc-go" aria-hidden="true">
+                <h3>{s.t}</h3>
+                <p>{s.d}</p>
+              </div>
+              <a class="svc-go" href={s.href} aria-label={`${s.t} service details`}>
                 <span set:html={arrow} style="display:inline-flex" />
-              </span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ YELLOW BAND ============ -->
+  <section class="band-yellow" aria-label="Why one call is enough">
+    <div class="in">
+      <div class="wrap">
+        <span class="eyebrow on-yellow rv"><span class="dot"></span>Why it works</span>
+        <h2 class="rv rv-d1">One number. One team. No membership.</h2>
+        <p class="lede rv rv-d1">
+          The same promise on every service, every hour of every day.
+        </p>
+        <div class="circles">
+          <div class="circle rv">
+            <span class="circle-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
             </span>
-          </a>
+            <strong>30 to 40 minutes</strong>
+            <span>Usual response across Birmingham.</span>
+          </div>
+          <div class="circle rv rv-d1">
+            <span class="circle-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2H2v10l9.3 9.3a1 1 0 0 0 1.4 0l8.6-8.6a1 1 0 0 0 0-1.4L12 2zm3 7.5A1.5 1.5 0 1 1 16.5 8 1.5 1.5 0 0 1 15 9.5z" /></svg>
+            </span>
+            <strong>Fixed quote first</strong>
+            <span>Agreed on the phone, honoured on arrival.</span>
+          </div>
+          <div class="circle rv rv-d2">
+            <span class="circle-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm-1 3h2v6h-2zm0 8h2v2h-2z" /></svg>
+            </span>
+            <strong>No membership</strong>
+            <span>Pay per job. Nothing yearly, nothing hidden.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEO CONTENT ============ -->
+  <section class="sec" id="about-services">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Roadside help in Birmingham</span>
+        <h2>Breakdown cover without the membership.</h2>
+      </div>
+      <article class="legal rv">
+        <p>
+          Most drivers only think about breakdown cover twice a year: when they
+          pay for it, and when they break down. Birmingham Jump Start was built
+          for everyone in between. Instead of a yearly subscription with a
+          national call centre, you get a local Birmingham team on one number,
+          ready 24 hours a day. When your car will not start, you run out of
+          fuel, lock your keys inside or get a flat tyre, one call sends the
+          right help, usually within 30 to 40 minutes.
+        </p>
+        <h2>What our roadside services cover</h2>
+        <p>
+          A flat battery is the most common callout, and our jump start
+          service gets most cars running in minutes, with a free battery
+          health check so you know if the battery is dying. If the battery is
+          finished, we supply and fit the correct replacement at your car,
+          including AGM batteries for stop-start systems. Cars that cannot be
+          fixed at the roadside are towed safely to your home or garage, and
+          accident-damaged vehicles are recovered with the right equipment.
+          We also deliver emergency fuel when the tank runs dry, open cars
+          without damage when keys are locked inside, and fit your spare wheel
+          after a puncture. For anything bigger, our breakdown recovery takes
+          you and the car together, day or night.
+        </p>
+        <h2>Where we work</h2>
+        <p>
+          Our technicians are based in Birmingham and cover the whole West
+          Midlands: Walsall, Wolverhampton, Coventry, Solihull, Tamworth,
+          Sutton Coldfield, Dudley and everywhere between. Because we are
+          local, we know the car parks, the junctions and the shortcuts, which
+          is how we keep response times down. Every service runs 24 hours a
+          day, including nights, weekends and bank holidays, with a real
+          person answering the phone.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="sec" id="how">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>How it works</span>
+        <h2>From your call to moving again.</h2>
+        <p class="lead">
+          Every service follows the same four steps, so you always know what
+          happens next.
+        </p>
+      </div>
+      <div class="steps">
+        <article class="step rv">
+          <span class="num">01</span>
+          <h3>You call.</h3>
+          <p>
+            One number, answered 24/7 by a real person. Tell us where you are
+            and what happened.
+          </p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">02</span>
+          <h3>Fixed quote.</h3>
+          <p>
+            We agree the price on the phone before we set off. It does not
+            change when we arrive.
+          </p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">03</span>
+          <h3>We come to you.</h3>
+          <p>
+            The nearest technician heads straight to you, usually within 30 to
+            40 minutes.
+          </p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
+          <h3>Problem solved.</h3>
+          <p>
+            Fixed at the roadside or recovered to where it needs to go. You
+            drive away or ride with us.
+          </p>
+        </article>
+      </div>
+      <div class="steps-cta rv">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>FAQ</span>
+        <h2>Questions drivers ask us.</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f, i) => (
+          <div class={`faq rv ${i % 3 === 1 ? "rv-d1" : i % 3 === 2 ? "rv-d2" : ""}`}>
+            <button aria-expanded="false" aria-controls={`faq-a-${i}`} id={`faq-q-${i}`}>
+              <span>{f.q}</span>
+              <span class="plus" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" /></svg>
+              </span>
+            </button>
+            <div class="a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
+              <div class="a-in">
+                <p>{f.a}</p>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </div>
@@ -128,10 +391,10 @@ const services = [
   <!-- ============ FINAL CTA ============ -->
   <section class="final">
     <div class="in rv">
-      <h2>Not sure which service you need?</h2>
+      <h2>Need help right now?</h2>
       <p>
-        Call and describe what happened. A real person answers and sends the
-        right help, usually reaching you within 30 to 40 minutes.
+        Call and a real person answers. We dispatch help straight away,
+        usually reaching you within 30 to 40 minutes.
       </p>
       <div class="row">
         <a href={phoneHref} class="btn btn-black">
