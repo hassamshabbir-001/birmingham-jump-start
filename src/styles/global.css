@@ -1581,6 +1581,10 @@ body {
   .nav-cta {
     display: none;
   }
+  /* burger stays pinned to the pill's right edge now the call pill is hidden */
+  .burger {
+    margin-left: auto;
+  }
   .nav-in {
     gap: 12px;
     padding: 8px 8px 8px 18px;
