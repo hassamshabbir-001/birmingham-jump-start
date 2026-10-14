@@ -29,6 +29,7 @@ const businessJsonLd = {
   description:
     "24/7 car jump start and vehicle recovery service in Birmingham and the West Midlands. Flat battery jump starts, towing, breakdown and accident recovery.",
   url: siteUrl,
+  logo: siteUrl + "images/logo-header.webp",
   telephone: "+447477649906",
   priceRange: "££",
   image: siteUrl + "og-cover.jpg",
@@ -127,7 +128,9 @@ const breadcrumbJsonLd =
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -166,10 +169,15 @@ const breadcrumbJsonLd =
     <header class="nav" id="nav">
       <div class="nav-in">
         <a href="#top" class="wordmark" aria-label="Birmingham Jump Start home">
-          <span class="bolt" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
-          </span>
-          <span>Birmingham Jump Start<small>24/7 Recovery</small></span>
+          <img
+            src="/images/logo-header.webp"
+            alt="Birmingham Jump Start"
+            width="640"
+            height="213"
+            class="wordmark-logo"
+            loading="eager"
+            decoding="async"
+          />
         </a>
         <nav class="nav-links" aria-label="Primary">
           <div class="nav-drop">
@@ -235,10 +243,15 @@ const breadcrumbJsonLd =
         <div class="foot-grid">
           <div class="foot-brand">
             <a href="#top" class="wordmark" aria-label="Birmingham Jump Start home">
-              <span class="bolt" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
-              </span>
-              <span>Birmingham Jump Start<small>24/7 Recovery</small></span>
+              <img
+                src="/images/logo-footer.webp"
+                alt="Birmingham Jump Start"
+                width="480"
+                height="480"
+                class="foot-logo"
+                loading="lazy"
+                decoding="async"
+              />
             </a>
             <p>
               Birmingham's 24/7 jump start and recovery specialists. One call and

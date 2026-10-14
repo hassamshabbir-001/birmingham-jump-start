@@ -211,6 +211,16 @@ h3 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.wordmark-logo {
+  display: block;
+  height: 46px;
+  width: auto;
+}
+.foot-logo {
+  display: block;
+  width: 200px;
+  height: auto;
+}
 .bolt {
   display: inline-flex;
   align-items: center;
