@@ -1,0 +1,174 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phoneHref = "tel:+447477649906";
+const phoneLabel = "07477 649906";
+const waHref =
+  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20help.";
+
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+
+const faqs = [
+  {
+    q: "How fast can you tow my car?",
+    a: "Usually within 30 to 40 minutes of your call in Birmingham. We confirm the arrival time on the phone.",
+  },
+  {
+    q: "Where can you take my car?",
+    a: "Anywhere you choose: your home, a garage, a dealership or an auction site.",
+  },
+  {
+    q: "Can you tow accident-damaged cars?",
+    a: "Yes. We recover accident and non-runner vehicles with the right equipment to avoid further damage.",
+  },
+  {
+    q: "How much does towing cost?",
+    a: "A fixed quote on the phone before we set off, based on distance. No hidden extras.",
+  },
+];
+---
+
+<BaseLayout
+  title="Car Towing and Recovery Birmingham | 24/7 Tow Service"
+  description="Need a tow in Birmingham? We recover your car safely to your home, garage or destination, 24/7, usually within 30 to 40 minutes. Call 07477 649906."
+  path="services/towing-and-recovery/"
+  faq={faqs}
+>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow rv"><span class="dot"></span>Services</span>
+      <h1 class="rv rv-d1">
+        Towed safely, <span class="hl">wherever it needs to go</span>.
+      </h1>
+      <p class="sub rv rv-d2">
+        Car not starting at all? Accident damage? We tow it safely to your home, your garage, or wherever it needs to go, anywhere in Birmingham and the West Midlands.
+      </p>
+      <div class="hero-ctas rv rv-d2">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+      <p class="hero-eta rv rv-d2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+        At your car within 30 to 40 minutes of your call
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INCLUDED ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>What you get</span>
+        <h2>Recovery without the drama.</h2>
+        <p class="lead">Modern equipment, trained operators, and your car treated like it is our own from pickup to drop-off.</p>
+      </div>
+      <div class="duo">
+        <div class="duo-card duo-white rv">
+          <div class="ph">
+            <img
+              src="/images/car-towing-recovery-birmingham.webp"
+              alt="Recovery truck loading a broken-down car on a Birmingham street"
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="800"
+            />
+          </div>
+        </div>
+        <div class="duo-card duo-black rv rv-d1">
+          <div>
+            <h3>Every visit includes</h3>
+            <ul class="tick-list">
+              <li>Local towing across Birmingham and the West Midlands</li>
+              <li>Your choice of destination: home, garage or auction</li>
+              <li>Accident and non-runner recovery</li>
+              <li>Secure loading with wheel-lift and flatbed options</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>How it works</span>
+        <h2>From your call to moving again.</h2>
+      </div>
+      <div class="steps">
+        <article class="step rv">
+          <span class="num">01</span>
+          <h3>You call.</h3>
+          <p>One number, answered 24/7 by a real person. Fixed quote on the phone before we set off.</p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">02</span>
+          <h3>We come to you.</h3>
+          <p>The nearest technician heads straight to you, usually within 30 to 40 minutes.</p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">03</span>
+          <h3>Delivered safely.</h3>
+          <p>Your car is secured, transported and handed over at your chosen destination. You sign, we leave.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>FAQ</span>
+        <h2>Questions drivers ask us.</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f, i) => (
+          <div class={`faq rv ${i % 3 === 1 ? "rv-d1" : i % 3 === 2 ? "rv-d2" : ""}`}>
+            <button aria-expanded="false" aria-controls={`faq-a-${i}`} id={`faq-q-${i}`}>
+              <span>{f.q}</span>
+              <span class="plus" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" /></svg>
+              </span>
+            </button>
+            <div class="a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
+              <div class="a-in">
+                <p>{f.a}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final">
+    <div class="in rv">
+      <h2>Still stuck? One call fixes it.</h2>
+      <p>
+        Call now and a real person answers. We dispatch help straight away,
+        usually reaching you within 30 to 40 minutes.
+      </p>
+      <div class="row">
+        <a href={phoneHref} class="btn btn-black">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

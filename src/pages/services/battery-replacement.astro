@@ -1,0 +1,174 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phoneHref = "tel:+447477649906";
+const phoneLabel = "07477 649906";
+const waHref =
+  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20help.";
+
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+
+const faqs = [
+  {
+    q: "How do I know I need a new battery?",
+    a: "If the car will not hold a charge after a jump start, or the battery is over 4 years old and struggling, it is time. We test it free on every visit.",
+  },
+  {
+    q: "Do you fit batteries for stop-start cars?",
+    a: "Yes. We carry AGM and EFB batteries for stop-start systems and register them to the car where required.",
+  },
+  {
+    q: "How long does fitting take?",
+    a: "Usually 20 to 30 minutes at your location, including testing the charging system.",
+  },
+  {
+    q: "What happens to my old battery?",
+    a: "We take it away and recycle it responsibly at no extra charge.",
+  },
+];
+---
+
+<BaseLayout
+  title="Car Battery Replacement Birmingham | Supplied and Fitted 24/7"
+  description="Dead car battery in Birmingham? We supply and fit the right battery at your location within 30 to 40 minutes, 24/7. Old battery taken away. Call 07477 649906."
+  path="services/battery-replacement/"
+  faq={faqs}
+>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow rv"><span class="dot"></span>Services</span>
+      <h1 class="rv rv-d1">
+        New battery, <span class="hl">fitted at your car</span>.
+      </h1>
+      <p class="sub rv rv-d2">
+        Battery finished? We bring the right battery for your car and fit it where you are parked. One visit solves the whole problem, and we take the old battery away.
+      </p>
+      <div class="hero-ctas rv rv-d2">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+      <p class="hero-eta rv rv-d2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+        At your car within 30 to 40 minutes of your call
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INCLUDED ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>What you get</span>
+        <h2>The right battery, fitted properly.</h2>
+        <p class="lead">We match the battery to your exact car, including stop-start and hybrid systems, and register it where the car needs it.</p>
+      </div>
+      <div class="duo">
+        <div class="duo-card duo-white rv">
+          <div class="ph">
+            <img
+              src="/images/car-battery-replacement-birmingham.webp"
+              alt="Technician fitting a new car battery under an open bonnet in Birmingham"
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="800"
+            />
+          </div>
+        </div>
+        <div class="duo-card duo-black rv rv-d1">
+          <div>
+            <h3>Every visit includes</h3>
+            <ul class="tick-list">
+              <li>Correct battery for your make, model and engine</li>
+              <li>Fitted at your home, work or the roadside</li>
+              <li>Battery coding and registration where required</li>
+              <li>Old battery removed and recycled responsibly</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>How it works</span>
+        <h2>From your call to moving again.</h2>
+      </div>
+      <div class="steps">
+        <article class="step rv">
+          <span class="num">01</span>
+          <h3>You call.</h3>
+          <p>One number, answered 24/7 by a real person. Fixed quote on the phone before we set off.</p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">02</span>
+          <h3>We come to you.</h3>
+          <p>The nearest technician heads straight to you, usually within 30 to 40 minutes.</p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">03</span>
+          <h3>Fitted and tested.</h3>
+          <p>New battery in, terminals cleaned and tightened, charging system checked. You drive away with a warranty.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>FAQ</span>
+        <h2>Questions drivers ask us.</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f, i) => (
+          <div class={`faq rv ${i % 3 === 1 ? "rv-d1" : i % 3 === 2 ? "rv-d2" : ""}`}>
+            <button aria-expanded="false" aria-controls={`faq-a-${i}`} id={`faq-q-${i}`}>
+              <span>{f.q}</span>
+              <span class="plus" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" /></svg>
+              </span>
+            </button>
+            <div class="a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
+              <div class="a-in">
+                <p>{f.a}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final">
+    <div class="in rv">
+      <h2>Still stuck? One call fixes it.</h2>
+      <p>
+        Call now and a real person answers. We dispatch help straight away,
+        usually reaching you within 30 to 40 minutes.
+      </p>
+      <div class="row">
+        <a href={phoneHref} class="btn btn-black">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

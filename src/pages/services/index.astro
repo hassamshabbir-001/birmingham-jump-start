@@ -1,0 +1,148 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phoneHref = "tel:+447477649906";
+const phoneLabel = "07477 649906";
+const waHref =
+  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20help.";
+
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+
+const services = [
+  {
+    href: "/services/jump-start/",
+    img: "/images/car-jump-start-birmingham.webp",
+    alt: "Birmingham Jump Start technician connecting jump leads to a car battery",
+    t: "Jump Start",
+    d: "Flat battery running again in minutes, with a free battery health check.",
+  },
+  {
+    href: "/services/battery-replacement/",
+    img: "/images/car-battery-replacement-birmingham.webp",
+    alt: "Technician fitting a new car battery under an open bonnet in Birmingham",
+    t: "Battery Replacement",
+    d: "The right battery supplied and fitted at your car, old one taken away.",
+  },
+  {
+    href: "/services/towing-and-recovery/",
+    img: "/images/car-towing-recovery-birmingham.webp",
+    alt: "Recovery truck loading a broken-down car on a Birmingham street",
+    t: "Towing and Recovery",
+    d: "Towed safely to your home, garage or wherever it needs to go.",
+  },
+  {
+    href: "/services/emergency-fuel-delivery/",
+    img: "/images/emergency-fuel-delivery-birmingham.webp",
+    alt: "Technician delivering emergency fuel to a stranded car in Birmingham",
+    t: "Emergency Fuel Delivery",
+    d: "Petrol or diesel brought to you, enough to reach the nearest station.",
+  },
+  {
+    href: "/services/car-lockout/",
+    img: "/images/car-lockout-service-birmingham.webp",
+    alt: "Technician unlocking a car door with professional tools in Birmingham",
+    t: "Car Lockout",
+    d: "Locked keys? Opened without damage, back behind the wheel fast.",
+  },
+  {
+    href: "/services/tyre-change/",
+    img: "/images/mobile-tyre-change-birmingham.webp",
+    alt: "Mobile tyre change at the roadside in Birmingham",
+    t: "Tyre Change",
+    d: "Flat tyre? We fit your spare where you are, torqued to spec.",
+  },
+  {
+    href: "/services/breakdown-recovery/",
+    img: "/images/recovery-van-birmingham-night.webp",
+    alt: "Birmingham Jump Start recovery van with amber beacons at night",
+    t: "Breakdown Recovery",
+    d: "You and the car recovered together, day or night, across the West Midlands.",
+  },
+];
+---
+
+<BaseLayout
+  title="Our Services | Birmingham Jump Start | 24/7 Roadside Help"
+  description="Every roadside service in one place: jump starts, battery replacement, towing, fuel delivery, lockouts, tyre changes and full breakdown recovery across Birmingham, 24/7."
+  path="services/"
+>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow rv"><span class="dot"></span>Our services</span>
+      <h1 class="rv rv-d1">
+        One call covers <span class="hl">every roadside problem</span>.
+      </h1>
+      <p class="sub rv rv-d2">
+        Jump starts, batteries, towing, fuel, lockouts, tyres and full
+        recovery. A local technician reaches you usually within 30 to 40
+        minutes of your call, 24 hours a day.
+      </p>
+      <div class="hero-ctas rv rv-d2">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE GRID ============ -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>What we do</span>
+        <h2>Choose the service you need.</h2>
+        <p class="lead">
+          Fixed quote on the phone before we set off. No membership, no
+          hidden charges.
+        </p>
+      </div>
+      <div class="svc-grid">
+        {services.map((s, i) => (
+          <a href={s.href} class={`svc-card svc-link-card rv ${i % 2 === 1 ? "rv-d1" : ""}`} aria-label={`${s.t} service details`}>
+            <span class="svc-photo">
+              <img src={s.img} alt={s.alt} loading="lazy" decoding="async" width="1200" height="800" />
+            </span>
+            <span class="svc-info">
+              <span class="txt">
+                <span class="kicker">Birmingham Jump Start</span>
+                <strong class="svc-t">{s.t}</strong>
+                <span class="svc-d">{s.d}</span>
+              </span>
+              <span class="svc-go" aria-hidden="true">
+                <span set:html={arrow} style="display:inline-flex" />
+              </span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final">
+    <div class="in rv">
+      <h2>Not sure which service you need?</h2>
+      <p>
+        Call and describe what happened. A real person answers and sends the
+        right help, usually reaching you within 30 to 40 minutes.
+      </p>
+      <div class="row">
+        <a href={phoneHref} class="btn btn-black">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

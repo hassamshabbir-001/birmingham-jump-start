@@ -1,0 +1,174 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phoneHref = "tel:+447477649906";
+const phoneLabel = "07477 649906";
+const waHref =
+  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20help.";
+
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+
+const faqs = [
+  {
+    q: "What if I do not have a spare wheel?",
+    a: "Many new cars come with sealant kits instead. We can still help, or recover the car to a tyre shop.",
+  },
+  {
+    q: "Can you repair the puncture at the roadside?",
+    a: "We fit your spare to get you moving. A proper puncture repair needs a workshop, and we will tell you honestly if it is repairable.",
+  },
+  {
+    q: "Is it safe to change a tyre on a busy road?",
+    a: "We position the van to shield the work area and use warning beacons. If the location is unsafe, we recover the car instead.",
+  },
+  {
+    q: "How fast can you reach me?",
+    a: "Usually within 30 to 40 minutes of your call in Birmingham.",
+  },
+];
+---
+
+<BaseLayout
+  title="Mobile Tyre Change Birmingham | Flat Tyre Fitted at Roadside 24/7"
+  description="Flat tyre in Birmingham? We come to you and fit your spare at the roadside, usually within 30 to 40 minutes. Call 07477 649906."
+  path="services/tyre-change/"
+  faq={faqs}
+>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow rv"><span class="dot"></span>Services</span>
+      <h1 class="rv rv-d1">
+        Flat tyre? <span class="hl">Changed where you are</span>.
+      </h1>
+      <p class="sub rv rv-d2">
+        Puncture at the roadside? No jack, no safe place to work? We come to you and fit your spare properly, so you can drive on safely.
+      </p>
+      <div class="hero-ctas rv rv-d2">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+      <p class="hero-eta rv rv-d2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+        At your car within 30 to 40 minutes of your call
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INCLUDED ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>What you get</span>
+        <h2>Back on four wheels, safely.</h2>
+        <p class="lead">Proper jacking, correct torque on the wheel nuts, and a pressure check before you drive off.</p>
+      </div>
+      <div class="duo">
+        <div class="duo-card duo-white rv">
+          <div class="ph">
+            <img
+              src="/images/mobile-tyre-change-birmingham.webp"
+              alt="Mobile tyre change at the roadside in Birmingham"
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="800"
+            />
+          </div>
+        </div>
+        <div class="duo-card duo-black rv rv-d1">
+          <div>
+            <h3>Every visit includes</h3>
+            <ul class="tick-list">
+              <li>Spare wheel fitted at your location</li>
+              <li>Wheel nuts torqued to manufacturer spec</li>
+              <li>Tyre pressure checked on all four wheels</li>
+              <li>Honest advice on repair vs replacement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>How it works</span>
+        <h2>From your call to moving again.</h2>
+      </div>
+      <div class="steps">
+        <article class="step rv">
+          <span class="num">01</span>
+          <h3>You call.</h3>
+          <p>One number, answered 24/7 by a real person. Fixed quote on the phone before we set off.</p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">02</span>
+          <h3>We come to you.</h3>
+          <p>The nearest technician heads straight to you, usually within 30 to 40 minutes.</p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">03</span>
+          <h3>Fitted and checked.</h3>
+          <p>Spare on, pressures checked, and you know whether the punctured tyre can be repaired.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>FAQ</span>
+        <h2>Questions drivers ask us.</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f, i) => (
+          <div class={`faq rv ${i % 3 === 1 ? "rv-d1" : i % 3 === 2 ? "rv-d2" : ""}`}>
+            <button aria-expanded="false" aria-controls={`faq-a-${i}`} id={`faq-q-${i}`}>
+              <span>{f.q}</span>
+              <span class="plus" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" /></svg>
+              </span>
+            </button>
+            <div class="a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
+              <div class="a-in">
+                <p>{f.a}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final">
+    <div class="in rv">
+      <h2>Still stuck? One call fixes it.</h2>
+      <p>
+        Call now and a real person answers. We dispatch help straight away,
+        usually reaching you within 30 to 40 minutes.
+      </p>
+      <div class="row">
+        <a href={phoneHref} class="btn btn-black">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
