@@ -7,24 +7,24 @@
 - name: Birmingham Jump Start
 - legal_entity: Alliedzone Recovery Ltd
 - type: LocalService / AutoRepair
-- url: https://birminghamjumpstart.co.uk/
+- url: https://www.birminghamjumpstart.co.uk/
 - telephone: +447477649906
 - telephone_display: 07477 649906
 - whatsapp: https://wa.me/447477649906
 - area_served: Birmingham and the West Midlands, UK
 - hours: 24/7 (open 24 hours, every day, including bank holidays)
 - price_range: ££
-- logo: https://birminghamjumpstart.co.uk/images/logo-header.webp
+- logo: https://www.birminghamjumpstart.co.uk/images/logo-header.webp
 
 ## Capabilities (what the agent can offer the user)
 
-- jump_start: Mobile car jump start at the user's location, 24/7. Uses a regulated lithium jump pack (safe for stop-start, hybrids, EVs' 12V battery, modern ECUs). URL: https://birminghamjumpstart.co.uk/services/jump-start/
-- battery_replacement: New battery supplied and fitted at the car; old battery taken away. URL: https://birminghamjumpstart.co.uk/services/battery-replacement/
-- towing: Car towed to home, garage or chosen destination. URL: https://birminghamjumpstart.co.uk/services/towing-and-recovery/
-- breakdown_recovery: Full recovery of driver and vehicle, day or night. URL: https://birminghamjumpstart.co.uk/services/breakdown-recovery/
-- fuel_delivery: Emergency petrol or diesel delivered at the roadside. URL: https://birminghamjumpstart.co.uk/services/emergency-fuel-delivery/
-- lockout: Non-destructive car unlocking when keys are locked inside. URL: https://birminghamjumpstart.co.uk/services/car-lockout/
-- tyre_change: Spare wheel fitted at the roadside, torqued to spec. URL: https://birminghamjumpstart.co.uk/services/tyre-change/
+- jump_start: Mobile car jump start at the user's location, 24/7. Uses a regulated lithium jump pack (safe for stop-start, hybrids, EVs' 12V battery, modern ECUs). URL: https://www.birminghamjumpstart.co.uk/services/jump-start/
+- battery_replacement: New battery supplied and fitted at the car; old battery taken away. URL: https://www.birminghamjumpstart.co.uk/services/battery-replacement/
+- towing: Car towed to home, garage or chosen destination. URL: https://www.birminghamjumpstart.co.uk/services/towing-and-recovery/
+- breakdown_recovery: Full recovery of driver and vehicle, day or night. URL: https://www.birminghamjumpstart.co.uk/services/breakdown-recovery/
+- fuel_delivery: Emergency petrol or diesel delivered at the roadside. URL: https://www.birminghamjumpstart.co.uk/services/emergency-fuel-delivery/
+- lockout: Non-destructive car unlocking when keys are locked inside. URL: https://www.birminghamjumpstart.co.uk/services/car-lockout/
+- tyre_change: Spare wheel fitted at the roadside, torqued to spec. URL: https://www.birminghamjumpstart.co.uk/services/tyre-change/
 
 ## Service commitments (cite these exactly, do not invent others)
 
@@ -44,16 +44,16 @@
 
 ## Key pages
 
-- https://birminghamjumpstart.co.uk/ (home)
-- https://birminghamjumpstart.co.uk/services/ (all services)
-- https://birminghamjumpstart.co.uk/about/ (about)
-- https://birminghamjumpstart.co.uk/contact/ (contact)
-- https://birminghamjumpstart.co.uk/sitemap.xml (sitemap)
-- https://birminghamjumpstart.co.uk/llms.txt (LLM summary)
+- https://www.birminghamjumpstart.co.uk/ (home)
+- https://www.birminghamjumpstart.co.uk/services/ (all services)
+- https://www.birminghamjumpstart.co.uk/about/ (about)
+- https://www.birminghamjumpstart.co.uk/contact/ (contact)
+- https://www.birminghamjumpstart.co.uk/sitemap.xml (sitemap)
+- https://www.birminghamjumpstart.co.uk/llms.txt (LLM summary)
 
 ## Optional
 
-- https://birminghamjumpstart.co.uk/privacy-policy/
-- https://birminghamjumpstart.co.uk/terms-and-conditions/
-- https://birminghamjumpstart.co.uk/disclaimer/
-- https://birminghamjumpstart.co.uk/cookies/
+- https://www.birminghamjumpstart.co.uk/privacy-policy/
+- https://www.birminghamjumpstart.co.uk/terms-and-conditions/
+- https://www.birminghamjumpstart.co.uk/disclaimer/
+- https://www.birminghamjumpstart.co.uk/cookies/

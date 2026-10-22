@@ -3,6 +3,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://birminghamjumpstart.co.uk',
+  site: 'https://www.birminghamjumpstart.co.uk',
   compressHTML: true,
 });
