@@ -1,0 +1,518 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phoneHref = "tel:+447477649906";
+const phoneLabel = "07477 649906";
+const waHref =
+  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20help%20with%20a%20hybrid%20or%20electric%20car.";
+
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+
+const faqs = [
+  {
+    q: "Can a hybrid car be jump started from another car?",
+    a: "It is safer not to. A regulated jump pack gives controlled power to the 12V system, while jump leads from another car can cause a voltage spike and damage sensitive electronics. We use a regulated pack and the correct terminals for your model, which is why most drivers in Birmingham call us rather than risk it.",
+  },
+  {
+    q: "Does boosting the 12V battery affect the main traction battery?",
+    a: "No, when it is done correctly. We only boost the separate 12V battery or its dedicated jump terminals. We never connect to the high voltage traction battery and we never touch the orange high voltage cables. Once the 12V system wakes up, the car can close its contactors and use the traction battery as normal.",
+  },
+  {
+    q: "My EV shows a full charge but will not unlock or start. Why?",
+    a: "Because the locks, dashboard and computers run on the separate 12V battery, not the traction battery. If the 12V battery is flat, the car cannot wake up even if the main battery is at 100 percent. Boosting the 12V battery is usually all that is needed, followed by a free battery health check to see if it needs replacing.",
+  },
+  {
+    q: "Where is the 12V battery on a Tesla, Prius or Leaf?",
+    a: "It varies by model and year. A Nissan Leaf usually has its 12V battery under the bonnet, many Toyota hybrids have a jump terminal in the fuse box under the bonnet with the battery in the boot, and a Tesla has a low voltage battery under a panel behind the front boot. Always check the handbook for your exact car, or call us and we will identify the correct points on arrival.",
+  },
+  {
+    q: "How long should a hybrid or EV 12V battery last?",
+    a: "Typically three to five years, sometimes less if the car does short journeys, is left parked for long periods, or is used mainly for school runs and shopping trips around Birmingham. If yours needs repeated boosts, warning messages or slow waking up, it is usually time for a replacement rather than another jump start.",
+  },
+  {
+    q: "What if my EV will not move at all after a boost?",
+    a: "Do not try to tow it with a rope and do not drag it. Most EVs and many hybrids must be moved on a flatbed with all wheels off the ground, or with specialist equipment. We will assess the car, try transport mode where the manufacturer allows it, and arrange safe recovery to your home, a charger or a garage.",
+  },
+];
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Hybrid or EV will not start? It is usually the small 12V battery, not the big one",
+  description:
+    "Hybrid or EV will not start in Birmingham? We boost the 12V battery safely, usually in 30 to 40 minutes. Call 07477 649906 for a fixed quote.",
+  image: "https://www.birminghamjumpstart.co.uk/images/car-jump-start-birmingham.webp?v=3",
+  datePublished: "2026-10-14",
+  dateModified: "2026-10-14",
+  author: {
+    "@type": "Organization",
+    "@id": "https://www.birminghamjumpstart.co.uk/#business",
+    name: "Birmingham Jump Start",
+  },
+  publisher: {
+    "@type": "Organization",
+    "@id": "https://www.birminghamjumpstart.co.uk/#business",
+    name: "Birmingham Jump Start",
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://www.birminghamjumpstart.co.uk/blog/jump-start-hybrid-electric-cars-birmingham/",
+  },
+};
+---
+
+<BaseLayout
+  heroImage="/images/car-jump-start-birmingham.webp?v=3"
+  title="Hybrid and Electric Car Jump Start Birmingham"
+  description="Hybrid or EV will not start in Birmingham? We boost the 12V battery safely, usually in 30 to 40 minutes. Call 07477 649906 for a fixed quote."
+  path="blog/jump-start-hybrid-electric-cars-birmingham/"
+  faq={faqs}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+
+  <style>
+    .blog-meta { color: var(--gray); font-weight: 600; font-size: 0.98rem; margin: 18px auto 0; text-align: center; }
+    .quick-answer { background: var(--white); border: 2px solid var(--black); border-radius: var(--radius-md); padding: 36px 34px; max-width: 860px; margin: 0 auto; box-shadow: var(--shadow-sm); }
+    .quick-answer h2 { font-size: 1.6rem; margin-bottom: 14px; }
+    .quick-answer p { margin: 0 0 14px; color: var(--ink); line-height: 1.65; }
+    .quick-answer p:last-child { margin-bottom: 0; }
+    .article-body { max-width: 820px; margin: 0 auto; }
+    .article-body p { color: var(--gray); line-height: 1.75; margin: 0 0 18px; font-size: 1.05rem; }
+    .article-body p strong, .article-body li strong { color: var(--ink); }
+    .article-body a { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 3px; text-underline-offset: 3px; }
+    .article-body ul { color: var(--gray); line-height: 1.75; margin: 0 0 18px; padding-left: 22px; font-size: 1.05rem; }
+    .article-body li { margin-bottom: 10px; }
+    .safety-warning { background: #fff3f3; border: 2px solid #b42318; border-radius: var(--radius-md); padding: 30px 32px; max-width: 860px; margin: 36px auto 0; }
+    .safety-warning h3 { color: #b42318; font-size: 1.35rem; margin-bottom: 10px; }
+    .safety-warning p { margin: 0; color: var(--ink); line-height: 1.65; }
+    .related-grid { display: grid; gap: 20px; }
+    @media (min-width: 760px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow rv"><span class="dot"></span>Hybrid and EV guide, Birmingham</span>
+      <h1 class="rv rv-d1">
+        Hybrid or EV will not start? It is usually the <span class="hl">small 12V battery</span>, not the big one.
+      </h1>
+      <p class="blog-meta rv rv-d1"><time datetime="2026-10-14">14 October 2026</time> &middot; Birmingham Jump Start</p>
+      <p class="sub rv rv-d2">
+        Your dashboard says the main battery is full, yet the car will not unlock, will not wake up and will not go into Ready mode. That confusing fault catches out hybrid and electric car drivers across Birmingham every week. This guide explains why it happens, where the 12V battery hides, and how a professional boost gets you moving safely.
+      </p>
+      <div class="hero-ctas rv rv-d2">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+      <p class="hero-eta rv rv-d2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+        At your car within 30 to 40 minutes of your call
+      </p>
+    </div>
+    <div class="hero-photo rv">
+      <div class="ph">
+        <img
+          src="/images/car-jump-start-birmingham.webp?v=3"
+          srcset="/images/car-jump-start-birmingham-mobile.webp?v=3 640w, /images/car-jump-start-birmingham.webp?v=3 1280w"
+          sizes="(max-width: 640px) 640px, 1280px"
+          alt="Birmingham Jump Start technician connecting jump leads beside the branded recovery van in Birmingham"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+      </div>
+      <div class="hero-floats">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <div>
+            <strong>12V boost, not traction battery</strong>
+            <span>Correct procedure for your make</span>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <div>
+            <strong>Free battery health check</strong>
+            <span>With every hybrid and EV visit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUICK ANSWER ============ -->
+  <section class="sec" id="quick-answer">
+    <div class="wrap">
+      <div class="quick-answer rv">
+        <span class="eyebrow"><span class="dot"></span>Quick answer</span>
+        <h2 style="margin-top: 18px;">Yes, you can jump start a hybrid or electric car, but only via its 12V battery.</h2>
+        <p>
+          <strong>Yes.</strong> Hybrids and fully electric cars have a separate 12V battery as well as the large traction battery. When the car will not start, you boost that 12V battery, or its dedicated jump terminals, using the correct procedure for the make and model. You never connect to the traction battery and you never touch the high voltage system.
+        </p>
+        <p>
+          If you are stranded now, our <a href="/services/jump-start/">mobile jump start service in Birmingham</a> does this safely with a regulated pack, usually within 30 to 40 minutes of your call, with a free battery health check included. Call <a href={phoneHref}>{phoneLabel}</a> for a fixed quote before we set off.
+        </p>
+      </div>
+      <div class="safety-warning rv" role="alert">
+        <h3>Safety warning: never touch the orange cables.</h3>
+        <p>
+          Bright orange cables carry high voltage from the traction battery and can cause serious injury or death. Never touch, cut, disconnect or connect anything to orange cables, the traction battery pack or any component marked with a high voltage warning. If you can see damaged orange cabling after a collision, keep clear of the car and call for professional help.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLACK BAND ============ -->
+  <section class="band-black" aria-label="Hybrid and EV jump start facts">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow on-dark"><span class="dot"></span>The key facts</span>
+        <h2>Full main battery, flat 12V battery. That is the fault, most of the time.</h2>
+        <p class="lede">
+          It feels like a major failure, but in most cases the cure is a careful 12V boost and a proper test, not a new traction battery and not a long stay in a workshop.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["Separate 12V battery on every hybrid and EV", "Never touch orange high voltage cables", "Regulated pack, safe for electronics", "30 to 40 minute response", "Free battery health check"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ WHY IT WILL NOT START ============ -->
+  <section class="sec" id="why">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Why it happens</span>
+        <h2>Why a hybrid or EV with a full charge still will not start.</h2>
+        <p class="lead">
+          Think of the car as having two jobs. The traction battery drives the wheels. The 12V battery runs the car itself: locks, lights, computers and the switches that connect the traction battery in the first place.
+        </p>
+      </div>
+      <div class="article-body rv">
+        <p>
+          When you press the power button on a hybrid or EV, there is no starter motor cranking an engine in the usual way. Instead, the 12V system wakes the computers, checks the key, releases the steering and parking locks, and closes large electrical contactors inside the traction battery pack. Only then can high voltage power flow and the car display Ready. If the 12V battery is flat, none of that sequence can begin. The screens stay dark, the doors may not unlock with the fob, and the car appears completely dead, even though the main battery could be at 90 or 100 percent.
+        </p>
+        <p>
+          The 12V battery on a hybrid or EV is also smaller and works differently from a petrol car battery. It is not used to crank a starter motor, so manufacturers often fit a compact battery that is charged from the traction battery through a DC to DC converter while the car is in Ready mode. Short journeys around Birmingham, Solihull or Sutton Coldfield may not give it long enough to recharge properly. Leaving the car at Birmingham Airport or the NEC for a week or two, leaving an interior light on, a dashcam running in parking mode, cold weather, and simple age all drain it further. A battery that coped in summer can fail on the first cold morning in Edgbaston or Erdington.
+        </p>
+        <p>
+          This is why the fault is so common on cars that are otherwise reliable, and why it is different from a conventional flat battery. If your symptoms are different, with clicking, dim lights or a car that started yesterday and not today, our guide on <a href="/blog/car-wont-start-birmingham/">why your car will not start in Birmingham</a> covers the wider causes, and our general <a href="/blog/how-to-jump-start-a-car-safely/">guide to jump starting a car safely</a> explains the basic principles for petrol and diesel cars. For hybrids and EVs, though, the 12V battery should always be your first suspect.
+        </p>
+      </div>
+      <div class="why-grid" style="margin-top: 36px;">
+        <article class="why-card w-white rv">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg></span>
+          <h3>The computers need 12 volts.</h3>
+          <p>Keyless entry, dashboards, brake boosters and safety systems all run on 12 volts. No 12 volt power means no wake up, no Ready mode and no drive, regardless of traction charge.</p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg></span>
+          <h3>Short trips drain it slowly.</h3>
+          <p>School runs in Kings Heath, shopping in Walsall or a commute into the city centre may end before the DC to DC converter has fully recharged the 12V battery, so it weakens a little every day.</p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z" /></svg></span>
+          <h3>Parked up means drained.</h3>
+          <p>Alarms, keyless receivers and telematics keep sipping power while the car is parked. A fortnight at an airport car park or on a street in Coventry is enough to flatten a weak 12V battery completely.</p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg></span>
+          <h3>Age catches up quietly.</h3>
+          <p>Most 12V batteries last three to five years. Hybrids and EVs give fewer warning signs than petrol cars, because there is no slow cranking to listen for. One morning it works, the next it does not.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHERE IS THE 12V BATTERY ============ -->
+  <section class="sec" id="where">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Finding the right terminals</span>
+        <h2>Where the 12V battery and jump terminals are.</h2>
+        <p class="lead">
+          There is no single standard place. The list below is general guidance only. Layout varies by model, year and trim, so always check your handbook or the label under the bonnet before connecting anything.
+        </p>
+      </div>
+      <div class="article-body rv">
+        <ul>
+          <li><strong>Toyota hybrids, including Prius, Corolla Hybrid, C-HR and RAV4 Hybrid:</strong> the 12V battery is often in the boot or under a rear panel, but Toyota usually provides a dedicated positive jump terminal inside the fuse box under the bonnet, with a marked metal point for the negative connection. Use those terminals, not the battery itself, where the handbook says so.</li>
+          <li><strong>Hyundai hybrids and EVs, including Ioniq and Kona:</strong> some models have the 12V battery under the bonnet or in the boot, and some Hyundai and Kia models integrate the 12V supply into the main pack with a 12V Battery Reset button on the dashboard. If your car has that button, the handbook explains the reset procedure. If it does not recover, it needs a proper boost or test.</li>
+          <li><strong>Kia hybrids and EVs, including Niro and EV6:</strong> similar variation to Hyundai. Many have a conventional 12V battery under the bonnet or in the boot area, with marked terminals. Never assume the EV6 or Niro layout matches a petrol Kia.</li>
+          <li><strong>Tesla Model 3 and Model Y:</strong> the low voltage battery sits under a removable panel at the back of the front boot. Earlier cars use a lead acid 12V battery, later cars use a lithium low voltage battery. There are also emergency jump points behind the tow eye cover on some models for opening the front boot when power is lost. This is Tesla specific and easy to get wrong without the correct procedure.</li>
+          <li><strong>Nissan Leaf:</strong> one of the simplest layouts. The 12V battery is under the bonnet, much like a petrol car, with clearly marked positive and negative terminals. Even so, connect in the correct order and keep clear of moving or high voltage parts.</li>
+        </ul>
+        <p>
+          If you cannot find the battery, cannot see a marked positive terminal, or the handbook shows a special procedure, stop there. Guessing on a hybrid or EV is how expensive electronics get damaged. A technician who does this daily will identify the points in seconds. That is exactly what our <a href="/services/jump-start/">hybrid aware jump start service</a> is for, and it is available across Birmingham from our <a href="/">Birmingham Jump Start home page</a> team, day and night.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SAFE PROFESSIONAL PROCEDURE ============ -->
+  <section class="sec" id="procedure">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>How professionals do it</span>
+        <h2>The safe professional procedure, step by step.</h2>
+        <p class="lead">
+          The principle is simple, but the details matter. This is the process our technicians follow on every hybrid and EV callout in Birmingham and the West Midlands.
+        </p>
+      </div>
+      <div class="steps">
+        <article class="step rv">
+          <span class="num">01</span>
+          <h3>Identify the car and terminals.</h3>
+          <p>We confirm the make, model and year, check the handbook information for that car, and locate the correct 12V battery or dedicated jump terminals. We check for damage, leaks or warning labels before connecting anything.</p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">02</span>
+          <h3>Connect a regulated pack.</h3>
+          <p>We use a regulated lithium jump pack, not leads from another car. Positive to the marked positive terminal first, then negative to the correct body or marked negative point, in the order your manufacturer specifies.</p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">03</span>
+          <h3>Wake the car to Ready.</h3>
+          <p>With stable 12 volt power supplied, we bring the car through its normal start sequence so the contactors close and the dashboard shows Ready. On hybrids the engine may not start straight away, and that is normal.</p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
+          <h3>Test, do not just start.</h3>
+          <p>We run a free battery health check, test the 12V battery condition and check that the DC to DC converter is charging it. Then we give honest advice: recharge, monitor, or replace, with no pressure.</p>
+        </article>
+      </div>
+      <div class="article-body rv" style="margin-top: 36px;">
+        <p>
+          That final test is the part most DIY attempts skip, and it matters. If the 12V battery has failed internally, or the converter is not charging it, the car will strand you again at the next stop, perhaps in a multi storey car park in the city centre or on a dark road near Walsall. A proper test takes minutes and tells you whether you can drive home with confidence or need a <a href="/services/battery-replacement/">replacement 12V battery fitted at your car</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RISKS OF DIY ============ -->
+  <section class="sec" id="risks">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>DIY risks</span>
+        <h2>The risks of doing it yourself on a hybrid or EV.</h2>
+        <p class="lead">
+          Jump starting a ten year old petrol hatchback and boosting a modern EV are not the same job. The risks below are the ones we see after a well meaning attempt has gone wrong.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg></span>
+          <h3>Wrong terminals, fried electronics.</h3>
+          <p>Connecting to the wrong point, or reversing positive and negative, can damage control units, fuses and converters. On a modern hybrid or EV that bill can be many times the cost of a professional callout.</p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg></span>
+          <h3>Using another car as the donor.</h3>
+          <p>Leads from a running donor car can deliver an uncontrolled spike. Using a hybrid as the donor car creates its own risks for that car too. A regulated pack is designed to avoid exactly this problem.</p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z" /></svg></span>
+          <h3>Touching the high voltage system.</h3>
+          <p>Orange cables, inverter housings and traction battery connections are not part of a jump start. Ever. Confusing a high voltage component for a jump point is dangerous, not just expensive.</p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg></span>
+          <h3>Waking it up, then stranding again.</h3>
+          <p>A boost without a test can leave a failing battery to die again at the shops, at work or inside the Clean Air Zone at rush hour. Testing is what turns a rescue into a fix.</p>
+        </article>
+      </div>
+      <div class="article-body rv" style="margin-top: 36px;">
+        <p>
+          None of this means a knowledgeable owner can never follow the handbook procedure for their own car. It means you should only do so if you are certain of the exact terminals, have the right regulated equipment, and understand the warnings for that model. If any of those is missing, the safer and usually cheaper choice is a professional visit. If you are unsure, <a href="/contact/">contact us for advice</a> before you connect anything. We would rather talk you through whether a callout is needed than attend after damage has been done.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SIGNS OF REPLACEMENT ============ -->
+  <section class="sec" id="signs">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Battery replacement signs</span>
+        <h2>Signs the 12V battery needs replacement, not another boost.</h2>
+        <p class="lead">
+          A jump start proves the car works. It does not prove the battery will keep working. Watch for these signs in the days and weeks afterwards.
+        </p>
+      </div>
+      <div class="article-body rv">
+        <ul>
+          <li><strong>It needs boosting more than once:</strong> one flat battery can be an accident, such as lights left on. A second or third in a short period means the battery is no longer holding charge.</li>
+          <li><strong>Warning messages on start up:</strong> messages about 12 volt charging, key not detected, parking brake faults or multiple system warnings that clear after a drive often point to low 12 volt power.</li>
+          <li><strong>Slow or strange waking up:</strong> screens flickering, locks cycling, mirrors not unfolding, or the car taking several attempts to reach Ready.</li>
+          <li><strong>The battery is three to five years old:</strong> age alone is a strong clue on hybrids and EVs, especially if the history is unknown after buying a used car.</li>
+          <li><strong>Problems after parking:</strong> the car is fine after a long drive to Coventry or Solihull, but dead after two days parked at home. That pattern is classic weak battery behaviour.</li>
+        </ul>
+        <p>
+          When the signs point to replacement, we can supply and fit the correct 12V battery at your location in many cases, including the correct specification for stop start hybrids and the battery registration or coding where the manufacturer requires it. See our <a href="/services/battery-replacement/">mobile battery replacement service in Birmingham</a> for how that works. Every jump start visit already includes a free battery health check, so you will know where you stand before you decide anything.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EV RECOVERY ============ -->
+  <section class="sec" id="recovery">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>If it will not move</span>
+        <h2>EV recovery if the car will not move at all.</h2>
+        <p class="lead">
+          Most hybrid and EV callouts end with a boost and a drive home. Occasionally the car will not enter Ready, will not release its parking brake, or will not select neutral. That is a recovery job, and it must be done differently.
+        </p>
+      </div>
+      <div class="article-body rv">
+        <p>
+          Many EVs and hybrids drive their wheels directly from electric motors. Towing one with the driven wheels turning on the road can damage the motor, gearbox or power electronics, and some manufacturers prohibit it completely. A rope tow to the nearest charger, however short, is a risk we advise against. The correct method is usually a flatbed truck carrying the car with all four wheels off the ground, or specialist skates and lifting equipment where access is tight, for example in an underground car park near the Bullring or at the NEC.
+        </p>
+        <p>
+          Before loading, a technician will try the manufacturer approved transport or tow mode where one exists, release the electronic parking brake if 12 volt power can be restored, and protect the car during loading. If the traction battery itself is genuinely empty, rather than the 12V battery, the destination is normally the nearest suitable rapid charger or your home charger. If there is a deeper electrical fault, it is a garage. Our <a href="/services/towing-and-recovery/">towing and recovery service</a> and our <a href="/services/breakdown-recovery/">breakdown recovery service</a> both cover hybrids and EVs, with the right vehicle sent first time rather than a truck that cannot legally or safely move your car.
+        </p>
+        <p>
+          This matters more in Birmingham than in many cities. The Birmingham Clean Air Zone is a Class D zone, known as CAZ D, covering the city centre inside the A4540 Middleway. It charges older, more polluting cars, vans and other vehicles that do not meet its emission standards, while fully electric cars and compliant hybrids are a popular way for local drivers to keep city centre trips simple and avoid that daily charge. Low emission choices are now part of normal driving life here, from Sutton Coldfield commuters to taxi drivers working around New Street. When one of those cars stops, it needs a service that understands it, not a generic tow.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ YELLOW BAND: LOCAL HELP ============ -->
+  <section class="band-yellow" aria-label="Local hybrid and EV help">
+    <div class="in">
+      <div class="wrap">
+        <span class="eyebrow on-yellow rv"><span class="dot"></span>Local help, 24/7</span>
+        <h2 class="rv rv-d1">Stranded in a hybrid or EV? We come to you.</h2>
+        <p class="lede rv rv-d1">
+          Birmingham, Solihull, Sutton Coldfield, Coventry, Walsall, the NEC and Birmingham Airport. One fixed quote on the phone, no membership, no extra charge for the Clean Air Zone, and a free battery health check with every visit.
+        </p>
+        <div class="steps-cta rv">
+          <a href={phoneHref} class="btn btn-black">
+            Call {phoneLabel} for your quote
+            <span class="arr-c" set:html={arrow} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AREAS ============ -->
+  <section class="sec" id="areas">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Areas we cover</span>
+        <h2>Hybrid and EV jump starts across the West Midlands.</h2>
+        <p class="lead">
+          Local technicians on the roads we know well: the M6, M42, A38 and A45 corridors, the city centre Clean Air Zone, Birmingham Airport, the NEC and every suburb between.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["Birmingham City Centre", "Edgbaston", "Erdington", "Sutton Coldfield", "Solihull", "Harborne", "Kings Heath", "Selly Oak", "Walsall", "Coventry", "Birmingham Airport", "The NEC"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+      <p class="areas-note rv">
+        Not sure if we cover your street? <a href="/contact/">Contact us</a> or call <a href={phoneHref}>{phoneLabel}</a> and we will tell you honestly, with an arrival time, before you commit to anything.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ RELATED GUIDES ============ -->
+  <section class="sec" id="related">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Related guides</span>
+        <h2>Read next, or get help now.</h2>
+        <p class="lead">More plain English guides from the same local team, and the services most hybrid and EV drivers need alongside this one.</p>
+      </div>
+      <div class="related-grid">
+        <article class="why-card w-white rv">
+          <h3>How to jump start a car safely</h3>
+          <p>For petrol and diesel cars, the correct order, the right equipment, and the mistakes that damage modern electronics.</p>
+          <p style="margin-top: 14px;"><a href="/blog/how-to-jump-start-a-car-safely/"><strong>Read the safe jump start guide</strong></a></p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <h3>Car will not start in Birmingham?</h3>
+          <p>Clicking, silence, slow cranking or a dashboard full of lights. Work through the symptoms and find the likely cause.</p>
+          <p style="margin-top: 14px;"><a href="/blog/car-wont-start-birmingham/"><strong>Read the will not start guide</strong></a></p>
+        </article>
+        <article class="why-card w-black rv">
+          <h3>Mobile jump start service</h3>
+          <p>Our core 24/7 service for all cars, including hybrids and EVs, with a fixed quote and a free battery health check.</p>
+          <p style="margin-top: 14px;"><a href="/services/jump-start/"><strong>See the jump start service</strong></a></p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <h3>Battery replacement and recovery</h3>
+          <p>If the 12V battery has finished, we fit the correct replacement at your car. If the car will not move, we recover it safely.</p>
+          <p style="margin-top: 14px;"><a href="/services/battery-replacement/"><strong>Battery replacement</strong></a> &middot; <a href="/services/towing-and-recovery/"><strong>Towing and recovery</strong></a> &middot; <a href="/services/breakdown-recovery/"><strong>Breakdown recovery</strong></a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>FAQ</span>
+        <h2>Hybrid and EV jump start questions, answered.</h2>
+        <p class="lead">
+          Straight answers, the way we would answer on the phone at 2am in a car park in Birmingham.
+        </p>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f, i) => (
+          <div class={`faq rv ${i % 3 === 1 ? "rv-d1" : i % 3 === 2 ? "rv-d2" : ""}`}>
+            <button aria-expanded="false" aria-controls={`faq-a-${i}`} id={`faq-q-${i}`}>
+              <span>{f.q}</span>
+              <span class="plus" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" /></svg>
+              </span>
+            </button>
+            <div class="a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
+              <div class="a-in">
+                <p>{f.a}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final">
+    <div class="in rv">
+      <h2>Hybrid or EV will not start? One call fixes it.</h2>
+      <p>
+        Call now and a real person answers. We dispatch help straight away, usually reaching you within 30 to 40 minutes, and every visit includes a free battery health check.
+      </p>
+      <div class="row">
+        <a href={phoneHref} class="btn btn-black">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

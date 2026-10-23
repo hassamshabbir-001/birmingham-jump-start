@@ -1,0 +1,642 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phoneHref = "tel:+447477649906";
+const phoneLabel = "07477 649906";
+const waHref =
+  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20a%20jump%20start.";
+
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+
+const faqs = [
+  {
+    q: "Can I jump start a car on my own?",
+    a: "With a portable jump pack, yes, one person can usually do it safely by following the pack instructions and connecting to the correct terminals or earth point. With jump leads you need a second car and ideally a second person to help position the cars, watch the leads and start the donor car in the right order. If you are alone, on a busy Birmingham road or unsure about any step, it is safer to call a professional on 07477 649906. We usually reach you within 30 to 40 minutes and include a free battery health check.",
+  },
+  {
+    q: "How long should I drive after a jump start?",
+    a: "Drive for around 20 to 30 minutes in one steady trip so the alternator can put useful charge back into the battery. A short hop to the shops in stop and start traffic is often not enough, especially in winter. A steady run out of the city centre, for example along the A45 or A38, is better than sitting in queues. If the car struggles to start again after that drive, the battery may be failing and should be tested properly.",
+  },
+  {
+    q: "Which jump lead goes on first, red or black?",
+    a: "Red first when you connect, and black last when you disconnect in reverse order. Connect the red lead to the positive terminal of the flat battery, then to the positive terminal of the donor battery. Then connect the black lead to the negative terminal of the donor battery, and finally to a solid metal earth point on the car with the flat battery, away from the battery itself. Never connect the black lead directly to the negative terminal of the flat battery as the final connection.",
+  },
+  {
+    q: "Can a jump start damage a modern car?",
+    a: "It can if it is done badly. Reversed polarity, sparks near the battery, leads touching moving parts or connecting in the wrong order can damage ECUs, fuses and stop-start systems. Modern cars, hybrids and cars with intelligent battery sensors need extra care and the handbook procedure for that model. A regulated portable jump pack used correctly is the safest method, which is why our technicians use one instead of leads from another car.",
+  },
+  {
+    q: "Can you jump start a car in the rain?",
+    a: "Light rain does not automatically stop a jump start, but you must keep connections as dry as you can, stand on firm ground and take extra care because wet hands, wet leads and poor light make mistakes more likely. Never work in standing water, during a storm or where passing traffic could spray or strike you. If the weather, light or roadside position feels unsafe in Birmingham, stop and call for professional help instead.",
+  },
+  {
+    q: "What if my car still will not start after a jump start?",
+    a: "Do not keep trying until both batteries are flat. A failed jump start can point to a battery that has failed completely, a faulty starter motor, an alternator problem, a poor earth connection or an immobiliser fault. Note what happens when you turn the key, whether you hear clicking, a single clunk or nothing at all, and share that detail when you call. We can test the battery on the spot, fit a replacement if needed or arrange recovery if the car needs a garage.",
+  },
+];
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "How to Jump Start a Car Safely: Step by Step Guide",
+  description:
+    "Learn how to jump start a car safely step by step in Birmingham, with leads and jump pack methods. Stuck now? Call 07477 649906 for fast help.",
+  image: "https://www.birminghamjumpstart.co.uk/images/birmingham-jump-start-hero.webp?v=3",
+  datePublished: "2026-10-07",
+  dateModified: "2026-10-07",
+  author: {
+    "@type": "Organization",
+    name: "Birmingham Jump Start",
+    url: "https://www.birminghamjumpstart.co.uk/",
+  },
+  publisher: {
+    "@type": "AutoRepair",
+    "@id": "https://www.birminghamjumpstart.co.uk/#business",
+    name: "Birmingham Jump Start",
+    telephone: "+447477649906",
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://www.birminghamjumpstart.co.uk/blog/how-to-jump-start-a-car-safely/",
+  },
+  articleSection: "Car battery guides",
+  inLanguage: "en-GB",
+};
+
+const howToJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to jump start a car safely with jump leads",
+  description:
+    "A safe step by step method for jump starting a car with jump leads and a donor car, in the correct connection order, with safety checks before and after starting.",
+  totalTime: "PT15M",
+  supply: [
+    { "@type": "HowToSupply", name: "Jump leads suitable for your engine size" },
+    { "@type": "HowToSupply", name: "A donor car with a healthy battery of the same voltage" },
+  ],
+  tool: [
+    { "@type": "HowToTool", name: "Gloves and eye protection" },
+    { "@type": "HowToTool", name: "Torch if it is dark" },
+  ],
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "Park both cars close and switch everything off",
+      text: "Park the donor car nose to nose or side by side so the leads reach both batteries without stretching. Apply both handbrakes, put manuals in neutral and automatics in Park, then switch off engines, lights, heaters and all electrics in both cars and remove the keys.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "Check both batteries and find the terminals",
+      text: "Open both bonnets and locate the positive terminal, marked with a plus sign and often a red cover, and the negative terminal, marked with a minus sign. Check for leaks, swelling, heavy corrosion or damaged cables. If anything looks damaged, do not go ahead.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "Connect the red lead to the flat battery positive terminal",
+      text: "Clamp one end of the red lead firmly onto the positive terminal of the flat battery. Make sure the clamp grips clean metal, does not wobble and cannot touch any other metal part of the car.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 4,
+      name: "Connect the red lead to the donor battery positive terminal",
+      text: "Clamp the other end of the red lead onto the positive terminal of the donor battery. Keep the loose black lead well away from terminals and moving parts while you do this.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 5,
+      name: "Connect the black lead to the donor battery negative terminal",
+      text: "Clamp one end of the black lead onto the negative terminal of the donor battery. Check that both red clamps are still secure and that no lead is hanging near belts or fans.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 6,
+      name: "Connect the black lead to an earth point on the car with the flat battery",
+      text: "Clamp the other end of the black lead onto a solid, unpainted metal earth point on the engine block or bodywork of the car with the flat battery, well away from the battery itself. Do not clamp it to the negative terminal of the flat battery.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 7,
+      name: "Start the donor car first, then start the flat car",
+      text: "Start the donor car and let it idle for a few minutes. Then try to start the car with the flat battery. If it does not start, wait a few more minutes and try once more. If it still fails, stop and seek help rather than draining both batteries.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 8,
+      name: "Remove the leads in the exact reverse order",
+      text: "With both engines running, remove the leads in the exact reverse order you fitted them: black earth clamp first, then black donor clamp, then red donor clamp, then red flat battery clamp. Keep each clamp away from metal and from the other clamps as you remove it.",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  heroImage="/images/birmingham-jump-start-hero.webp?v=3"
+  title="How to Jump Start a Car Safely: Step by Step Guide"
+  description="Learn how to jump start a car safely step by step in Birmingham, with leads and jump pack methods. Stuck now? Call 07477 649906 for fast help."
+  path="blog/how-to-jump-start-a-car-safely/"
+  faq={faqs}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(howToJsonLd)} />
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow rv"><span class="dot"></span>Blog guide, Birmingham</span>
+      <h1 class="rv rv-d1">
+        The safe way to jump start a car, <span class="hl">step by step</span>.
+      </h1>
+      <p class="rv rv-d2" style="margin: 18px auto 0; color: var(--gray); font-weight: 600;">
+        <time datetime="2026-10-07">7 October 2026</time> · By the Birmingham Jump Start team
+      </p>
+      <p class="sub rv rv-d2">
+        A flat battery always picks a bad moment: before work on a cold morning in Erdington, after a shift near the city centre, or in a car park at Birmingham Airport. This guide explains the safe method for jump leads and for a portable jump pack, the checks to make first, and the point at which you should stop and call a professional instead.
+      </p>
+      <div class="hero-ctas rv rv-d2">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+      <p class="hero-eta rv rv-d2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+        Need help now? We are usually at your car within 30 to 40 minutes in Birmingham
+      </p>
+    </div>
+    <div class="hero-photo rv">
+      <div class="ph">
+        <img
+          src="/images/birmingham-jump-start-hero.webp?v=3"
+          srcset="/images/birmingham-jump-start-hero-mobile.webp?v=3 640w, /images/birmingham-jump-start-hero.webp?v=3 1280w"
+          sizes="(max-width: 640px) 640px, 1280px"
+          alt="Birmingham Jump Start van arriving to safely jump start a car with a flat battery in Birmingham"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+      </div>
+      <div class="hero-floats">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <div>
+            <strong>Correct order matters</strong>
+            <span>Red on first, black off first</span>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <div>
+            <strong>Free battery health check</strong>
+            <span>With every professional visit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUICK ANSWER ============ -->
+  <section class="sec" id="quick-answer">
+    <div class="wrap">
+      <article class="why-card w-yellow rv">
+        <span class="eyebrow on-yellow"><span class="dot"></span>Quick answer</span>
+        <h2 style="margin-top: 18px;">How do you jump start a car safely?</h2>
+        <p style="margin-top: 14px;">
+          Park a donor car close, switch everything off in both cars, then connect the red lead to the positive terminal of the flat battery and then to the positive terminal of the donor battery. Next connect the black lead to the negative terminal of the donor battery and then to a solid metal earth point on the car with the flat battery, away from its battery. Start the donor car, wait a few minutes, then start the flat car. Once it is running, remove the leads in the exact reverse order and drive for 20 to 30 minutes. If you would rather not risk it, our <a href="/services/jump-start/">mobile jump start service in Birmingham</a> does this for you with a regulated pack and a free battery health check.
+        </p>
+        <p style="margin-top: 14px;">
+          <strong>Safety warning:</strong> modern cars, hybrids, stop-start models and cars with battery sensors can be damaged by the wrong order, reversed leads or a spark in the wrong place. Always follow the handbook for your exact model first. If your car is a hybrid or electric model, if warning lights mention the high voltage system, or if you are unsure about any step, do not guess. Call a professional on <a href={phoneHref}>{phoneLabel}</a> instead.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ BLACK BAND ============ -->
+  <section class="band-black" aria-label="Jump start help in Birmingham">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow on-dark"><span class="dot"></span>Stuck in Birmingham?</span>
+        <h2>Professional help is closer than you think.</h2>
+        <p class="lede">
+          If the steps below feel risky where you are parked, one call brings a technician with the right pack, testers and leads for your car.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["30 to 40 minute response", "Free battery health check", "Safe for hybrids and stop-start", "Fixed quote on the phone", "No membership needed"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ WHAT YOU NEED ============ -->
+  <section class="sec" id="what-you-need">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Before you begin</span>
+        <h2>What you need to jump start a car.</h2>
+        <p class="lead">
+          Good equipment makes the job safer and far more likely to work first time. Thin, damaged or very short leads are a common reason home attempts fail on driveways from Kings Heath to Sutton Coldfield. Check our <a href="/services/">full list of services</a> if you need a different kind of help, and keep the number for our <a href="/contact/">contact page</a> saved in your phone before you are stranded.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <h3>Proper jump leads.</h3>
+          <p>
+            Use heavy duty leads in good condition, long enough to reach comfortably without stretching, with strong insulated clamps. Leads for a small petrol hatchback may not be enough for a large diesel SUV. If insulation is cracked, clamps are loose or copper is showing, do not use them.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <h3>A suitable donor car.</h3>
+          <p>
+            The donor car needs a healthy battery of the same voltage, which is 12 volts for almost all cars. Its engine should ideally be a similar size or larger than the car you are starting. Never use a car that itself struggles to start, and never try to jump start a car from an electric vehicle unless its handbook clearly allows it.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Or a portable jump pack.</h3>
+          <p>
+            A charged lithium jump pack removes the need for a second car and is often the safer choice for modern electronics when used correctly. It must be suitable for your engine size and fuel type, fully charged, and connected exactly as its maker and your car handbook describe.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z" /></svg>
+          </span>
+          <h3>Basic safety kit.</h3>
+          <p>
+            Gloves, eye protection if you have it, a torch after dark and a phone with enough charge all help. A handbook is just as important, because some models hide the battery in the boot or under a seat and provide special jump points under the bonnet instead. If the battery has already failed completely, a <a href="/services/battery-replacement/">battery replacement at your car</a> may be the honest fix.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SAFETY RULES ============ -->
+  <section class="sec" id="safety-rules">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Safety first</span>
+        <h2>Safety rules before you start.</h2>
+        <p class="lead">
+          Most injuries and most car damage happen before the first lead is even connected, through poor parking, rushing or working in a dangerous spot. The Highway Code expects you to keep yourself, passengers and other road users safe when your vehicle breaks down, so choose your position with care, use hazard lights where appropriate and never put yourself in moving traffic on fast roads such as the A38 Aston Expressway or the M6. If the position is not safe, stay clear of the car and call our <a href="/services/breakdown-recovery/">breakdown recovery team</a> or return to our <a href="/">homepage</a> for the fastest contact options.
+        </p>
+      </div>
+      <div class="duo">
+        <div class="duo-card duo-white rv">
+          <div>
+            <h3>Set the cars up safely</h3>
+            <ul class="tick-list">
+              <li>Park on level, firm ground away from moving traffic wherever possible</li>
+              <li>Handbrake on in both cars, manuals in neutral, automatics in Park</li>
+              <li>Engines, lights, heaters, radios and heated screens all switched off</li>
+              <li>Keys removed, doors kept clear and children and pets away from the engine bay</li>
+              <li>Leads laid out so they cannot fall into belts, fans or hot exhaust parts</li>
+            </ul>
+          </div>
+        </div>
+        <div class="duo-card duo-black rv rv-d1">
+          <div>
+            <h3>Protect yourself and the cars</h3>
+            <ul class="tick-list">
+              <li>No smoking and no naked flames anywhere near a battery</li>
+              <li>Remove rings, watches and loose jewellery and tie back loose clothing</li>
+              <li>Never lean directly over a battery while connecting or starting</li>
+              <li>Stop if you smell rotten eggs, see leaking fluid or hear fizzing</li>
+              <li>Read the handbook jump points first, especially on hybrids and stop-start cars</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="lead rv" style="max-width: 760px; margin-top: 28px; color: var(--gray);">
+        In multi storey and underground car parks around the Bullring and the Jewellery Quarter, think about ventilation, headroom and whether a donor car can even park close enough without blocking an exit route. On residential streets in Harborne, Selly Oak or Yardley, a neighbour may happily offer a donor car, but only accept if their battery is healthy and you can position both cars without blocking driveways or the pavement for other people.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ STEP BY STEP: JUMP LEADS ============ -->
+  <section class="sec" id="jump-leads">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Method one</span>
+        <h2>Step by step with jump leads.</h2>
+        <p class="lead">
+          Follow this order exactly. The order is not a preference, it is what keeps sparks away from the flat battery and protects the electronics in both cars. If your handbook shows dedicated jump points, use those points instead of the battery terminals and follow the handbook where it differs.
+        </p>
+      </div>
+      <div class="steps">
+        <article class="step rv">
+          <span class="num">01</span>
+          <h3>Park both cars close and switch everything off</h3>
+          <p>Park the donor car nose to nose or side by side so the leads reach both batteries without stretching. Apply both handbrakes, put manuals in neutral and automatics in Park, then switch off engines, lights, heaters and all electrics in both cars and remove the keys.</p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">02</span>
+          <h3>Check both batteries and find the terminals</h3>
+          <p>Open both bonnets and locate the positive terminal, marked with a plus sign and often a red cover, and the negative terminal, marked with a minus sign. Check for leaks, swelling, heavy corrosion or damaged cables. If anything looks damaged, do not go ahead.</p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">03</span>
+          <h3>Connect the red lead to the flat battery positive terminal</h3>
+          <p>Clamp one end of the red lead firmly onto the positive terminal of the flat battery. Make sure the clamp grips clean metal, does not wobble and cannot touch any other metal part of the car.</p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
+          <h3>Connect the red lead to the donor battery positive terminal</h3>
+          <p>Clamp the other end of the red lead onto the positive terminal of the donor battery. Keep the loose black lead well away from terminals and moving parts while you do this.</p>
+        </article>
+        <article class="step rv">
+          <span class="num">05</span>
+          <h3>Connect the black lead to the donor battery negative terminal</h3>
+          <p>Clamp one end of the black lead onto the negative terminal of the donor battery. Check that both red clamps are still secure and that no lead is hanging near belts or fans.</p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">06</span>
+          <h3>Connect the black lead to an earth point on the car with the flat battery</h3>
+          <p>Clamp the other end of the black lead onto a solid, unpainted metal earth point on the engine block or bodywork of the car with the flat battery, well away from the battery itself. Do not clamp it to the negative terminal of the flat battery.</p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">07</span>
+          <h3>Start the donor car first, then start the flat car</h3>
+          <p>Start the donor car and let it idle for a few minutes. Then try to start the car with the flat battery. If it does not start, wait a few more minutes and try once more. If it still fails, stop and seek help rather than draining both batteries.</p>
+        </article>
+        <article class="step rv">
+          <span class="num">08</span>
+          <h3>Remove the leads in the exact reverse order</h3>
+          <p>With both engines running, remove the leads in the exact reverse order you fitted them: black earth clamp first, then black donor clamp, then red donor clamp, then red flat battery clamp. Keep each clamp away from metal and from the other clamps as you remove it.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STEP BY STEP: JUMP PACK ============ -->
+  <section class="sec" id="jump-pack">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Method two</span>
+        <h2>Step by step with a portable jump pack.</h2>
+        <p class="lead">
+          A jump pack is the method our own technicians use across Birmingham, from city centre flats to Solihull and Walsall callouts, because it needs no second car and gives a controlled supply. Packs differ, so the pack instructions and your car handbook always come first, but the safe sequence is broadly the same.
+        </p>
+      </div>
+      <div class="steps">
+        <article class="step rv">
+          <span class="num">01</span>
+          <h3>Check the pack charge</h3>
+          <p>Confirm the pack is well charged and rated for your engine size and fuel type. A small pack that starts a petrol hatchback may not turn over a large diesel on a frosty morning in Erdington or Aston.</p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">02</span>
+          <h3>Switch everything off</h3>
+          <p>Turn off the ignition and every electrical load in the car. Leave the pack switched off while you connect it, unless its instructions clearly say otherwise.</p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">03</span>
+          <h3>Connect red, then black to earth</h3>
+          <p>Connect the red clamp to the positive terminal or the handbook jump point. Connect the black clamp to a solid earth point away from the battery, just as you would with leads, unless the pack maker states a different approved point.</p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
+          <h3>Switch the pack on and wait</h3>
+          <p>Switch the pack on or press its boost button only if the instructions require it. Wait for the ready light, then try to start the car in short attempts, resting the starter between tries.</p>
+        </article>
+        <article class="step rv">
+          <span class="num">05</span>
+          <h3>Disconnect promptly and safely</h3>
+          <p>Once the engine runs, switch the pack off and remove the black clamp first, then the red clamp. Keep the clamps apart, close the bonnet carefully and recharge the pack as soon as you can so it is ready next time.</p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">06</span>
+          <h3>Know when the pack is telling you no</h3>
+          <p>Many modern packs block the output if polarity is reversed or a fault is detected. Treat that warning as useful information, not an obstacle to defeat. Recheck the terminals once, and if the warning stays, stop and get the battery tested.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AFTER IT STARTS ============ -->
+  <section class="sec" id="after-it-starts">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Aftercare</span>
+        <h2>What to do after it starts.</h2>
+        <p class="lead">
+          Starting is only half the job. What you do in the next half hour decides whether you reach work, get home from the NEC or face the same clicking sound again tomorrow morning.
+        </p>
+      </div>
+      <div class="duo">
+        <div class="duo-card duo-white rv">
+          <div class="ph">
+            <img
+              src="/images/car-jump-start-birmingham.webp?v=3"
+              srcset="/images/car-jump-start-birmingham-mobile.webp?v=3 640w, /images/car-jump-start-birmingham.webp?v=3 1280w"
+              sizes="(max-width: 640px) 640px, 1280px"
+              alt="Technician completing a jump start and battery check beside a car in Birmingham"
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="800"
+            />
+          </div>
+        </div>
+        <div class="duo-card duo-black rv rv-d1">
+          <div>
+            <h3>Do these things next</h3>
+            <ul class="tick-list">
+              <li>Keep the engine running and drive for 20 to 30 minutes in one steady trip</li>
+              <li>Choose a flowing route, such as the A45 towards Coventry or the A38, rather than short queues</li>
+              <li>Turn off heated screens, blowers and seat heaters you do not need</li>
+              <li>Get a battery and charging check the same day if the battery is old or the start was slow</li>
+              <li>If it fails again, book a test instead of jump starting it every morning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="lead rv" style="max-width: 760px; margin-top: 28px; color: var(--gray);">
+        A jump start does not repair a worn out battery, it only borrows enough power to start the engine once. If your car needed a jump because lights were left on, a long drive may be enough. If it went flat after a normal night, after a week parked near Birmingham Airport or during a cold spell in Kings Heath, the battery, alternator or a parasitic drain needs proper testing. Our team includes a free battery health check with every visit, and if the test shows the battery has failed we can explain your <a href="/services/battery-replacement/">battery replacement options</a> at the car. For anything urgent, use our <a href="/contact/">contact page</a> or call straight away.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ MISTAKES ============ -->
+  <section class="sec" id="mistakes">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Costly errors</span>
+        <h2>Mistakes that damage ECUs and electrics.</h2>
+        <p class="lead">
+          Modern cars are computers on wheels. One careless clamp can turn a simple flat battery into a repair bill for modules, sensors and coded components, which is why garages and technicians are strict about order and equipment.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Reversing the polarity.</h3>
+          <p>
+            Putting red on negative or black on positive, even briefly, can blow main fuses, damage the alternator and harm ECUs. Terminals can look similar in poor light under a bonnet in a dark car park, so use a torch and read the plus and minus marks every single time, never rely on cable colour alone.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <h3>Making the last connection at the flat battery.</h3>
+          <p>
+            The final connection can create a small spark. If that spark happens right at the flat battery, it is in exactly the wrong place. That is why the black lead finishes on a remote earth point on the engine or bodywork, well away from the battery and any fuel lines.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <h3>Letting clamps touch or slip.</h3>
+          <p>
+            A clamp that slips off a terminal and touches bodywork, or two loose clamps that touch each other on the ground, can short the supply and damage both cars. Fit one clamp at a time, check its grip, and keep removed clamps separated and away from metal during removal.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z" /></svg>
+          </span>
+          <h3>Cranking for too long, again and again.</h3>
+          <p>
+            Holding the key for long bursts overheats the starter motor and drains the donor battery, while repeated failed attempts can confuse immobiliser and battery monitoring systems on some models. Use short attempts, pause between them, and after two sensible tries treat the problem as a fault to diagnose, not a challenge to force.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHEN NOT TO ============ -->
+  <section class="band-yellow" aria-label="When not to jump start a car yourself">
+    <div class="in">
+      <div class="wrap">
+        <span class="eyebrow on-yellow rv"><span class="dot"></span>Know when to stop</span>
+        <h2 class="rv rv-d1">When you should not jump start it yourself.</h2>
+        <p class="lede rv rv-d1">
+          There are clear situations where the right decision is to walk away from the bonnet and call for help. A battery that is leaking, swollen, cracked or hot, a strong smell of rotten eggs, or fluid on or under the battery all mean do not connect anything. The same applies if cables are burnt, terminals are broken or the battery has been damaged in a collision.
+        </p>
+        <p class="lede rv rv-d1" style="margin-top: 16px;">
+          Do not attempt it if your hybrid or electric car shows high voltage or system warnings, if the handbook forbids the method you have available, or if you cannot find the correct jump points. Do not attempt it when there is no suitable second car for leads and no charged pack, and do not struggle alone in an underground car park with poor ventilation, poor light and no phone signal. In those cases, call <a href={phoneHref}>{phoneLabel}</a> for our <a href="/services/jump-start/">professional jump start service</a> or, if the car cannot be started safely at all, our <a href="/services/breakdown-recovery/">breakdown recovery service</a> will move it without further damage.
+        </p>
+        <div class="steps-cta rv">
+          <a href={phoneHref} class="btn btn-black">
+            Call {phoneLabel} for safe help
+            <span class="arr-c" set:html={arrow} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RELATED GUIDES ============ -->
+  <section class="sec" id="related">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Keep reading</span>
+        <h2>Related guides.</h2>
+        <p class="lead">
+          If your symptoms do not match a simple flat battery, or your car is a hybrid or electric model, these guides and services will help you choose the right next step.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <h3><a href="/blog/car-wont-start-birmingham/">Car will not start in Birmingham?</a></h3>
+          <p>
+            Work through the sounds, lights and warning messages your car gives you to tell a flat battery apart from a starter, alternator, fuel or immobiliser fault before you spend money on the wrong fix.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <h3><a href="/blog/jump-start-hybrid-electric-cars-birmingham/">Jump starting hybrids and electric cars</a></h3>
+          <p>
+            Hybrids and EVs still rely on a 12 volt battery to wake up. This guide explains where that battery lives, which points to use and which warnings mean you should call a technician instead of connecting a pack yourself.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <h3><a href="/services/">All Birmingham services</a></h3>
+          <p>
+            From jump starts and battery replacement to towing, lockouts and tyre help, see every service on our <a href="/services/">services hub</a> and choose the help that matches what your car is actually doing today.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <h3><a href="/services/battery-replacement/">Battery replacement in Birmingham</a></h3>
+          <p>
+            If tests show your battery has failed, we supply and fit the correct battery at your car, code it where your model requires it and take the old unit away for recycling.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>FAQ</span>
+        <h2>Jump start safety questions, answered.</h2>
+        <p class="lead">
+          Straight answers to the questions Birmingham drivers ask us on the phone before they decide whether to try it themselves or book a visit.
+        </p>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f, i) => (
+          <div class={`faq rv ${i % 3 === 1 ? "rv-d1" : i % 3 === 2 ? "rv-d2" : ""}`}>
+            <button aria-expanded="false" aria-controls={`faq-a-${i}`} id={`faq-q-${i}`}>
+              <span>{f.q}</span>
+              <span class="plus" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" /></svg>
+              </span>
+            </button>
+            <div class="a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
+              <div class="a-in">
+                <p>{f.a}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final">
+    <div class="in rv">
+      <h2>Not confident? We will start it safely for you.</h2>
+      <p>
+        Call now and a real person answers, 24 hours a day. We give you a fixed quote on the phone, reach you usually within 30 to 40 minutes anywhere in Birmingham and include a free battery health check with every visit.
+      </p>
+      <div class="row">
+        <a href={phoneHref} class="btn btn-black">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,168 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phoneHref = "tel:+447477649906";
+const phoneLabel = "07477 649906";
+const waHref =
+  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20I%20need%20a%20jump%20start.";
+
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+
+const posts = [
+  {
+    href: "/blog/car-battery-died-birmingham-city-centre/",
+    img: "/images/car-breakdown-recovery-birmingham.webp?v=3",
+    alt: "Recovery technician helping a driver with a flat battery in Birmingham City Centre",
+    date: "21 October 2026",
+    datetime: "2026-10-21",
+    t: "Car Battery Died in Birmingham City Centre? What To Do Next",
+    d: "Stranded at the Bullring, Grand Central or a city centre car park? The first 10 minutes, explained step by step, plus how fast local help reaches you.",
+  },
+  {
+    href: "/blog/jump-start-hybrid-electric-cars-birmingham/",
+    img: "/images/car-jump-start-birmingham.webp?v=3",
+    alt: "Technician safely jump starting a hybrid car 12V battery in Birmingham",
+    date: "14 October 2026",
+    datetime: "2026-10-14",
+    t: "Can You Jump Start Hybrid and Electric Cars in Birmingham?",
+    d: "Yes, but only the separate 12V battery, and only with the correct procedure. What is safe, what is risky, and when to call a professional instead.",
+  },
+  {
+    href: "/blog/how-to-jump-start-a-car-safely/",
+    img: "/images/birmingham-jump-start-hero.webp?v=3",
+    alt: "Driver learning how to jump start a car safely with a jump pack in Birmingham",
+    date: "7 October 2026",
+    datetime: "2026-10-07",
+    t: "How to Jump Start a Car Safely: A Step by Step Guide",
+    d: "The safe order for jump leads and jump packs, the mistakes that damage modern car electronics, and the warning signs that mean stop and call for help.",
+  },
+  {
+    href: "/blog/car-wont-start-birmingham/",
+    img: "/images/car-breakdown-recovery-birmingham.webp?v=3",
+    alt: "Birmingham driver checking why a car will not start, flat battery or starter motor",
+    date: "23 September 2026",
+    datetime: "2026-09-23",
+    t: "Car Won't Start in Birmingham? Battery, Starter or Alternator",
+    d: "Clicking, silence or a slow crank? Work out the cause in 60 seconds with this symptom checker, and know exactly what fix you actually need.",
+  },
+  {
+    href: "/blog/how-much-does-a-jump-start-cost-in-birmingham/",
+    img: "/images/car-jump-start-birmingham.webp?v=3",
+    alt: "Mobile jump start technician giving a fixed quote on the phone in Birmingham",
+    date: "8 September 2026",
+    datetime: "2026-09-08",
+    t: "How Much Does a Jump Start Cost in Birmingham in 2026?",
+    d: "Typical Birmingham prices are £49 to £150. See what affects the price, how it compares with AA and RAC membership, and how to avoid overpaying.",
+  },
+];
+
+const blogJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "Birmingham Jump Start Blog",
+  description:
+    "Guides on jump start costs, flat battery diagnosis, safe jump starting, hybrid and EV batteries, and what to do when your car will not start in Birmingham.",
+  url: "https://www.birminghamjumpstart.co.uk/blog/",
+  publisher: {
+    "@type": "AutoRepair",
+    "@id": "https://www.birminghamjumpstart.co.uk/#business",
+    name: "Birmingham Jump Start",
+    telephone: "+447477649906",
+  },
+  blogPost: posts.map((p) => ({
+    "@type": "BlogPosting",
+    headline: p.t,
+    url: "https://www.birminghamjumpstart.co.uk" + p.href,
+    datePublished: p.datetime,
+  })),
+};
+---
+
+<BaseLayout
+  heroImage="/images/birmingham-jump-start-hero.webp?v=3"
+  title="Blog | Birmingham Jump Start Guides and Advice"
+  description="Birmingham guides on jump start costs, flat batteries, hybrid and EV help and what to do when your car will not start. Call 07477 649906 for 24/7 help."
+  path="blog/"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(blogJsonLd)} />
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow rv"><span class="dot"></span>Blog and guides, Birmingham</span>
+      <h1 class="rv rv-d1">
+        Flat battery advice, <span class="hl">written for Birmingham drivers.</span>
+      </h1>
+      <p class="sub rv rv-d2">
+        Honest, practical guides on what a jump start costs, why your car will
+        not start, how to jump start safely, and what to do in the city centre.
+        Need help right now? Our <a href="/services/jump-start/">24/7 jump start service</a> reaches
+        most of Birmingham in 30 to 40 minutes.
+      </p>
+      <div class="hero-ctas rv rv-d2">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href="/services/" class="btn btn-white">
+          See our services
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="guides">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Latest guides</span>
+        <h2>Start with the guide that matches your problem.</h2>
+        <p class="lead">
+          Every guide links back to the service that fixes it, from a simple
+          <a href="/services/jump-start/"> jump start</a> to
+          <a href="/services/battery-replacement/"> battery replacement</a> and
+          <a href="/services/breakdown-recovery/"> full breakdown recovery</a>.
+        </p>
+      </div>
+      <div class="svc-grid">
+        {posts.map((p, i) => (
+          <article class={`svc-card rv ${i % 2 === 1 ? "rv-d1" : ""}`}>
+            <div class="svc-photo">
+              <img src={p.img} alt={p.alt} loading="lazy" decoding="async" width="1200" height="800" />
+            </div>
+            <div class="svc-info">
+              <div class="txt">
+                <span class="kicker"><time datetime={p.datetime}>{p.date}</time></span>
+                <h3>{p.t}</h3>
+                <p>{p.d}</p>
+              </div>
+              <a class="svc-go" href={p.href} aria-label={`Read: ${p.t}`}>
+                <span set:html={arrow} style="display:inline-flex" />
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="in rv">
+      <h2>Reading will not start your car. One call will.</h2>
+      <p>
+        Call now and a real person answers. Fixed quote on the phone, free
+        battery health check, usually at your car in 30 to 40 minutes.
+      </p>
+      <div class="row">
+        <a href={phoneHref} class="btn btn-black">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

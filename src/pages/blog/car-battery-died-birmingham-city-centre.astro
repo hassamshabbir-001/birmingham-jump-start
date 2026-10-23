@@ -1,0 +1,629 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phoneHref = "tel:+447477649906";
+const phoneLabel = "07477 649906";
+const waHref =
+  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20my%20car%20battery%20has%20died%20in%20Birmingham%20City%20Centre.";
+
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+
+const faqs = [
+  {
+    q: "Can you reach my car inside a Bullring or multi-storey car park?",
+    a: "Yes, in most cases. Tell us the car park name, the level, the row or zone if there is one, and any height restriction shown at the entrance. Our technician carries a portable regulated jump pack, so we can often walk to your car and start it where it sits, even when a larger recovery vehicle cannot get to that level.",
+  },
+  {
+    q: "How long does a city centre jump start take in rush hour?",
+    a: "We usually reach Birmingham City Centre within 30 to 40 minutes of your call. At peak times, during major events at the Bullring or Grand Central, or when roads are closed, we will give you an honest arrival time on the phone rather than a promise we cannot keep, and we will keep you updated if traffic changes.",
+  },
+  {
+    q: "Will I pay extra because my car is inside the Clean Air Zone?",
+    a: "No. We do not add a surcharge for callouts inside the Birmingham Clean Air Zone. You get one fixed quote on the phone before we set off. Any Clean Air Zone charge for your own vehicle is a separate Birmingham City Council matter and depends on whether your vehicle meets the required standard and whether it is driven within the zone on that day.",
+  },
+  {
+    q: "My car is in an underground car park with a low entrance. Can you still help?",
+    a: "Usually, yes. Let us know the car park, the level and the height limit when you call. Because our jump pack is portable, we can normally reach cars in underground and multi-storey car parks such as NCP and Q-Park sites. If the car also needs recovery and a recovery vehicle cannot enter safely, we will explain the safest option on the phone before we travel.",
+  },
+  {
+    q: "What happens if a jump start does not start my car in the city centre?",
+    a: "We test the battery and charging system on the spot and include a free battery health check. If the battery has failed, we can supply and fit a replacement at your car where suitable. If the fault is the starter motor, alternator or something else, we can arrange recovery to your home or a garage of your choice so you are not left stranded.",
+  },
+  {
+    q: "Is it safe to wait in Birmingham City Centre late at night?",
+    a: "Stay somewhere well lit and visible if you can, such as a staffed car park, a station entrance, a shop or a venue doorway, and keep your phone charged. Lock the car if you leave it, take valuables with you, and share your live location with us or with someone you trust. Call 07477 649906 and we will stay in contact until our technician is with you.",
+  },
+];
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Car Battery Died in Birmingham City Centre? What to Do in the First 10 Minutes",
+  description:
+    "Car battery died in Birmingham City Centre? 24/7 help in 30 to 40 minutes, free battery health check included. Call 07477 649906 for a fixed quote.",
+  image: "https://www.birminghamjumpstart.co.uk/images/car-breakdown-recovery-birmingham.webp",
+  datePublished: "2026-10-21",
+  dateModified: "2026-10-21",
+  author: {
+    "@type": "AutoRepair",
+    "@id": "https://www.birminghamjumpstart.co.uk/#business",
+    name: "Birmingham Jump Start",
+  },
+  publisher: {
+    "@type": "AutoRepair",
+    "@id": "https://www.birminghamjumpstart.co.uk/#business",
+    name: "Birmingham Jump Start",
+    telephone: "+447477649906",
+    url: "https://www.birminghamjumpstart.co.uk/",
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://www.birminghamjumpstart.co.uk/blog/car-battery-died-birmingham-city-centre/",
+  },
+  articleSection: "Car Battery Help",
+  inLanguage: "en-GB",
+  about: [
+    { "@type": "Place", name: "Birmingham City Centre" },
+    { "@type": "Place", name: "Bullring, Birmingham" },
+    { "@type": "Place", name: "Birmingham New Street Station" },
+  ],
+};
+---
+
+<BaseLayout
+  heroImage="/images/car-breakdown-recovery-birmingham.webp?v=3"
+  title="Car Battery Died in Birmingham City Centre | Help"
+  description="Car battery died in Birmingham City Centre? 24/7 help in 30 to 40 minutes, free battery health check included. Call 07477 649906 for a fixed quote."
+  path="blog/car-battery-died-birmingham-city-centre/"
+  faq={faqs}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow rv"><span class="dot"></span>City centre battery guide, Birmingham</span>
+      <h1 class="rv rv-d1">
+        Car battery died in Birmingham City Centre? <span class="hl">What to do in the first 10 minutes.</span>
+      </h1>
+      <p class="rv rv-d1">
+        <time datetime="2026-10-21">21 October 2026</time> · By Birmingham Jump Start · Covering B1, B2, B3, B4 and B5
+      </p>
+      <p class="sub rv rv-d2">
+        A flat battery in the middle of Birmingham is stressful for a different reason
+        than a flat battery at home. You might be on a high level of a multi-storey
+        car park, parked under the Bullring, running late for a train at New Street,
+        or stopped on a one way street with buses behind you. This guide tells you
+        exactly what to do now, what to avoid, and how to get moving again safely.
+      </p>
+      <div class="hero-ctas rv rv-d2">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+      <p class="hero-eta rv rv-d2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+        Usually at your car within 30 to 40 minutes of your call
+      </p>
+    </div>
+    <div class="hero-photo rv">
+      <div class="ph">
+        <img
+          src="/images/car-breakdown-recovery-birmingham.webp?v=3"
+          srcset="/images/car-breakdown-recovery-birmingham-mobile.webp?v=3 640w, /images/car-breakdown-recovery-birmingham.webp?v=3 1280w"
+          sizes="(max-width: 640px) 640px, 1280px"
+          alt="Recovery technician helping a driver with a flat car battery in Birmingham City Centre"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+      </div>
+      <div class="hero-floats">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <div>
+            <strong>Portable jump pack</strong>
+            <span>Built for car parks and tight city streets</span>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <div>
+            <strong>Free battery health check</strong>
+            <span>Included with every city centre visit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUICK ANSWER ============ -->
+  <section class="sec" id="quick-answer">
+    <div class="wrap">
+      <div class="duo">
+        <div class="duo-card duo-black rv">
+          <div>
+            <h3>Quick answer: your first 10 minutes</h3>
+            <ul class="tick-list">
+              <li>Move to safety first. If the car is rolling or in a live lane, get everyone to a safe place behind a barrier or on the pavement.</li>
+              <li>Switch on hazard lights if the battery still has any power, and switch off lights, heaters and screens to save what is left.</li>
+              <li>Note your exact location: street name, car park name, level, zone and the nearest landmark.</li>
+              <li>Call 07477 649906, tell us the car, the postcode and exactly where you are, and agree a fixed quote before we set off.</li>
+              <li>Wait somewhere safe and visible. We usually reach Birmingham City Centre in 30 to 40 minutes.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="duo-card duo-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z" /></svg>
+          </span>
+          <h3>Do not keep trying the ignition</h3>
+          <p>
+            Repeated attempts rarely bring a flat battery back, and they can leave
+            you with no power at all for hazards, locking or windows. One or two
+            tries is enough to confirm the symptoms. After that, protect your
+            safety, record your location properly, and call for a proper
+            <a href="/services/jump-start/">mobile jump start in Birmingham</a>.
+            If the dashboard is completely dark, or you can smell burning or see
+            damage under the bonnet, do not try again at all.
+          </p>
+          <p>
+            Not sure whether it is the battery at all? Start from our
+            <a href="/">Birmingham Jump Start home page</a> for the main signs, or
+            read the linked guides at the end of this article.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLACK BAND ============ -->
+  <section class="band-black" aria-label="City centre jump start facts">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow on-dark"><span class="dot"></span>Built for the city centre</span>
+        <h2>Local help that knows B1 to B5, not a national call centre queue.</h2>
+        <p class="lede">
+          We work around the Bullring, Grand Central, Colmore Row, Digbeth and
+          Broad Street every week. That local knowledge matters when every
+          car park entrance, one way system and height barrier is different.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["30 to 40 minute response", "B1 B2 B3 B4 B5 covered", "Multi-storey car parks", "Fixed quote on the phone", "No Clean Air Zone surcharge from us", "Free battery health check", "24/7, every day"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ STEP BY STEP ============ -->
+  <section class="sec" id="what-to-do-now">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Step by step</span>
+        <h2>What to do now, in the right order.</h2>
+        <p class="lead">
+          Work through these steps calmly. The more precise you are about
+          location, the faster we can find you in a busy centre.
+        </p>
+      </div>
+      <div class="steps">
+        <article class="step rv">
+          <span class="num">01</span>
+          <h3>Park safely and stay visible</h3>
+          <p>
+            If the car is still moving, steer to the safest nearby place you can
+            reach without power: a layby, a car park entrance that does not block
+            traffic, or the side of a quieter street. Apply the handbrake. If you
+            have stopped in a live lane, on a bend, or near a junction on the
+            A38 or the Middleway, get passengers out on the pavement side and
+            move well away from traffic.
+          </p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">02</span>
+          <h3>Use hazards, then save power</h3>
+          <p>
+            Put hazard lights on straight away if they work, so other drivers,
+            cyclists and bus drivers can see you. Then switch everything else
+            off: headlights, interior lights, heated screens, air conditioning
+            and phone chargers plugged into the car. If you have a warning
+            triangle and it is safe to place it, use it, but never walk into a
+            busy city road to do so.
+          </p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">03</span>
+          <h3>Note your exact location</h3>
+          <p>
+            This is the step drivers skip, and it costs the most time. Read the
+            street sign, the shop or venue in front of you, and the postcode
+            from your maps app. In a car park, note the operator, the level,
+            the colour or zone, the row, and the stairwell or lift nearest to
+            your car. A photo of the level sign helps more than a long
+            description.
+          </p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
+          <h3>Call with the right details</h3>
+          <p>
+            Call us on 07477 649906 with your car make and model, your exact
+            location, and what happened when you tried to start it: clicking,
+            a slow turn, or nothing at all. We give you a fixed quote and an
+            honest arrival time on that call. If anything changes while you
+            wait, use our <a href="/contact/">contact page</a> details or
+            WhatsApp to update us.
+          </p>
+        </article>
+      </div>
+      <div class="legal rv" style="margin-top:48px;">
+        <p>
+          While you wait, stay with the car only if it is safe to do so. In a
+          staffed car park, tell the attendant or use the help point and let them
+          know a technician is coming. At Grand Central and Birmingham New Street,
+          station staff can often confirm the best meeting point for vehicle
+          access nearby. On street, keep doors locked if you are inside the car,
+          and keep valuables out of sight. Do not accept a push start on a steep
+          car park ramp, and do not let a stranger connect jump leads in the
+          wrong order to a modern car. The wrong connection can damage sensitive
+          electronics, which turns a simple flat battery into a far more
+          expensive repair.
+        </p>
+        <p>
+          If children, older passengers or anyone vulnerable is with you, tell
+          us on the phone. We can prioritise clear meeting instructions and keep
+          the call short, so your phone battery lasts until we arrive.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CITY CENTRE PROBLEMS ============ -->
+  <section class="sec" id="city-centre-problems">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Why the city centre is different</span>
+        <h2>Problems you only get in central Birmingham.</h2>
+        <p class="lead">
+          A jump start is simple. Getting to the car, safely and legally, is
+          often the hard part in B1, B2 and B3.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M4 20V8l8-5 8 5v12h-6v-6H10v6H4z" /></svg>
+          </span>
+          <h3>Multi-storey and underground car parks</h3>
+          <p>
+            Bullring car parks, NCP sites and Q-Park sites have tight ramps,
+            low ceilings, one way circulation and strict height limits. A
+            traditional recovery truck may not reach your level at all. Our
+            portable equipment is carried to the car, which is why the level,
+            zone and nearest lift matter so much when you call.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Clean Air Zone context</h3>
+          <p>
+            Birmingham Clean Air Zone covers the area inside the A4540
+            Middleway ring road, which includes most of the city centre. Charges
+            can apply to vehicles that do not meet the required emissions
+            standard when they are driven in the zone. We do not add a Clean
+            Air Zone surcharge to our quote, but do not drive a faulty car
+            around the centre trying to find help and risk further charges or a
+            penalty for other offences.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" /></svg>
+          </span>
+          <h3>One way streets and bus lanes</h3>
+          <p>
+            Around Colmore Row, the Jewellery Quarter and Digbeth, one way
+            systems change quickly and bus lanes and bus gates are enforced by
+            camera. Never drive a car that is cutting out, has no power
+            steering feel, or has warning lights flashing just to reach a
+            quieter street. You could stall again in a worse place, or pick up
+            a fine. Stay put if you are safe, and let us come to you.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <h3>Events, matches and roadworks</h3>
+          <p>
+            A busy shopping Saturday, an event at the Utilita Arena, a match
+            day crowd moving through the centre, or temporary roadworks can
+            close the obvious route to you. Tell us about any closure or queue
+            you can see. Local knowledge of Digbeth, Five Ways and the routes
+            in from Aston helps us choose a realistic way in, not just the
+            shortest line on a map.
+          </p>
+        </article>
+      </div>
+      <div class="legal rv" style="margin-top:48px;">
+        <p>
+          Short trips are part of the story too. Many city centre batteries die
+          after a day parked in B2 or B4 because the battery was already weak,
+          the car had only done short journeys that week, or lights and systems
+          were left on during a long meeting, a shopping trip or a show. Cold
+          evenings after a warm day, and cars left at New Street or Moor Street
+          while their owners travel, are common patterns we see. That is why
+          every visit includes a free battery health check. Starting the car is
+          only half the job. Knowing whether the battery will start it again
+          tomorrow morning is the other half.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AREAS ============ -->
+  <section class="sec" id="areas-we-reach-fast">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Areas and landmarks</span>
+        <h2>Landmarks we reach fast in the city centre.</h2>
+        <p class="lead">
+          Use a landmark when you call. It is often faster and clearer than a
+          postcode alone in a car park or a pedestrianised area.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["Bullring and Grand Central", "New Street Station", "Moor Street Station", "Snow Hill", "Colmore Row B3", "Broad Street B1", "Five Ways B5", "Digbeth B5", "Jewellery Quarter B3", "Southside and Chinatown B5", "Aston B4", "Edgbaston B5", "Mailbox and Canal Side B1", "Children's Hospital B4"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+      <div class="legal rv" style="margin-top:48px;">
+        <p>
+          In B1, we regularly help drivers around Broad Street, the Mailbox,
+          Brindleyplace and the canal side apartments, where underground
+          parking and visitors who do not know the access roads can make a
+          simple callout confusing. In B2, the pressure points are New Street,
+          Grand Central and the main shopping streets, where loading bays are
+          busy and stopping places are limited. In B3, Colmore Row, St Pauls
+          Square and the Jewellery Quarter combine business parking, narrow
+          streets and permit areas, so a precise building name helps.
+        </p>
+        <p>
+          In B4, around Aston University, the Birmingham Children's Hospital
+          area and the routes towards Aston, drivers are often on tight
+          schedules for appointments, lectures or shifts. In B5, Digbeth,
+          Southside, Five Ways and the edge of Edgbaston bring a mix of
+          venues, student housing, hotels and late night traffic. Wherever you
+          are in those postcodes, describe the nearest junction, venue or car
+          park entrance and we will do the rest. If your car is just outside
+          the centre in Edgbaston, Aston or the Jewellery Quarter fringe, call
+          anyway. We cover the wider city, and the same fixed quote process
+          applies.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NIGHT SAFETY ============ -->
+  <section class="sec" id="night-safety">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Night and early morning</span>
+        <h2>Staying safe when the centre is quiet.</h2>
+        <p class="lead">
+          A flat battery at 2am outside a Broad Street venue, or at 5am before
+          an early shift, needs a calmer plan, not a faster panic.
+        </p>
+      </div>
+      <div class="duo">
+        <div class="duo-card duo-white rv">
+          <div>
+            <h3>Choose light and people over shortcuts</h3>
+            <p>
+              Wait near a lit entrance, a staffed car park desk, a hotel lobby,
+              a station entrance or a late night business if one is nearby and
+              you can reach it safely on foot. Avoid unlit service yards,
+              canal towpaths and empty side streets while you wait, even if
+              they look like a shortcut back to the car. Keep your phone in
+              your hand, share your location, and agree the exact meeting
+              point with our technician before they arrive.
+            </p>
+          </div>
+        </div>
+        <div class="duo-card duo-black rv rv-d1">
+          <div>
+            <h3>What we do differently at night</h3>
+            <ul class="tick-list">
+              <li>Real person answers, 24/7, on 07477 649906</li>
+              <li>Clear arrival time and updates while you wait</li>
+              <li>Meeting point agreed before we set off</li>
+              <li>Free battery health check, even on night callouts</li>
+              <li>Recovery option if the car cannot be started safely</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="legal rv" style="margin-top:48px;">
+        <p>
+          If you feel unsafe at any point, move to a safe public place first
+          and call the police in an emergency. Your car can wait. Tell us where
+          you have moved to, and we will meet you there and walk back to the
+          vehicle together when our technician arrives. Early morning drivers
+          should take the same approach. A quiet car park before dawn can feel
+          exposed, so stay visible, keep the car locked if you remain inside,
+          and do not open the bonnet in the dark if you are unsure what you are
+          looking at.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IF IT FAILS ============ -->
+  <section class="sec" id="if-jump-start-fails">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>If a jump start is not enough</span>
+        <h2>When the battery, or something else, has actually failed.</h2>
+        <p class="lead">
+          Sometimes a jump start reveals the real fault. You still have
+          options on the same visit, without starting again with another company.
+        </p>
+      </div>
+      <div class="legal rv">
+        <p>
+          First, we test. A battery can take a boost and still fail a proper
+          health check, which means it is likely to let you down again within
+          days. A healthy battery with a flat charge points to something else:
+          lights left on, a short trip pattern, or a charging fault. Our free
+          battery health check and alternator check help separate those cases
+          while we are standing at your car, so the advice you get is based on
+          a test, not a guess.
+        </p>
+        <p>
+          If the battery needs replacing, our
+          <a href="/services/battery-replacement/">battery replacement service in Birmingham</a>
+          can supply and fit the correct battery at your car where suitable,
+          including in many car park locations. That means you drive away on a
+          new battery instead of hoping the old one lasts the week. We will
+          confirm the correct battery for your vehicle and the fixed price
+          before any fitting goes ahead.
+        </p>
+        <p>
+          If the problem is not the battery at all, for example a failed
+          starter motor, a serious alternator fault, or accident or mechanical
+          damage, the right answer is recovery, not repeated jump attempts.
+          Our <a href="/services/breakdown-recovery/">breakdown recovery service</a>
+          and our <a href="/services/towing-and-recovery/">towing and recovery service</a>
+          can take your car to your home or to a garage you choose. In a
+          multi-storey car park, we will talk through access and height limits
+          first, so there are no surprises when the recovery vehicle arrives.
+          Either way, you will know the plan and the price before anything
+          moves.
+        </p>
+        <p>
+          That joined up approach is the main advantage of calling a local
+          <a href="/services/jump-start/">jump start specialist</a> first.
+          One call covers the start, the test, a replacement battery if you
+          need one, and recovery if you need that instead. You are not left
+          in a city centre car park making a second round of phone calls.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RELATED GUIDES ============ -->
+  <section class="sec" id="related-guides">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Related guides</span>
+        <h2>Read next before, or after, you call.</h2>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <h3>How much does a jump start cost in Birmingham?</h3>
+          <p>
+            What affects your fixed quote, why we do not publish a single
+            price for every car, and what should always be included.
+            <br /><a href="/blog/how-much-does-a-jump-start-cost-in-birmingham/">Read the jump start cost guide</a>
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <h3>Car will not start in Birmingham?</h3>
+          <p>
+            Clicking, silence, slow turning or warning lights: work through
+            the symptoms and work out whether it is likely to be the battery.
+            <br /><a href="/blog/car-wont-start-birmingham/">Read the car will not start guide</a>
+          </p>
+        </article>
+        <article class="why-card w-white rv">
+          <h3>Need help beyond this guide?</h3>
+          <p>
+            See all of our services on the <a href="/">home page</a>, check
+            the main <a href="/services/jump-start/">jump start page</a> for
+            how a visit works, or go straight to our
+            <a href="/contact/">contact page</a> to call or message us now.
+          </p>
+        </article>
+        <article class="why-card w-black rv rv-d1">
+          <h3>Battery keeps going flat?</h3>
+          <p>
+            Repeated flat batteries usually mean the battery is at the end of
+            its life or the car is not charging properly. Our
+            <a href="/services/battery-replacement/">battery replacement</a>
+            and <a href="/services/breakdown-recovery/">breakdown recovery</a>
+            pages explain the next steps in detail.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>FAQ</span>
+        <h2>City centre flat battery questions, answered.</h2>
+        <p class="lead">
+          The questions drivers in B1 to B5 ask us most, answered the same
+          way we answer them on the phone.
+        </p>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f, i) => (
+          <div class={`faq rv ${i % 3 === 1 ? "rv-d1" : i % 3 === 2 ? "rv-d2" : ""}`}>
+            <button aria-expanded="false" aria-controls={`faq-a-${i}`} id={`faq-q-${i}`}>
+              <span>{f.q}</span>
+              <span class="plus" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" /></svg>
+              </span>
+            </button>
+            <div class="a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
+              <div class="a-in">
+                <p>{f.a}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final">
+    <div class="in rv">
+      <h2>Still stuck in the city centre? Call now.</h2>
+      <p>
+        Tell us exactly where you are in Birmingham City Centre, agree a
+        fixed quote, and we will usually be with you in 30 to 40 minutes.
+        Every visit includes a free battery health check.
+      </p>
+      <div class="row">
+        <a href={phoneHref} class="btn btn-black">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

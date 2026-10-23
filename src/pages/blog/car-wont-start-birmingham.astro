@@ -1,0 +1,650 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phoneHref = "tel:+447477649906";
+const phoneLabel = "07477 649906";
+const waHref =
+  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20my%20car%20will%20not%20start.";
+
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+
+const faqs = [
+  {
+    q: "Why will my car not start but the lights still work?",
+    a: "The lights need very little power, so they can work even when the battery is too weak to turn the engine. Rapid clicking, dimming dashboard lights or a slow crank usually point to a flat or failing battery. A jump start with a battery health check will confirm it on the spot.",
+  },
+  {
+    q: "How can I tell if it is the battery or the starter motor?",
+    a: "A flat battery usually gives rapid clicking, fading electrics or complete silence after the car has been parked. A faulty starter motor more often gives one single click, even when the dashboard lights stay bright. If a safe jump start does not turn the engine, the starter motor or another part may need attention.",
+  },
+  {
+    q: "Can cold weather stop a car starting in Birmingham?",
+    a: "Yes. Cold mornings reduce battery power at the exact moment the engine needs more effort to turn. Short trips around Birmingham, school runs and station parking can leave a weak battery with too little charge, which is why many failures happen first thing on a frosty morning.",
+  },
+  {
+    q: "Should I keep trying to start my car if it will not turn over?",
+    a: "No. Stop after two or three short attempts. Repeated cranking drains the battery further and can overheat the starter motor. If you hear grinding, smell burning, see smoke or spot a fuel smell, stop straight away and call for professional help.",
+  },
+  {
+    q: "How quickly can you reach me if my car will not start in Birmingham?",
+    a: "Usually within 30 to 40 minutes of your call anywhere in Birmingham, including the City Centre, Edgbaston, Erdington and Selly Oak. You get a fixed quote on the phone before we set off, an honest arrival time, and a free battery health check with every visit.",
+  },
+  {
+    q: "What happens if a jump start does not fix my car?",
+    a: "We test the battery and charging system at your car and explain what we find. If the battery has failed, we can fit the correct replacement there and then. If the fault is mechanical or electrical, we can arrange recovery to a garage of your choice so you are not left stranded.",
+  },
+];
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Car won't start in Birmingham? Work out why in 60 seconds",
+  description:
+    "Car won't start in Birmingham? Spot the cause in 60 seconds and get fast mobile help in 30 to 40 minutes. Call 07477 649906 for a fixed quote.",
+  datePublished: "2026-09-23",
+  dateModified: "2026-09-23",
+  author: {
+    "@type": "Organization",
+    "@id": "https://www.birminghamjumpstart.co.uk/#business",
+    name: "Birmingham Jump Start",
+    url: "https://www.birminghamjumpstart.co.uk/",
+  },
+  publisher: {
+    "@type": "Organization",
+    "@id": "https://www.birminghamjumpstart.co.uk/#business",
+    name: "Birmingham Jump Start",
+    url: "https://www.birminghamjumpstart.co.uk/",
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://www.birminghamjumpstart.co.uk/blog/car-wont-start-birmingham/",
+  },
+  image: [
+    "https://www.birminghamjumpstart.co.uk/images/car-breakdown-recovery-birmingham.webp",
+  ],
+};
+---
+
+<BaseLayout
+  heroImage="/images/car-breakdown-recovery-birmingham.webp?v=3"
+  title="Car Won't Start in Birmingham? Causes and Fixes"
+  description="Car won't start in Birmingham? Spot the cause in 60 seconds and get fast mobile help in 30 to 40 minutes. Call 07477 649906 for a fixed quote."
+  path="blog/car-wont-start-birmingham/"
+  faq={faqs}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow rv"><span class="dot"></span>Guides, Birmingham drivers</span>
+      <h1 class="rv rv-d1">
+        Car won't start in Birmingham? <span class="hl">Work out why</span> in 60 seconds.
+      </h1>
+      <p class="rv rv-d1" style="margin:18px auto 0;color:var(--gray);font-weight:600;">
+        <time datetime="2026-09-23">23 September 2026</time> · By Birmingham Jump Start
+      </p>
+      <p class="sub rv rv-d2">
+        Turn the key, press the button, and nothing useful happens. This guide helps you
+        read the signs in under a minute, try only the safe checks, and know exactly when
+        to stop trying and call for help in Birmingham.
+      </p>
+      <div class="hero-ctas rv rv-d2">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+      <p class="hero-eta rv rv-d2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+        At your car within 30 to 40 minutes of your call
+      </p>
+    </div>
+    <div class="hero-photo rv">
+      <div class="ph">
+        <img
+          src="/images/car-breakdown-recovery-birmingham.webp?v=3"
+          srcset="/images/car-breakdown-recovery-birmingham-mobile.webp?v=3 640w, /images/car-breakdown-recovery-birmingham.webp?v=3 1280w"
+          sizes="(max-width: 640px) 640px, 1280px"
+          alt="Recovery technician helping a driver whose car will not start in Birmingham"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+      </div>
+      <div class="hero-floats">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <div>
+            <strong>Most common cause</strong>
+            <span>A flat or failing battery</span>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <div>
+            <strong>Free battery check</strong>
+            <span>With every callout</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUICK ANSWER ============ -->
+  <section class="sec" id="quick-answer">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Quick answer</span>
+        <h2>The short answer first.</h2>
+        <p class="lead">
+          If your car will not start, the most common cause is a flat battery. You can
+          usually tell in 60 seconds from the sound and the dashboard.
+        </p>
+      </div>
+      <div class="duo">
+        <div class="duo-card duo-black rv">
+          <div>
+            <h3>What it usually means</h3>
+            <p>
+              Rapid clicking, a slow and tired crank, flickering dashboard lights or
+              complete silence after the car has been parked all point to the battery
+              first. Lights and the radio can still work because they need far less
+              power than the starter motor. In most cases a safe
+              <a href="/services/jump-start/" style="color:var(--yellow);font-weight:700;"> mobile jump start in Birmingham</a>
+              gets the engine running, and a free battery health check tells you whether
+              the battery will hold charge or needs replacing.
+            </p>
+          </div>
+        </div>
+        <div class="duo-card duo-white rv rv-d1">
+          <div>
+            <h3>The 60 second tell</h3>
+            <ul class="tick-list">
+              <li>Listen: clicking, one click, slow crank or silence</li>
+              <li>Look: are the dashboard lights bright, dim or dead?</li>
+              <li>Check: did it start fine yesterday, or has it been parked up?</li>
+              <li>Decide: if the battery signs match, call for a jump start</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLACK BAND ============ -->
+  <section class="band-black" aria-label="Help for a car that will not start in Birmingham">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow on-dark"><span class="dot"></span>Stuck right now?</span>
+        <h2>Do not guess for long. Get the cause checked at your car.</h2>
+        <p class="lede">
+          A proper test at the roadside is faster and safer than repeated attempts,
+          borrowed leads or buying a battery you may not need.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["30 to 40 minute response", "Fixed quote on the phone", "No membership needed", "Free battery health check", "Cover across Birmingham"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SYMPTOM CHECKER ============ -->
+  <section class="sec" id="symptoms">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Symptom checker</span>
+        <h2>What is your car doing when you try to start it?</h2>
+        <p class="lead">
+          Start here. Match what you hear and see to one of these five signs, and you
+          will have a clear idea of the likely cause before anyone touches the car.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <h3>Rapid clicking, no start.</h3>
+          <p>
+            You hear fast clicking when you turn the key or press start, but the engine
+            does not turn over. This is the classic flat battery sign. The battery has
+            enough charge to power the starter solenoid, but not enough to spin the
+            engine. A jump start is normally the right first step.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Complete silence, nothing at all.</h3>
+          <p>
+            No click, no dashboard, no central locking. The battery may be fully flat,
+            a terminal connection may be loose, or the car may not be recognising the
+            key. Check that you are in Park or neutral with your foot on the brake or
+            clutch, then call for help if it stays dead.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <h3>Slow, struggling crank.</h3>
+          <p>
+            The engine turns, but slowly and reluctantly, as if it is tired. This often
+            happens on cold mornings in Harborne, Selly Oak and Edgbaston after short
+            trips have left the battery low. The battery is weak, the engine oil is cold
+            and thick, and the starter needs more power than usual.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z" /></svg>
+          </span>
+          <h3>Dashboard lights flicker or fade.</h3>
+          <p>
+            Bright lights that dim sharply when you try to start point to a battery that
+            cannot hold its voltage under load. If the lights stay bright and nothing
+            turns, the problem is less likely to be charge alone and could involve the
+            starter motor, a fuse, the immobiliser or a connection.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Key not detected or start button does nothing.</h3>
+          <p>
+            Many modern cars will not start if the key fob battery is flat or the car
+            cannot read the key. Try holding the fob against the start button or in the
+            slot your handbook shows, and try your spare key if you have one. If the car
+            still will not wake up, the 12 volt battery may be flat, which is common on
+            hybrids and electric cars too.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <h3>Engine cranks normally but will not fire.</h3>
+          <p>
+            If the engine turns at normal speed but never catches, the battery is
+            probably not the main fault. Fuel, spark, air or a sensor issue is more
+            likely. Do not keep cranking, because you will flatten a healthy battery.
+            This is a job for
+            <a href="/services/breakdown-recovery/"> breakdown recovery in Birmingham</a>
+            and a garage diagnosis.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPARISON ============ -->
+  <section class="sec" id="comparison">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Find the real fault</span>
+        <h2>Flat battery, starter motor or alternator?</h2>
+        <p class="lead">
+          These three faults get mixed up every day. The sound, the history and what
+          happened on your last drive separate them quickly.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-yellow rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <h3>Flat battery.</h3>
+          <p>
+            <strong>Symptoms:</strong> rapid clicking, slow crank, dim or flickering lights, worse after parking or cold weather.
+            <strong> Sound:</strong> clicking or a tired groan.
+            <strong> Fix:</strong> a safe jump start, then a battery and charging test. If the battery has failed, our
+            <a href="/services/battery-replacement/"> battery replacement service</a>
+            can fit the correct battery at your car.
+            <strong> Cost point:</strong> you get a fixed quote on the phone before we set off, so there is no guessing.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Starter motor.</h3>
+          <p>
+            <strong>Symptoms:</strong> one single click, dashboard lights stay bright, car was starting normally until it suddenly was not.
+            <strong> Sound:</strong> a single click, silence, or occasional grinding.
+            <strong> Fix:</strong> a jump start alone will not repair a failed starter. The car usually needs recovery to a garage for repair or replacement.
+            <strong> Cost point:</strong> diagnosis first avoids paying for a battery you do not need.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <h3>Alternator.</h3>
+          <p>
+            <strong>Symptoms:</strong> battery warning light on your last drive, lights fading while driving, car cutting out or needing repeated jump starts.
+            <strong> Sound:</strong> the car may start after a boost, then die again.
+            <strong> Fix:</strong> the alternator is not charging the battery, so a new battery alone will go flat again. The charging system needs testing and repair.
+            <strong> Cost point:</strong> we test alternator output on every jump start visit at no extra step.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z" /></svg>
+          </span>
+          <h3>Not sure which one it is?</h3>
+          <p>
+            That is normal, and it is exactly why we test before we advise. Start with our
+            <a href="/"> Birmingham Jump Start homepage</a>
+            for how the service works, or call and describe the sound. We will tell you
+            honestly whether a jump start is likely to fix it, or whether recovery is
+            the better first move.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SAFE CHECKS ============ -->
+  <section class="sec" id="safe-checks">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Safe DIY checks</span>
+        <h2>What to check safely yourself in 5 minutes.</h2>
+        <p class="lead">
+          You can rule out the simple causes in five minutes without tools and without
+          touching anything under the bonnet that could hurt you or the car.
+        </p>
+      </div>
+      <div class="duo">
+        <div class="duo-card duo-white rv">
+          <div class="ph">
+            <img
+              src="/images/car-battery-replacement-birmingham.webp?v=3"
+              srcset="/images/car-battery-replacement-birmingham-mobile.webp?v=3 640w, /images/car-battery-replacement-birmingham.webp?v=3 1280w"
+              sizes="(max-width: 640px) 640px, 1280px"
+              alt="Technician testing a car battery during a battery replacement callout in Birmingham"
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="1066"
+            />
+          </div>
+        </div>
+        <div class="duo-card duo-black rv rv-d1">
+          <div>
+            <h3>Your 5 minute checklist</h3>
+            <ul class="tick-list">
+              <li>Confirm the car is in Park or neutral, handbrake on, foot brake pressed for automatics</li>
+              <li>Turn off lights, heater, radio and heated screens, then try once more</li>
+              <li>Check the key fob: try the spare key, or hold the fob to the start button</li>
+              <li>Look at the dashboard messages and note any battery or immobiliser warning</li>
+              <li>Think back: lights left on, long parking, short trips, or a warning light yesterday?</li>
+              <li>If it is an automatic, wiggle the selector firmly into Park and retry once</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sec-head rv" style="margin-top:48px;">
+        <p class="lead">
+          If none of that helps, stop there. Do not use jump leads from another car unless
+          you know the correct order and your car allows it, because modern electronics,
+          stop start systems and hybrids can be damaged by voltage spikes. Our regulated
+          jump pack is the safer route, and if you are travelling through the Birmingham
+          Clean Air Zone or joining the M6 or A38, a reliable start matters more than a
+          hopeful one. Parked near the City Centre, Erdington or Sutton Coldfield, the
+          same rule applies: two failed attempts is enough information.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHEN NOT TO KEEP TRYING ============ -->
+  <section class="sec" id="stop-trying">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Know when to stop</span>
+        <h2>When not to keep trying to start it.</h2>
+        <p class="lead">
+          Repeated attempts will not persuade a faulty car to start. They can make a
+          simple job bigger, so stop straight away if you notice any of these.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Stop if you hear grinding or smell burning.</h3>
+          <p>
+            Grinding can mean the starter motor is not engaging properly, and a burning
+            smell, smoke or a strong fuel smell means you should turn everything off and
+            step away from the car. Do not keep cranking through those signs.
+          </p>
+        </article>
+        <article class="why-card w-black rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <h3>Stop after two or three attempts.</h3>
+          <p>
+            Each attempt drains the battery further and heats the starter motor. If the
+            car has not started after two or three short tries, more tries will only
+            leave you with a flatter battery and less information, not a running car.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ YELLOW BAND: WHEN TO CALL ============ -->
+  <section class="band-yellow" aria-label="When to call a professional in Birmingham">
+    <div class="in">
+      <div class="wrap">
+        <span class="eyebrow on-yellow rv"><span class="dot"></span>When to call a professional</span>
+        <h2 class="rv rv-d1">Call when the signs point beyond a simple check.</h2>
+        <p class="lede rv rv-d1">
+          Call a professional if the battery signs match, if you are on a busy road, in a
+          car park with a deadline, or anywhere you feel unsafe. Call if the car started
+          yesterday and is dead today, if you need to be in Solihull, at work, or on the
+          school run, or if a previous jump start only lasted a day. We cover the City
+          Centre, Edgbaston, Erdington, Sutton Coldfield, Solihull, Harborne and Selly Oak,
+          plus routes along the M6 and A38. You get a fixed quote on the phone, help usually
+          within 30 to 40 minutes, and a free battery health check. Visit our
+          <a href="/contact/" style="font-weight:800;text-decoration:underline;"> contact page</a>
+          or call now, and if the car cannot be fixed at the roadside we can arrange
+          <a href="/services/towing-and-recovery/" style="font-weight:800;text-decoration:underline;"> towing and recovery</a>
+          to a garage you trust.
+        </p>
+        <div class="steps-cta rv">
+          <a href={phoneHref} class="btn btn-black">
+            Call {phoneLabel} now
+            <span class="arr-c" set:html={arrow} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="sec" id="how">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>How it works</span>
+        <h2>From your call to moving again.</h2>
+        <p class="lead">
+          No membership, no app, no waiting for a call centre callback. One call and the
+          process is the same across Birmingham, day or night.
+        </p>
+      </div>
+      <div class="steps">
+        <article class="step rv">
+          <span class="num">01</span>
+          <h3>You call and describe it.</h3>
+          <p>
+            Tell us where you are and what the car does: clicking, silence, slow crank
+            or warning lights. That helps us bring the right kit first time.
+          </p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">02</span>
+          <h3>Fixed quote agreed.</h3>
+          <p>
+            We give you the exact price on the phone before we set off. The price we
+            quote is the price you pay, with no night or weekend surcharge.
+          </p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">03</span>
+          <h3>We come to you.</h3>
+          <p>
+            The nearest technician heads straight to you, usually within 30 to 40
+            minutes, whether you are at home, at work or in a City Centre car park.
+          </p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
+          <h3>Started, tested, explained.</h3>
+          <p>
+            We start the car safely, test the battery and alternator, and explain in
+            plain English whether you need nothing more, a recharge, or a new battery.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AREAS ============ -->
+  <section class="sec" id="areas">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Areas we cover</span>
+        <h2>Local help, wherever you are stuck in Birmingham.</h2>
+        <p class="lead">
+          Cold mornings catch drivers out across the city, from early commuters on the
+          A38 to shoppers returning to a dead car in a multi storey car park. We are
+          already nearby in these areas, inside and outside the Clean Air Zone, with no
+          extra charge for a central location.
+        </p>
+      </div>
+      <ul class="chips rv" style="justify-content:flex-start;">
+        {["Birmingham City Centre", "Edgbaston", "Erdington", "Sutton Coldfield", "Solihull", "Harborne", "Selly Oak", "Clean Air Zone", "M6 corridor", "A38 corridor"].map((c) => (
+          <li style="border-color:var(--line);"><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ RELATED GUIDES ============ -->
+  <section class="sec" id="related">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Related guides</span>
+        <h2>Read next for cost and hybrid advice.</h2>
+        <p class="lead">
+          Two guides Birmingham drivers ask for most once they know the cause.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <h3>How much does a jump start cost?</h3>
+          <p>
+            See what affects the price, why we quote a fixed price on the phone, and how
+            to avoid membership fees and surprise charges. Read:
+            <a href="/blog/how-much-does-a-jump-start-cost-in-birmingham/"> How much does a jump start cost in Birmingham?</a>
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <h3>Jump starting hybrids and electric cars.</h3>
+          <p>
+            Hybrids and EVs still rely on a 12 volt battery, and the safe method is
+            different from a petrol car. Read:
+            <a href="/blog/jump-start-hybrid-electric-cars-birmingham/"> Jump start hybrid and electric cars in Birmingham</a>
+            before anyone connects leads to your car.
+          </p>
+        </article>
+      </div>
+      <div class="sec-head rv" style="margin-top:40px;">
+        <p class="lead">
+          Need the service itself rather than another guide? Go straight to our
+          <a href="/services/jump-start/"> jump start service page</a>,
+          check <a href="/services/breakdown-recovery/"> breakdown recovery</a> if the engine cranks but will not fire, or
+          <a href="/contact/"> contact us</a> and we will talk you through the signs on the phone.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>FAQ</span>
+        <h2>Car will not start questions, answered.</h2>
+        <p class="lead">
+          Straight answers to the questions Birmingham drivers ask us most when a car
+          will not start.
+        </p>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f, i) => (
+          <div class={`faq rv ${i % 3 === 1 ? "rv-d1" : i % 3 === 2 ? "rv-d2" : ""}`}>
+            <button aria-expanded="false" aria-controls={`faq-a-${i}`} id={`faq-q-${i}`}>
+              <span>{f.q}</span>
+              <span class="plus" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" /></svg>
+              </span>
+            </button>
+            <div class="a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
+              <div class="a-in">
+                <p>{f.a}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final">
+    <div class="in rv">
+      <h2>Still will not start? One call sorts it.</h2>
+      <p>
+        Call now and a real person answers. We dispatch help straight away, usually
+        reaching you within 30 to 40 minutes, with a free battery health check included.
+      </p>
+      <div class="row">
+        <a href={phoneHref} class="btn btn-black">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

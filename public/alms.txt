@@ -48,6 +48,7 @@
 - https://www.birminghamjumpstart.co.uk/services/ (all services)
 - https://www.birminghamjumpstart.co.uk/about/ (about)
 - https://www.birminghamjumpstart.co.uk/contact/ (contact)
+- https://www.birminghamjumpstart.co.uk/blog/ (guides: jump start cost, car will not start diagnosis, safe jump starting, hybrid and EV 12V help, city centre flat battery)
 - https://www.birminghamjumpstart.co.uk/sitemap.xml (sitemap)
 - https://www.birminghamjumpstart.co.uk/llms.txt (LLM summary)
 

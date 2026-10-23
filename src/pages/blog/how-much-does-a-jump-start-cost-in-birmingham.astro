@@ -1,0 +1,515 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phoneHref = "tel:+447477649906";
+const phoneLabel = "07477 649906";
+const waHref =
+  "https://wa.me/447477649906?text=Hi%20Birmingham%20Jump%20Start%2C%20how%20much%20is%20a%20jump%20start%3F";
+
+const arrow =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>';
+
+const faqs = [
+  {
+    q: "How much does a jump start cost in Birmingham in 2026?",
+    a: "Most Birmingham drivers pay between £49 and £150 for a mobile jump start, depending on location, time and vehicle type. Birmingham Jump Start does not publish a single fixed price because every job is different. You get a fixed quote on the phone before we set off, and that price does not change on arrival.",
+  },
+  {
+    q: "Does Birmingham Jump Start charge extra at night or at weekends?",
+    a: "No. There is no night surcharge, no weekend surcharge and no extra charge for jobs inside the Birmingham Clean Air Zone. The fixed quote you agree on the phone is the price you pay, whenever you call.",
+  },
+  {
+    q: "Is a pay-as-you-go jump start cheaper than AA or RAC membership?",
+    a: "For most drivers, yes. National membership with roadside cover often costs well over £100 a year, every year, even if you never break down. A pay-as-you-go jump start means you only pay when you actually need help, with no yearly fee and no auto-renewal.",
+  },
+  {
+    q: "What can make a jump start cost more than the basic price?",
+    a: "Distance to reach you, difficult access such as a tight multi-storey car park, a large van or motorhome, and a battery that has completely failed can all affect the quote. We explain any difference on the phone before we set off, so there are no surprises.",
+  },
+  {
+    q: "Will I have to pay extra if I need a new battery?",
+    a: "Only if your battery has failed and cannot hold a charge. We test it for free first and show you the result. If you choose a replacement, we quote the battery and fitting separately before any work starts. You can also decline and arrange your own battery.",
+  },
+  {
+    q: "How do I get an exact price before you come out?",
+    a: "Call 07477 649906 and tell us your car, your location and what happened when you tried to start it. We give you a fixed quote and an honest arrival time, usually 30 to 40 minutes, on that same call.",
+  },
+];
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "How Much Does a Jump Start Cost in Birmingham in 2026?",
+  description:
+    "How much does a jump start cost in Birmingham? Typical prices are £49 to £150. See cost factors, save money and get a fixed quote: 07477 649906.",
+  datePublished: "2026-09-08",
+  dateModified: "2026-09-08",
+  author: {
+    "@type": "Organization",
+    "@id": "https://www.birminghamjumpstart.co.uk/#business",
+    name: "Birmingham Jump Start",
+  },
+  publisher: {
+    "@type": "Organization",
+    "@id": "https://www.birminghamjumpstart.co.uk/#business",
+    name: "Birmingham Jump Start",
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://www.birminghamjumpstart.co.uk/blog/how-much-does-a-jump-start-cost-in-birmingham/",
+  },
+  image: "https://www.birminghamjumpstart.co.uk/og-cover.jpg",
+};
+---
+
+<BaseLayout
+  heroImage="/images/car-jump-start-birmingham.webp?v=3"
+  title="How Much Does a Jump Start Cost in Birmingham in 2026?"
+  description="How much does a jump start cost in Birmingham? Typical prices are £49 to £150. See cost factors, save money and get a fixed quote: 07477 649906."
+  path="blog/how-much-does-a-jump-start-cost-in-birmingham/"
+  faq={faqs}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow rv"><span class="dot"></span>Birmingham guide, Jump start pricing</span>
+      <h1 class="rv rv-d1">
+        Jump start prices in Birmingham: <span class="hl">what you should actually pay</span> in 2026.
+      </h1>
+      <p class="rv rv-d1" style="margin-top:10px;font-weight:600;">
+        Published: <time datetime="2026-09-08">8 September 2026</time> by Birmingham Jump Start
+      </p>
+      <p class="sub rv rv-d2">
+        Your car will not start, you are stuck on a drive in Erdington, a car park by the Bullring or a layby off the M6, and the first question is simple: how much will this cost? This guide gives you the honest Birmingham answer, what pushes the price up, what should never add a penny, and how to make sure you never overpay for a flat battery.
+      </p>
+      <div class="hero-ctas rv rv-d2">
+        <a href={phoneHref} class="btn btn-yellow">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+      <p class="hero-eta rv rv-d2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+        At your car within 30 to 40 minutes of your call
+      </p>
+    </div>
+    <div class="hero-photo rv">
+      <div class="ph">
+        <img
+          src="/images/car-jump-start-birmingham.webp?v=3"
+          srcset="/images/car-jump-start-birmingham-mobile.webp?v=3 640w, /images/car-jump-start-birmingham.webp?v=3 1280w"
+          sizes="(max-width: 640px) 640px, 1280px"
+          alt="Technician providing a mobile car jump start in Birmingham and checking the battery health"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+      </div>
+      <div class="hero-floats">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <div>
+            <strong>£49 to £150 typical range</strong>
+            <span>Across Birmingham providers</span>
+          </div>
+        </div>
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <div>
+            <strong>Fixed quote on the phone</strong>
+            <span>Agreed before we set off</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUICK ANSWER ============ -->
+  <section class="sec" id="quick-answer">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Quick answer</span>
+        <h2>How much is a jump start in Birmingham, in short?</h2>
+        <p class="lead">
+          A jump start is a mobile service where a technician brings a regulated jump pack to your car, starts the engine safely and tests the battery. In Birmingham, the typical price quoted by local providers is between £49 and £150.
+        </p>
+      </div>
+      <div class="duo">
+        <div class="duo-card duo-black rv">
+          <div>
+            <h3>The direct answer</h3>
+            <p>
+              Expect to pay somewhere in the £49 to £150 range for a mobile jump start in Birmingham in 2026. Where you land in that range depends on distance, access and vehicle type. With Birmingham Jump Start, you do not have to guess. You get a fixed quote on the phone before we set off, with no membership to buy, no night or weekend surcharge and no extra charge for the Clean Air Zone. If your car needs our full <a href="/services/jump-start/">mobile jump start service in Birmingham</a>, one call to {phoneLabel} gives you the exact price and an arrival time of usually 30 to 40 minutes. Every visit also includes a free battery health check, so you know whether the battery just needed a boost or is close to failing for good.
+            </p>
+          </div>
+        </div>
+        <div class="duo-card duo-white rv rv-d1">
+          <div>
+            <h3>What is always included</h3>
+            <ul class="tick-list">
+              <li>Fixed quote agreed before we travel to you</li>
+              <li>Safe start with a regulated lithium jump pack</li>
+              <li>Free battery health check on every visit</li>
+              <li>Alternator check while the engine is running</li>
+              <li>No membership, no joining fee, no surcharge at night</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLACK BAND ============ -->
+  <section class="band-black" aria-label="Jump start pricing facts">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow on-dark"><span class="dot"></span>Pricing without surprises</span>
+        <h2>The price we quote is the price you pay.</h2>
+        <p class="lede">
+          Flat battery pricing should be simple. You are stranded, you need a clear price and a fast arrival, not a sales pitch for a yearly contract you may never use again.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["£49 to £150 typical in Birmingham", "Fixed quote on the phone", "No membership needed", "No night or weekend surcharge", "No Clean Air Zone surcharge", "Free battery health check"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ PRICE FACTORS AS CARDS ============ -->
+  <section class="sec" id="price-guide">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Price guide</span>
+        <h2>What a jump start usually costs, and why prices vary.</h2>
+        <p class="lead">
+          No two callouts are identical. A car outside a house in Edgbaston at midday is a different job from a van stuck on the top floor of a city centre car park at 2am. These four factors explain almost all of the difference between a £49 job and a £150 job.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" /></svg>
+          </span>
+          <h3>Lower end: around £49 to £75</h3>
+          <p>
+            A standard car, easy access, close to one of our technicians, in normal hours. Think a family hatchback on a driveway in Erdington, Kings Heath or Yardley that just needs a boost and a battery test. This is the most common type of job we attend across the city.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <h3>Mid range: around £75 to £110</h3>
+          <p>
+            A longer journey to reach you, a larger vehicle, or trickier access. Jobs near Birmingham Airport, the NEC or out towards Solihull and Walsall can sit here, as can SUVs and vans that need a heavier duty pack and a longer test.
+          </p>
+        </article>
+        <article class="why-card w-black rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3>Upper end: around £110 to £150</h3>
+          <p>
+            Difficult locations, very late night callouts with some providers, motorway locations off the M6 or A38, or a vehicle where the battery is buried and panels need removing just to reach the terminals. Some firms add night fees on top. We do not. Our quote already covers it.
+          </p>
+        </article>
+        <article class="why-card w-white rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z" /></svg>
+          </span>
+          <h3>What should cost £0 extra</h3>
+          <p>
+            With us: nights, weekends, bank holidays and the Birmingham Clean Air Zone. A city centre job near the Bullring should not cost more just because of where you broke down. If another firm adds all three surcharges, ask for the total before you agree to anything.
+          </p>
+        </article>
+      </div>
+      <p class="lead rv" style="margin-top:28px;">
+        Not sure whether your problem is even the battery? Read our guide on what to check first, then come back here for pricing. If the car will not start at all and a jump does not fix it, you may need <a href="/services/breakdown-recovery/">breakdown recovery in Birmingham</a> instead, and we will tell you that honestly on the phone rather than selling you a jump start that will not help.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT AFFECTS PRICE ============ -->
+  <section class="sec" id="factors">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Cost factors</span>
+        <h2>What affects your jump start price?</h2>
+        <p class="lead">
+          Five things shape your quote: where you are, when you call, what you drive, how easy your car is to reach, and whether the battery itself has failed. Understanding them helps you spot a fair quote and challenge an inflated one.
+        </p>
+      </div>
+      <div class="duo">
+        <div class="duo-card duo-white rv">
+          <div class="ph">
+            <img
+              src="/images/birmingham-jump-start-hero.webp?v=3"
+              srcset="/images/birmingham-jump-start-hero-mobile.webp?v=3 640w, /images/birmingham-jump-start-hero.webp?v=3 1280w"
+              sizes="(max-width: 640px) 640px, 1280px"
+              alt="Birmingham Jump Start recovery van travelling to a flat battery callout in Birmingham"
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="1066"
+            />
+          </div>
+        </div>
+        <div class="duo-card duo-black rv rv-d1">
+          <div>
+            <h3>Before you call, have this ready</h3>
+            <ul class="tick-list">
+              <li>Your exact location and postcode if you know it</li>
+              <li>Your car make, model and fuel type</li>
+              <li>What happens when you turn the key or press start</li>
+              <li>Whether you are in a car park, on a road or at home</li>
+              <li>Any warning lights you saw before it died</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:36px;">
+        <h3 class="rv">Location and distance</h3>
+        <p class="rv">
+          A technician based nearby can reach Birmingham City Centre, Edgbaston or Aston quickly via the A38 and the ring road. A job out in Sutton Coldfield, Solihull or Walsall takes longer and uses more fuel, so some providers price that in. Our network is spread across the city, which is why we can usually reach you in 30 to 40 minutes without loading the quote. Tell us a landmark if you are unsure of the postcode: the Bullring, Birmingham Airport, the NEC or a junction on the M6 all help us dispatch the closest van.
+        </p>
+        <h3 class="rv" style="margin-top:24px;">Time of day and day of week</h3>
+        <p class="rv">
+          Many national and local firms charge more after midnight, at weekends and on bank holidays. That can turn a £60 daytime job into a £120 night job with the same firm. We keep one clear rule: no night surcharge and no weekend surcharge. The quote is based on the job, not on how desperate the hour feels. Always ask any provider whether the price they quote includes out of hours fees before you say yes.
+        </p>
+        <h3 class="rv" style="margin-top:24px;">Vehicle type and battery access</h3>
+        <p class="rv">
+          A small petrol car is the quickest job. Diesels, stop-start cars, hybrids, large SUVs and vans need more cranking power and sometimes a different procedure. On some models the 12V battery sits under a seat or behind trim, which adds time. Hybrids and electric cars still rely on a 12V battery to wake up, and boosting it correctly matters. None of this should double your price, but it can move you within the £49 to £150 range.
+        </p>
+        <h3 class="rv" style="margin-top:24px;">Access and parking</h3>
+        <p class="rv">
+          Tight multi-storey car parks, underground parking, gated sites and motorway hard shoulders take more time and care. The Clean Air Zone in Birmingham City Centre catches some drivers out when firms add a zone fee. We do not charge a Clean Air Zone surcharge. If access is difficult, mention it on the call so we bring the right kit first time. You can also reach us via our <a href="/contact/">contact page</a> if you need to send a location pin or car park details on WhatsApp.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ YELLOW BAND: MEMBERSHIP COMPARISON ============ -->
+  <section class="band-yellow" aria-label="Jump start versus breakdown membership cost">
+    <div class="in">
+      <div class="wrap">
+        <span class="eyebrow on-yellow rv"><span class="dot"></span>Jump start vs membership</span>
+        <h2 class="rv rv-d1">Pay per job, or pay every year whether you break down or not?</h2>
+        <p class="lede rv rv-d1">
+          AA and RAC style membership can make sense if you cover huge miles and break down often. For most Birmingham drivers who need help once every few years, the maths is different. A yearly policy with roadside assistance, recovery and home start often costs well over £100 to £200 a year, renews automatically, and can rise sharply if you call them out without cover and join on the spot. A single pay-as-you-go jump start, even at the top of the local range, can cost less than one year of membership. And in the years when nothing goes wrong, you pay nothing at all. There is no contract to cancel and no renewal letter to remember. If you are comparing options from our <a href="/">Birmingham Jump Start home page</a>, this is the core difference: we charge for the job in front of us, not for a year of cover you might never use.
+        </p>
+        <p class="lede rv rv-d1">
+          Membership has other catches worth checking. Some basic policies do not include home start, which is exactly where most flat batteries happen: on your own driveway in the morning. Others limit callouts or charge extra for a battery, which is the most common fix. Before you renew, check what is actually included. If you only need a battery started today, a fixed quote from a local technician is usually the cheaper and faster route, especially when help can be with you in 30 to 40 minutes instead of a long estimated window.
+        </p>
+        <div class="steps-cta rv">
+          <a href={phoneHref} class="btn btn-black">
+            Call {phoneLabel} for your fixed quote
+            <span class="arr-c" set:html={arrow} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BATTERY REPLACEMENT EXTRA ============ -->
+  <section class="sec" id="battery-extra">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>When a jump is not enough</span>
+        <h2>When battery replacement costs extra, and when it should not.</h2>
+        <p class="lead">
+          A jump start fixes a flat battery. It cannot fix a failed battery. If the cells have collapsed, the battery will not hold a charge and the car will be flat again by morning, or will not restart after you switch off at the petrol station.
+        </p>
+      </div>
+      <p class="rv">
+        That is why every jump start from us includes a free battery health check and an alternator check. We show you the test result and explain it in plain language. If the battery passes, you pay only for the jump start and you are done. If it fails, you have a choice. You can have us supply and fit the correct battery at your car, you can drive to a garage of your choice while the car is running, or you can arrange your own battery later. We quote our <a href="/services/battery-replacement/">battery replacement service in Birmingham</a> separately and in full before any fitting starts. The battery price itself depends on size, type and whether your car needs a stop-start AGM or EFB battery, which cost more than a standard lead-acid unit. Fitting, testing and safe disposal of the old battery should be explained in that quote. Never agree to a replacement without seeing the test result and the total price first.
+      </p>
+      <p class="rv" style="margin-top:16px;">
+        Warning signs that replacement is likely: the battery is four to five years old or older, the car has struggled on cold mornings for weeks, the battery warning light stays on, or a jump start works but the car is flat again within a day or two. Short trips around Birmingham, lots of stop-start driving in city traffic and leaving a car unused for weeks all shorten battery life. If a jump start does not work at all and the car needs moving, our <a href="/services/towing-and-recovery/">towing and recovery service</a> can take it to your garage, and we will agree that price before loading, not after.
+      </p>
+      <div class="steps" style="margin-top:32px;">
+        <article class="step rv">
+          <span class="num">01</span>
+          <h3>We start the car.</h3>
+          <p>Safe boost with a regulated pack, correct order, no risk to modern electrics or ECUs.</p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">02</span>
+          <h3>We test for free.</h3>
+          <p>Battery health and alternator output checked on the spot, result shown to you.</p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">03</span>
+          <h3>You decide.</h3>
+          <p>Recharge and go, replace with us at a quoted price, or sort it yourself. No pressure.</p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
+          <h3>You are moving.</h3>
+          <p>Most visits finish in under 20 minutes once we arrive, with clear advice for next time.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AVOID OVERPAYING ============ -->
+  <section class="sec" id="avoid-overpaying">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Save money</span>
+        <h2>How to avoid overpaying for a jump start.</h2>
+        <p class="lead">
+          Most overpaying happens in a rush, at night, when the driver agrees to the first vague price they hear. These four steps take two minutes and protect you every time.
+        </p>
+      </div>
+      <div class="steps">
+        <article class="step rv">
+          <span class="num">01</span>
+          <h3>Get a total price.</h3>
+          <p>
+            Ask for the full amount including callout, VAT and any out of hours fee. If the answer is vague, do not book. A proper firm gives a fixed total on the phone.
+          </p>
+        </article>
+        <article class="step rv rv-d1">
+          <span class="num">02</span>
+          <h3>Ask about surcharges.</h3>
+          <p>
+            Say it plainly: is there a night, weekend or Clean Air Zone charge on top? With us the answer is no. With others, those extras are where a cheap quote grows.
+          </p>
+        </article>
+        <article class="step rv rv-d2">
+          <span class="num">03</span>
+          <h3>Do not buy membership in a panic.</h3>
+          <p>
+            Joining a national scheme at the roadside when you are not covered often costs far more than a local pay-as-you-go job, and ties you into a yearly contract.
+          </p>
+        </article>
+        <article class="step rv">
+          <span class="num">04</span>
+          <h3>Ask for the battery test.</h3>
+          <p>
+            A free battery health check stops you paying for a second callout tomorrow. If the battery is dying, you can plan a replacement at a fair price instead of another emergency.
+          </p>
+        </article>
+      </div>
+      <p class="rv" style="margin-top:28px;">
+        One more saving: if you are a new customer, mention the code WELCOME10 when you call. And if you are not sure whether you even need a callout, our guide on <a href="/blog/how-to-jump-start-a-car-safely/">how to jump start a car safely</a> explains what you can check yourself, what you should never attempt on a modern car, and when to leave it to a technician with the right pack. If the symptoms point to something else entirely, start with <a href="/blog/car-wont-start-birmingham/">why your car will not start in Birmingham</a> for a simple diagnosis checklist before you spend anything.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ AREAS ============ -->
+  <section class="sec" id="areas">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Areas we cover</span>
+        <h2>Same clear pricing across Birmingham and the West Midlands.</h2>
+        <p class="lead">
+          From Birmingham City Centre and the Bullring out to Edgbaston, Erdington, Sutton Coldfield, Solihull and Walsall, and from Birmingham Airport and the NEC across to the M6 and A38 corridors, our technicians cover the routes Birmingham drivers actually use. Wherever you are stuck, the process is the same: one call, one fixed quote, help usually within 30 to 40 minutes, and a free battery health check when we arrive.
+        </p>
+      </div>
+      <ul class="chips rv">
+        {["Birmingham City Centre", "Edgbaston", "Erdington", "Sutton Coldfield", "Solihull", "Walsall", "Birmingham Airport", "The NEC", "Bullring", "Clean Air Zone", "M6 corridor", "A38 corridor"].map((c) => (
+          <li><i aria-hidden="true"></i>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ RELATED GUIDES ============ -->
+  <section class="sec" id="related">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>Related guides</span>
+        <h2>More help for a car that will not start.</h2>
+        <p class="lead">
+          Read these next if you want to understand the problem before you book, or share them with a family member who is stuck right now.
+        </p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card w-white rv">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 4h2v6h-2zm0 8h2v2h-2z" /></svg>
+          </span>
+          <h3><a href="/blog/car-wont-start-birmingham/">Car will not start in Birmingham?</a></h3>
+          <p>
+            Clicking, silence, slow cranking or a dashboard full of lights: what each symptom means, what you can check safely, and when you need a technician, a new battery or recovery.
+          </p>
+        </article>
+        <article class="why-card w-yellow rv rv-d1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" /></svg>
+          </span>
+          <h3><a href="/blog/how-to-jump-start-a-car-safely/">How to jump start a car safely</a></h3>
+          <p>
+            The correct order for leads and jump packs, what changes on hybrids and stop-start cars, the mistakes that damage ECUs, and when you should not attempt it yourself at all.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>FAQ</span>
+        <h2>Jump start cost questions, answered.</h2>
+        <p class="lead">
+          Straight answers on pricing, surcharges, membership and batteries, the same way we answer on the phone.
+        </p>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f, i) => (
+          <div class={`faq rv ${i % 3 === 1 ? "rv-d1" : i % 3 === 2 ? "rv-d2" : ""}`}>
+            <button aria-expanded="false" aria-controls={`faq-a-${i}`} id={`faq-q-${i}`}>
+              <span>{f.q}</span>
+              <span class="plus" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" /></svg>
+              </span>
+            </button>
+            <div class="a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`}>
+              <div class="a-in">
+                <p>{f.a}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final">
+    <div class="in rv">
+      <h2>Need a jump start now? Get your fixed quote in one call.</h2>
+      <p>
+        Call now and a real person answers. Tell us your car and location, agree your fixed price, and we will usually be with you within 30 to 40 minutes, with a free battery health check included.
+      </p>
+      <div class="row">
+        <a href={phoneHref} class="btn btn-black">
+          Call {phoneLabel}
+          <span class="arr-c" set:html={arrow} />
+        </a>
+        <a href={waHref} target="_blank" rel="noopener" class="btn btn-white">
+          WhatsApp us
+          <span class="arr-c" set:html={arrow} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
